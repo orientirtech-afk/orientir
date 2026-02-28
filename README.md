@@ -127,7 +127,6 @@ orientir/
 ├── page-lab.js
 └── page-animation.js
 
-text
 
 ---
 
@@ -219,4 +218,5 @@ text
 |--------|--------|
 | **Website** | [https://orenpro.pro/](https://orenpro.pro/) |
 | **GitHub** | [https://github.com/orientirtech-afk](https://github.com/orientirtech-afk) |
+
 | **Email** | [orientir.tech@gmail.com](mailto:orientir.tech@gmail.com) |
