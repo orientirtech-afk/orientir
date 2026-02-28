@@ -1,0 +1,225 @@
+﻿/* ============================================================================
+   Шапка сайта (стандартная версия)
+   Используется на страницах: orientir, local_ai, lab, animation
+   ============================================================================ */
+
+.site-header {
+    padding: clamp(16px,2vw,24px) 0;
+    background: rgba(10,14,20,0.98);
+    backdrop-filter: blur(20px) saturate(180%);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-controls);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: all var(--transition-smooth);
+}
+
+.header-inner {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 clamp(24px,5vw,64px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(20px,3vw,40px);
+}
+
+@media (max-width: 1024px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Логотип */
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px,1.5vw,20px);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 900;
+    transition: all var(--transition-smooth);
+    padding: 8px 0;
+}
+
+    .site-logo:focus-visible {
+        outline: 2px solid var(--color-accent-blue);
+        outline-offset: 2px;
+    }
+
+.logo-sphere {
+    width: clamp(40px,4vw,56px);
+    height: clamp(40px,4vw,56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: var(--radius-xl);
+    font-size: clamp(20px,2vw,28px);
+    font-weight: 900;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+    transition: all var(--transition-bounce);
+    animation: sphereFloat 8s var(--ease-smooth) infinite;
+}
+
+/* Цветовые модификаторы – через data-атрибут */
+.site-logo[data-page="orientir"] .logo-sphere {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-blue), transparent 70%);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 0 30px rgba(var(--color-accent-blue-rgb), 0.3), 0 0 60px rgba(var(--color-accent-blue-rgb), 0.15);
+}
+
+.site-logo[data-page="local_ai"] .logo-sphere {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-green), transparent 70%);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 0 30px rgba(var(--color-accent-green-rgb), 0.3), 0 0 60px rgba(var(--color-accent-green-rgb), 0.15);
+}
+
+.site-logo[data-page="lab"] .logo-sphere {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-yellow), transparent 70%);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 0 30px rgba(var(--color-accent-yellow-rgb), 0.3), 0 0 60px rgba(var(--color-accent-yellow-rgb), 0.15);
+}
+
+.site-logo[data-page="animation"] .logo-sphere {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-pink), transparent 70%);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 0 30px rgba(var(--color-accent-pink-rgb), 0.3), 0 0 60px rgba(var(--color-accent-pink-rgb), 0.15);
+}
+
+.site-logo:hover .logo-sphere {
+    transform: scale(1.15) rotate(12deg);
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.15), 0 0 40px rgba(var(--sphere-color-rgb), 0.5), 0 0 80px rgba(var(--sphere-color-rgb), 0.3);
+}
+
+.logo-text {
+    font-size: clamp(1.1rem,1.5vw,1.4rem);
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+}
+
+/* Индикатор прогресса */
+.header-indicator {
+    background: rgba(26,31,41,0.7);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    padding: 12px 20px;
+    border: 1px solid rgba(var(--indicator-color-rgb, 79,195,247), 0.2);
+    min-width: 200px;
+}
+
+.indicator-label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.indicator-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+    .progress-track::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        animation: progressShimmer 2s linear infinite;
+    }
+
+.progress-fill {
+    height: 100%;
+    background: var(--indicator-color, var(--color-accent-blue));
+    border-radius: 3px;
+    width: 0%;
+    transition: width 1.2s var(--ease-smooth);
+    position: relative;
+    z-index: 1;
+}
+
+.indicator-value {
+    font-size: clamp(0.95rem,1.2vw,1.1rem);
+    font-weight: 900;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.site-header--hidden {
+    transform: translateY(-100%);
+    transition: transform var(--transition-smooth);
+}
+
+/* ============================================================================
+   Компас в шапке — адаптация под размер сферы
+   ============================================================================ */
+.site-header .compass-3d {
+    width: clamp(40px, 4vw, 56px);
+    height: clamp(40px, 4vw, 56px);
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+.site-header .compass-ring.outer {
+    border-width: 2px;
+}
+
+.site-header .compass-ring.inner {
+    border-width: 1px;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+
+.site-header .compass-needle.primary {
+    width: 3px;
+    height: 45%;
+}
+
+.site-header .compass-needle.secondary {
+    width: 1.5px;
+    height: 40%;
+}
+
+.site-header .compass-center {
+    width: 12px;
+    height: 12px;
+}
+
+.site-header .compass-direction {
+    font-size: 0.5rem;
+    font-weight: 600;
+}
+
+.site-header .compass-inner {
+    animation-duration: 20s; /* немного замедлим вращение */
+}

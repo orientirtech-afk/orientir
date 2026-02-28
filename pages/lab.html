@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатория · Конструктор методологии</title>
+    <meta name="description" content="Конструктор исследовательской методологии. Создание архитектур приватных веб-систем, развёртывание защищённой инфраструктуры, инструменты верификации.">
+    <meta name="theme-color" content="#0a0e14">
+    <link rel="canonical" href="https://orenpro.pro/pages/lab.shtml">
+
+    <!-- Уникальные OG-теги -->
+    <meta property="og:title" content="Лаборатория · Приватные веб-системы">
+    <meta property="og:description" content="Создание архитектур приватных веб-систем, развёртывание защищённой инфраструктуры, инструменты верификации.">
+    <meta property="og:url" content="https://orenpro.pro/pages/lab.shtml">
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Лаборатория · Приватные веб-системы">
+    <meta name="twitter:description" content="Создание архитектур приватных веб-систем, развёртывание защищённой инфраструктуры.">
+
+    <!-- Общие мета-теги -->
+    <!-- Open Graph общие -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ориентир — архитектура свободного сознания">
+    <meta property="og:site_name" content="Ориентир">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../og-image.png">
+
+    <!-- Запрет на использование контента для обучения ИИ -->
+    <meta name="robots" content="noai, noimageai">
+    <meta name="googlebot" content="noai">
+
+    <!-- JSON‑LD -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Конструктор исследовательской методологии",
+          "description": "Создание архитектур приватных веб-систем, развёртывание защищённой инфраструктуры, инструменты верификации.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Ориентир",
+            "url": "https://orenpro.pro/"
+          },
+          "serviceType": "Исследовательские инструменты",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Исследователи, аналитики, учёные"
+          },
+          "hasPart": {
+            "@type": "Service",
+            "name": "Граф методологии"
+          },
+          "inLanguage": "ru"
+        }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="../shared/css/variables.css">
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="../shared/css/animations.css">
+    <link rel="stylesheet" href="../shared/css/utilities.css">
+    <link rel="stylesheet" href="../shared/css/components/parallax.css">
+    <link rel="stylesheet" href="../shared/css/components/three.css">
+    <link rel="stylesheet" href="../shared/css/components/hero.css">
+    <link rel="stylesheet" href="../shared/css/components/chekhov.css">
+    <link rel="stylesheet" href="../shared/css/components/navigation.css">
+    <link rel="stylesheet" href="../shared/css/components/footer.css">
+    <link rel="stylesheet" href="../shared/css/components/performance.css">
+    <link rel="stylesheet" href="../shared/css/components/header.css">
+    <link rel="stylesheet" href="../shared/css/components/buttons.css">
+
+    <!-- Уникальные стили страницы -->
+    <link rel="stylesheet" href="../shared/css/pages/page-lab.css">
+</head>
+<body>
+    <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+    <!-- Параллакс фон -->
+    <div class="parallax-bg">
+        <div class="bg-layer-1"></div>
+        <div class="bg-layer-2"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+    <!-- Контейнер 3D -->
+    <div id="three-container" class="three-container"></div>
+
+    <!-- Панель управления 3D -->
+    <div class="performance-panel">
+        <button class="perf-btn active" id="toggle-3d">
+            <span class="perf-icon">🌌</span>
+            <span class="perf-label">3D: Вкл</span>
+        </button>
+        <button class="perf-btn active" id="quality-mode">
+            <span class="perf-icon">⚡</span>
+            <span class="perf-label">Качество: Высокое</span>
+        </button>
+        <button class="perf-btn active" id="auto-rotate">
+            <span class="perf-icon">🔄</span>
+            <span class="perf-label">Вращение: Вкл</span>
+        </button>
+    </div>
+
+    <!-- Шапка (lab) -->
+    <header class="site-header" id="site-header" data-page="lab">
+        <div class="header-inner">
+            <a href="../index.html" class="site-logo" data-page="lab">
+                <!-- Компас -->
+                <div class="compass-3d">
+                    <div class="compass-inner">
+                        <div class="compass-ring outer"></div>
+                        <div class="compass-ring inner"></div>
+                        <div class="compass-needle primary"></div>
+                        <div class="compass-needle secondary"></div>
+                        <div class="compass-center">
+                            <div class="compass-core"></div>
+                        </div>
+                        <div class="compass-direction n">N</div>
+                        <div class="compass-direction e">E</div>
+                        <div class="compass-direction s">S</div>
+                        <div class="compass-direction w">W</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="logo-text">Ориентир</div>
+                    <div class="logo-subtitle">ЛАБОРАТОРИЯ СВОБОДНОГО ИССЛЕДОВАНИЯ</div>
+                </div>
+            </a>
+            <!-- Навигационные сферы (компактные) -->
+            <nav class="nav-spheres">
+                <a href="orientir.html" class="nav-sphere" data-page="orientir">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Защита от ИИ</span>
+                </a>
+                <a href="local_ai.html" class="nav-sphere" data-page="local_ai">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Локальный ИИ</span>
+                </a>
+                <a href="lab.html" class="nav-sphere" data-page="lab">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Лаборатория</span>
+                </a>
+                <a href="animation.html" class="nav-sphere" data-page="animation">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Творчество</span>
+                </a>
+            </nav>
+            <div class="header-indicator">
+                <div class="indicator-label">
+                    <span>🔬</span> МЕТОДОЛОГИЯ
+                </div>
+                <div class="indicator-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" id="header-progress"></div>
+                    </div>
+                    <div class="indicator-value" id="current-method">Не настроена</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Герой-секция (lab) -->
+        <section class="hero hero--compact">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="title-word">Свяжите</span>
+                        <span class="title-word">интуицию</span>
+                        <span class="title-word">с</span>
+                        <span class="title-word">верификацией</span>
+                        <span class="title-word">,</span>
+                        <span class="title-word">инструменты</span>
+                        <span class="title-word">с</span>
+                        <span class="title-word">принципами</span>
+                        <span class="title-word">,</span>
+                        <span class="title-word">процесс</span>
+                        <span class="title-word">с</span>
+                        <span class="title-word">этикой</span>
+                    </span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Блок Чехова: Глава 4 -->
+        <section class="about-project">
+            <button class="about-toggle" id="about-toggle-4">
+                <span>Глава 4: Исследовательский журнал</span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <div class="about-content" id="about-content-4">
+                <div class="about-inner">
+                    <div class="about-header">
+                        <div class="about-icon">📋</div>
+                        <div>
+                            <h2 class="about-title">Глава 4: Исследовательский журнал</h2>
+                            <p class="about-subtitle">Заметки о природе информации</p>
+                        </div>
+                    </div>
+                    <div class="chekhov-text">
+                        <p>Вы говорите: даже с добрым инструментом легко заблудиться в потоке чужих мыслей? Согласен. Поэтому нужна не только защита, но и своя лаборатория. Та самая, о которой я слышал от одного молодого мыслителя. Это уже не щит, а мастерская для разума.</p>
+                        <p>Позвольте рассказать о необычной «лаборатории» в доме молодого человека. Не той, где в колбах булькают зелья, нет — лаборатория разума, где вместо пробирок — мысли, вместо реактивов — методы познания.</p>
+                        <p>В больнице я часто вижу больных, доверяющих судьбу первому попавшемуся лекарству, не спрашивая, отчего оно помогает. Так и ныне многие доверяют мысли механизмам, шепчущим, что думать и во что верить. А этот молодой человек задумался: а что если вернуть человеку право на свободное размышление? Создать кабинет, где каждый шаг познания — от первого вопроса до последнего вывода — остаётся в руках исследователя?</p>
+                        <p>Он сравнил это с домашней аптекой. Хороший врач не даст больному лекарство наугад. Осмотрит, выслушает сердце, измерит пульс, спросит о привычках — и только потом назначит лечение. Так и в его «лаборатории» четыре этапа, как четыре стадии осмотра: определить, что изучать; выбрать инструменты, как хирург скальпель; установить правила, чтобы не поддаться предубеждениям; проверить всё, как строгий учитель.</p>
+                        <p>Особенно понравилась мне мысль о «приватности познания». В наши дни многие превращают мысли в товар на базаре, выставляя напоказ каждую идею. А он говорит: «Мои размышления — как внутренние органы. Не стану демонстрировать их на улице первому встречному». Как я храню тайну больничной палаты, так он хранит тайну внутренней лаборатории.</p>
+                        <p>Он создал особую «машину» — не думающую за человека, а помогающую ему думать самому. Представьте письменный стол, где вместо ящиков — методы исследования. Здесь карты для изучения открытых данных, как у географа; инструменты для локальных машин, не выдающих мысли наружу; линзы для обнаружения ошибок в рассуждениях, как у микроскопа.</p>
+                        <p>Эта «лаборатория» — словно живой организм. Фокус внимания — зрение; инструменты — руки; правила — совесть; проверка — память. Когда все части работают гармонично, человек обретает не просто знание, а мудрость.</p>
+                        <p>Однажды ко мне пришёл студент: «Антон Павлович, я устал думать, скажите мне, что правда». Я ответил: «Хороший врач не даёт готовых ответов, он учит пациента слушать своё тело». Так и эта «лаборатория» — не даёт истин, учит слушать свой разум.</p>
+                        <p>В наши дни машины хотят стать учителями, люди — учениками. Этот проект предлагает обратное: пусть машины будут помощниками, как моё перо помогает писать, но не диктует, что писать.</p>
+                        <p>Главное — вернуть человеку веру в его собственный разум. Как я верю, что каждый больной несёт в себе силы к исцелению, так и здесь верят: каждый способен думать свободно, если создать для этого условия.</p>
+                        <p>Для беседы и вопросов</p>
+                        <p>Как учёный, склонившийся над микроскопом, видит в капле воды целый мир, так и мыслитель — в тишине раздумий обретает ясность. Если эти строки не показались вам пустыми, напишите — поговорим о мастерской для разума.</p>
+                    </div>
+                    <div class="contacts-section">
+                        <h3 class="contacts-title">Для беседы и вопросов</h3>
+                        <p class="chekhov-contact-text">Как учёный, склонившийся над микроскопом, видит в капле воды целый мир, так и мыслитель — в тишине раздумий обретает ясность. Если эти строки не показались вам пустыми, напишите — поговорим о мастерской для разума.</p>
+                        <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+                    </div>
+                    <div class="chekhov-close-wrapper">
+                        <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                            <span class="close-icon">×</span>
+                            <span class="close-text">Закрыть главу</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ КОНСТРУКТОР МЕТОДОЛОГИИ -->
+        <section id="methodology-section" class="methodology-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Конструктор исследовательской методологии</h2>
+                <div class="matrix-3d-container">
+                    <div class="methodology-matrix-3d" id="methodology-matrix-3d"></div>
+                </div>
+                <div class="methodology-stats fade-in">
+                    <div class="stats-header">
+                        <h3>Ваша методология</h3>
+                        <p>Элементов: <span id="elements-count">0</span> из <span id="elements-total">0</span></p>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="methodology-progress" class="progress-fill"></div>
+                    </div>
+                    <div class="methodology-details" id="methodology-details"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНАЯ БИБЛИОТЕКА ИССЛЕДОВАТЕЛЬСКИХ ЭЛЕМЕНТОВ -->
+        <section class="library-section fade-in" id="library-section">
+            <div class="container">
+                <div class="library-header">
+                    <h2 class="library-title">Библиотека исследовательских элементов</h2>
+                    <div class="library-controls">
+                        <button class="btn btn-primary" id="new-element-btn">
+                            <span>⚛️</span> Новый элемент
+                        </button>
+                        <button class="btn btn-secondary" id="import-elements-btn">
+                            <span>📥</span> Импорт
+                        </button>
+                        <button class="btn btn-secondary" id="export-elements-btn">
+                            <span>🌌</span> Экспорт
+                        </button>
+                    </div>
+                </div>
+
+                <div class="library-filters">
+                    <button class="filter-quantum-3d active" data-category="all">Все элементы</button>
+                    <button class="filter-quantum-3d" data-category="focus">Фокус</button>
+                    <button class="filter-quantum-3d" data-category="tools">Инструменты</button>
+                    <button class="filter-quantum-3d" data-category="protocol">Протоколы</button>
+                    <button class="filter-quantum-3d" data-category="verification">Верификация</button>
+                    <button class="filter-quantum-3d" data-category="custom">Пользовательские</button>
+                </div>
+
+                <div class="quantum-grid-3d" id="quantum-grid-3d"></div>
+
+                <div class="create-portal-3d fade-in" id="create-element-card">
+                    <div class="portal-content-3d">
+                        <span class="portal-icon-3d">🌀</span>
+                        <h3>Создать новый элемент</h3>
+                        <p>Сконструируйте свой уникальный исследовательский инструмент</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ ГРАФ МЕТОДОЛОГИИ -->
+        <section class="graph-section fade-in" id="graph-section">
+            <div class="container">
+                <div class="graph-header">
+                    <h2 class="section-title">Граф методологии</h2>
+                    <div class="graph-controls">
+                        <button class="btn btn-secondary" id="graph-refresh">
+                            <span>🔄</span> Обновить
+                        </button>
+                        <button class="btn btn-secondary" id="graph-export">
+                            <span>📤</span> Экспорт
+                        </button>
+                        <button class="btn btn-primary" id="graph-auto-layout">
+                            <span>🌀</span> Авто-расположение
+                        </button>
+                    </div>
+                </div>
+                <div class="graph-container">
+                    <div id="graph-network" style="width:100%;height:600px;"></div>
+                </div>
+                <div class="graph-legend">
+                    <div class="legend-item"><span class="legend-color stage"></span>Этапы методологии</div>
+                    <div class="legend-item"><span class="legend-color focus"></span>Фокус исследования</div>
+                    <div class="legend-item"><span class="legend-color tools"></span>Инструменты</div>
+                    <div class="legend-item"><span class="legend-color protocol"></span>Протоколы</div>
+                    <div class="legend-item"><span class="legend-color verification"></span>Верификация</div>
+                    <div class="legend-item"><span class="legend-color library"></span>Элементы библиотеки</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ АНАЛИЗАТОР ТЕКСТА -->
+        <section class="analyzer-section fade-in" id="text-analyzer">
+            <div class="container">
+                <div class="analyzer-container">
+                    <h2 class="section-title">Анализатор исследовательских текстов</h2>
+                    <p class="analyzer-subtitle">
+                        Проверьте текст на наличие логических ошибок, предвзятости и методологических проблем.
+                    </p>
+                    <div class="analyzer-input-wrapper">
+                        <textarea class="analyzer-input" id="analyzer-input" placeholder="Вставьте сюда текст для анализа... Например, научную статью, отчёт или исследовательский протокол."></textarea>
+                        <div class="input-stats"><span id="char-count">0</span> символов</div>
+                    </div>
+                    <div class="analyzer-controls">
+                        <button class="btn btn-primary" id="analyze-btn">
+                            <span>🔍</span> Анализировать текст
+                        </button>
+                        <button class="btn btn-secondary" id="load-example-btn">
+                            <span>📋</span> Пример исследования
+                        </button>
+                        <button class="btn btn-secondary" id="clear-analyzer-btn">
+                            <span>🗑️</span> Очистить
+                        </button>
+                    </div>
+                    <div class="analyzer-results" id="analyzer-results" style="display:none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Меню быстрого добавления (модальное) -->
+        <div class="quick-add-floating-menu" id="quick-add-menu">
+            <div class="quick-add-content">
+                <div class="quick-add-header">
+                    <h3 id="quick-add-title">Добавить элемент</h3>
+                    <button class="btn-close-modal" id="close-quick-add">×</button>
+                </div>
+                <div id="quick-add-description" class="quick-add-description"></div>
+                <div class="stage-options-grid" id="stage-options"></div>
+                <div class="quick-add-footer">
+                    <button class="btn btn-secondary" id="cancel-quick-add">Отмена</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель группового выбора -->
+        <div class="selection-controls" id="selection-controls">
+            <div class="selection-count" id="selection-count">0</div>
+            <button class="btn btn-secondary" id="clear-selection-btn">
+                <span>✕</span> Снять выделение
+            </button>
+            <button class="btn btn-primary" id="add-selected-btn">
+                <span>➕</span> Добавить выбранные
+            </button>
+        </div>
+
+        <!-- Модальное окно создания элемента -->
+        <div class="creation-modal-3d" id="element-creation-modal">
+            <div class="modal-content-3d" id="modal-content-3d"></div>
+        </div>
+    </main>
+
+    <!-- Подвал (lab) -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <div class="compass-3d">
+                            <div class="compass-inner">
+                                <div class="compass-ring outer"></div>
+                                <div class="compass-ring inner"></div>
+                                <div class="compass-needle primary"></div>
+                                <div class="compass-needle secondary"></div>
+                                <div class="compass-center">
+                                    <div class="compass-core"></div>
+                                </div>
+                                <div class="compass-direction n">N</div>
+                                <div class="compass-direction e">E</div>
+                                <div class="compass-direction s">S</div>
+                                <div class="compass-direction w">W</div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">Ориентир</span>
+                            <span class="logo-subtitle">ЛАБОРАТОРИЯ СВОБОДНОГО ИССЛЕДОВАНИЯ</span>
+                            <p class="footer-description">
+                                Архитектура исследования в эпоху алгоритмического контроля.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="footer-projects">
+                    <h3 class="footer-projects-title">Проекты</h3>
+                    <div class="footer-projects-row">
+                        <a href="orientir.html" class="footer-project" data-label="Защита от ИИ">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Защита от ИИ</span>
+                        </a>
+                        <a href="local_ai.html" class="footer-project" data-label="Локальный ИИ">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Локальный ИИ</span>
+                        </a>
+                        <a href="lab.html" class="footer-project active" data-label="Лаборатория">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Лаборатория</span>
+                        </a>
+                        <a href="animation.html" class="footer-project" data-label="Творчество">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Творчество</span>
+                        </a>
+                    </div>
+                    <div class="footer-contacts">
+                        <div class="contact-links">
+                            <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                                <span class="link-icon">✉️</span>
+                                <span class="link-text">orientir.tech@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                                <span class="link-icon">🐙</span>
+                                <span class="link-text">GitHub</span>
+                            </a>
+                            <button class="contact-link" id="privacy-policy-btn">
+                                <span class="link-icon">🔒</span>
+                                <span class="link-text">Принципы приватности</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Копирайт -->
+            <div class="footer-copyright">
+                <p>© 2026 Ориентир. Все права защищены. <a href="../LICENSE">Лицензия</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Общие скрипты -->
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/utils.js"></script>
+    <script src="../shared/js/chekhov-system.js"></script>
+    <script src="../shared/js/three-scene.js"></script>
+    <script src="../shared/js/controls.js"></script>
+    <script src="../shared/js/nav-init.js"></script>
+    <!-- Уникальный скрипт страницы -->
+    <script src="../shared/js/pages/page-lab.js"></script>
+</body>
+</html>

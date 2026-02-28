@@ -1,0 +1,30 @@
+# robots.txt для проекта Ориентир
+# Последнее обновление: 2026-02-24
+# Адаптировано для GitHub Pages: https://orientirtech-afk.github.io/orientir/
+
+User-agent: *
+Allow: /
+
+# Запрет для AI-краулеров (обучение моделей)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+# Запрет служебных путей
+Disallow: /shared/js/data/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Sitemap
+Sitemap: https://orientirtech-afk.github.io/orientir/sitemap.xml
+
+# Задержка для краулеров
+Crawl-delay: 1

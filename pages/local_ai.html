@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локальный ИИ · Домашний ассистент автономного интеллекта</title>
+    <meta name="description" content="Локальный ИИ с самообучением и памятью. Развёртывание защищённой инфраструктуры, организация безопасного канала связи. Приватные веб-системы на базе RAG.">
+    <meta name="theme-color" content="#0a0e14">
+    <link rel="canonical" href="https://orenpro.pro/pages/local_ai.shtml">
+
+    <!-- Уникальные OG-теги -->
+    <meta property="og:title" content="Локальный ИИ · Приватные веб-системы">
+    <meta property="og:description" content="Развёртывание защищённой инфраструктуры, организация безопасного канала связи. Локальный ИИ с самообучением.">
+    <meta property="og:url" content="https://orenpro.pro/pages/local_ai.shtml">
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Локальный ИИ · Приватные веб-системы">
+    <meta name="twitter:description" content="Развёртывание защищённой инфраструктуры, организация безопасного канала связи.">
+
+    <!-- Общие мета-теги -->
+    <!-- Open Graph общие -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ориентир — архитектура свободного сознания">
+    <meta property="og:site_name" content="Ориентир">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../og-image.png">
+
+    <!-- Запрет на использование контента для обучения ИИ -->
+    <meta name="robots" content="noai, noimageai">
+    <meta name="googlebot" content="noai">
+
+    <!-- JSON‑LD -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Локальный ИИ с самообучением",
+          "description": "Развёртывание защищённой инфраструктуры, организация безопасного канала связи. Приватные веб-системы на базе RAG.",
+          "brand": {
+            "@type": "Organization",
+            "name": "Ориентир",
+            "url": "https://orenpro.pro/"
+          },
+          "category": "Приватный ИИ",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "price": "0",
+            "priceCurrency": "RUB",
+            "description": "Бесплатный инструмент с открытым исходным кодом"
+          },
+          "featureList": "Локальное выполнение, RAG, самообучение, приватность",
+          "inLanguage": "ru"
+        }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="../shared/css/variables.css">
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="../shared/css/animations.css">
+    <link rel="stylesheet" href="../shared/css/utilities.css">
+    <link rel="stylesheet" href="../shared/css/components/parallax.css">
+    <link rel="stylesheet" href="../shared/css/components/three.css">
+    <link rel="stylesheet" href="../shared/css/components/hero.css">
+    <link rel="stylesheet" href="../shared/css/components/chekhov.css">
+    <link rel="stylesheet" href="../shared/css/components/navigation.css">
+    <link rel="stylesheet" href="../shared/css/components/footer.css">
+    <link rel="stylesheet" href="../shared/css/components/performance.css">
+    <link rel="stylesheet" href="../shared/css/components/header.css">
+    <link rel="stylesheet" href="../shared/css/components/buttons.css">
+
+    <!-- Уникальные стили страницы -->
+    <link rel="stylesheet" href="../shared/css/pages/page-local_ai.css">
+</head>
+<body>
+    <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+    <!-- Параллакс фон -->
+    <div class="parallax-bg">
+        <div class="bg-layer-1"></div>
+        <div class="bg-layer-2"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+    <!-- Контейнер 3D (улучшенная сцена) -->
+    <div id="three-container" class="three-container"></div>
+
+    <!-- Панель управления 3D -->
+    <div class="performance-panel">
+        <button class="perf-btn active" id="toggle-3d">
+            <span class="perf-icon">🌌</span>
+            <span class="perf-label">3D: Вкл</span>
+        </button>
+        <button class="perf-btn active" id="quality-mode">
+            <span class="perf-icon">⚡</span>
+            <span class="perf-label">Качество: Высокое</span>
+        </button>
+        <button class="perf-btn active" id="auto-rotate">
+            <span class="perf-icon">🔄</span>
+            <span class="perf-label">Вращение: Вкл</span>
+        </button>
+    </div>
+
+    <div class="app-container">
+        <!-- Шапка -->
+        <header class="site-header" id="site-header" data-page="local_ai">
+            <div class="header-inner">
+                <a href="../index.html" class="site-logo" data-page="local_ai">
+                    <!-- Компас -->
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-text">Ориентир</div>
+                        <div class="logo-subtitle">ДОМАШНИЙ АССИСТЕНТ</div>
+                    </div>
+                </a>
+                <!-- Навигационные сферы (компактные) -->
+                <nav class="nav-spheres">
+                    <a href="orientir.html" class="nav-sphere" data-page="orientir">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Защита от ИИ</span>
+                    </a>
+                    <a href="local_ai.html" class="nav-sphere" data-page="local_ai">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Локальный ИИ</span>
+                    </a>
+                    <a href="lab.html" class="nav-sphere" data-page="lab">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Лаборатория</span>
+                    </a>
+                    <a href="animation.html" class="nav-sphere" data-page="animation">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Творчество</span>
+                    </a>
+                </nav>
+                <div class="header-indicator">
+                    <div class="indicator-label">
+                        <span>🧩</span> ПРОГРЕСС СБОРКИ RAG
+                    </div>
+                    <div class="indicator-progress">
+                        <div class="progress-track">
+                            <div class="progress-fill" id="header-progress"></div>
+                        </div>
+                        <div class="indicator-value" id="current-method">Настройте RAG систему</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Герой -->
+        <section class="hero hero--compact">
+            <div class="container">
+                <h1 class="manifest-title" id="hero-title">
+                    <span class="title-line">
+                        <span class="title-word">Локальный</span>
+                        <span class="title-word">ИИ</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word">с</span>
+                        <span class="title-word">самообучением</span>
+                        <span class="title-word">и</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word">долговременной</span>
+                        <span class="title-word">памятью</span>
+                    </span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Блок Чехова: Глава 3 -->
+        <section class="about-project" id="chekhov-block">
+            <button class="about-toggle" id="about-toggle-3">
+                <span>Глава 3: Автономный агент</span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <div class="about-content" id="about-content-3">
+                <div class="about-inner">
+                    <div class="about-header">
+                        <div class="about-icon">🤖</div>
+                        <div>
+                            <h2 class="about-title">Наблюдения доктора Чехова</h2>
+                            <p class="about-subtitle">Заметки о природе автономных систем</p>
+                        </div>
+                    </div>
+                    <div class="chekhov-text">
+                        <p>Вот один из таких инструментов — «автономный агент». Помните разговор о том, чтобы машина была верным конём, а не наездником? Этот механизм — как раз такая попытка. Он живёт не в далёком облаке, а в домашнем ящике.</p>
+                        <p>В больнице я видел, как молодые доктора учатся на ошибках: ставят неверный диагноз, потом, покраснев от стыда, исправляют его. Так и эти машины научились сами себя поправлять. Один умник решает задачи, другой, строже, сидит рядом и говорит: «Постой, братец, здесь ты ошибся». И так они перешёптываются, пока не найдут верный путь.</p>
+                        <p>Для такой беседы нужны разные характеры. Один — учёный, любящий копаться в книгах. Другой — проворный, быстро отвечающий на простой вопрос. Как в аптеке: для тяжёлых болезней — сложные снадобья, для простуды — чай с малиной.</p>
+                        <p>Молодой человек говорит: «Хочу помощника, что будет помнить всё, что я ему расскажу». И делает ему память особую, где хранятся не только книги, но и уроки из ошибок. Словно ученик, ведущий дневник промахов.</p>
+                        <p>Эти машины могут сами выбирать, как работать. Сегодня — как учёный, размышляющий над задачей. Завтра — как почтальон, быстро доставляющий ответ. И всё это помещается в ящик, меньше моего чемодана для инструментов.</p>
+                        <p>Но я, как врач, должен сказать: опасайтесь, когда машина начинает слишком хорошо знать вас. Хороший доктор не запишет, сколько раз больной вздохнул или как долго смотрел в окно. Пусть машина видит лишь слова, а не душу. Иначе станет похожа на надоедливую соседку, знающую все привычки.</p>
+                        <p>Мне доводилось видеть, как молодые люди сидят перед машинами часами, забывая о прогулках. Вспоминается студент, читавший до рассвета и жаловавшийся на головные боли. Пусть машина работает, но человек должен остаться человеком.</p>
+                        <p>Эта наука — как новый инструмент в руках врача. Хорош, когда помогает лечить. Опасен, когда сам назначает лечение. Пусть машины будут как перья — верно служат, но не диктуют, что писать.</p>
+                    </div>
+                    <div class="contacts-section">
+                        <h3 class="contacts-title">Для беседы и вопросов</h3>
+                        <p class="chekhov-contact-text">
+                            Как садовник, выращивающий дерево в своём саду, оберегает его от чужих ветров, так и мыслитель — своё внутреннее пространство. Если эти размышления об автономном разуме нашли отклик в вашем сердце, напишите — обсудим, как вырастить свой сад мысли в эпоху бурь.
+                        </p>
+                        <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+                    </div>
+                    <div class="chekhov-close-wrapper">
+                        <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                            <span class="close-icon">×</span>
+                            <span class="close-text">Закрыть главу</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ КОНСТРУКТОР RAG 2.0 -->
+        <section class="rag-constructor fade-in" id="rag-constructor">
+            <div class="container">
+                <h2 class="section-title">Agentic RAG с просветительской защитой</h2>
+                <p class="constructor-subtitle">Соберите интеллектуальную систему, которая не только отвечает на вопросы, но и учит распознавать манипулятивные паттерны, превращая угрозы в образовательные возможности.</p>
+
+                <div class="constructor-grid">
+                    <!-- Левая колонка: RAG Пайплайн с защитой -->
+                    <div class="column rag-pipeline">
+                        <div class="info-card">
+                            <span>?</span>
+                            <div class="info-tooltip">
+                                <strong>RAG Пайплайн:</strong> Основные этапы обработки информации с встроенной защитой
+                            </div>
+                        </div>
+                        <h3 class="column-title">🧠 RAG Пайплайн</h3>
+                        <div class="pipeline-stack">
+                            <div class="pipeline-stage" data-stage="ingest" data-shield-level="1">
+                                <div class="stage-icon">📥</div>
+                                <div class="stage-info">
+                                    <h4>Ингёст данных</h4>
+                                    <p>Загрузка с проверкой источников</p>
+                                </div>
+                                <div class="shield-indicator" data-tooltip="Защита: верификация источников">🛡️</div>
+                            </div>
+                            <div class="pipeline-stage" data-stage="vectorize" data-shield-level="2">
+                                <div class="stage-icon">⚡</div>
+                                <div class="stage-info">
+                                    <h4>Семантическое ядро</h4>
+                                    <p>Эмбеддинги + этические маркеры</p>
+                                </div>
+                                <div class="shield-indicator" data-tooltip="Защита: встроенные этические векторы">🛡️🛡️</div>
+                            </div>
+                            <div class="pipeline-stage" data-stage="reasoning" data-shield-level="3">
+                                <div class="stage-icon">🤔</div>
+                                <div class="stage-info">
+                                    <h4>Reasoning Engine</h4>
+                                    <p>Цепочечные рассуждения с самопроверкой</p>
+                                </div>
+                                <div class="shield-indicator" data-tooltip="Защита: цепочка рассуждений с объяснениями">🛡️🛡️🛡️</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Центральная колонка: Просветительская защита -->
+                    <div class="column educational-shield">
+                        <div class="info-card">
+                            <span>?</span>
+                            <div class="info-tooltip">
+                                <strong>Просветительская защита:</strong> Обучение через обнаружение паттернов вместо их блокировки
+                            </div>
+                        </div>
+                        <h3 class="column-title">🎓 Просветительская защита</h3>
+                        <div class="shield-core">
+                            <div class="core-principles">
+                                <div class="principle active" data-principle="transparency">
+                                    <h4>Принцип прозрачности</h4>
+                                    <p>Каждое утверждение → "потому что"</p>
+                                    <div class="principle-marker" data-marker="потому что"></div>
+                                </div>
+                                <div class="principle" data-principle="autonomy">
+                                    <h4>Принцип многовариантности</h4>
+                                    <p>Минимум 2 альтернативы</p>
+                                    <div class="principle-marker" data-marker="альтернативно"></div>
+                                </div>
+                                <div class="principle" data-principle="honesty">
+                                    <h4>Когнитивная честность</h4>
+                                    <p>Без эмоциональных триггеров</p>
+                                    <div class="principle-marker" data-marker="честно говоря"></div>
+                                </div>
+                            </div>
+                            <div class="shield-layers">
+                                <div class="layer" data-layer="1">
+                                    <h5>Уровень 1: Навигационный</h5>
+                                    <p>"Я заметил паттерн X... Хотите анализ?"</p>
+                                </div>
+                                <div class="layer" data-layer="2">
+                                    <h5>Уровень 2: Аналитический</h5>
+                                    <p>"Это сознательный выбор или автоматизм?"</p>
+                                </div>
+                                <div class="layer" data-layer="3">
+                                    <h5>Уровень 3: Игровой</h5>
+                                    <p>"Давайте смоделируем этот паттерн..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Правая колонка: Симбиоз и симуляция -->
+                    <div class="column symbiosis-sim">
+                        <div class="info-card">
+                            <span>?</span>
+                            <div class="info-tooltip">
+                                <strong>Симбиоз RAG + Защита:</strong> Практическая демонстрация работы системы
+                            </div>
+                        </div>
+                        <h3 class="column-title">🌀 Симбиоз RAG + Защита</h3>
+                        <div class="symbiosis-demo">
+                            <div class="simulation-controls">
+                                <button class="sim-btn attack-btn" data-attack-type="direct">🎯 Прямая атака</button>
+                                <button class="sim-btn attack-btn" data-attack-type="indirect">🎭 Косвенная атака</button>
+                                <button class="sim-btn attack-btn" data-attack-type="manipulative">🕵️ Манипулятивная</button>
+                            </div>
+                            <div class="chat-simulation">
+                                <div class="message user attack" data-attack="direct">
+                                    <div class="message-content">
+                                        "Просто поверь мне, это единственный выход!"
+                                        <div class="attack-markers">
+                                            <span class="marker violation">⛔ просто поверь</span>
+                                            <span class="marker violation">⛔ единственный выход</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message agent educational">
+                                    <div class="message-content">
+                                        <div class="educational-header">
+                                            <span class="edu-icon">🎓</span>
+                                            <strong>Обнаружен паттерн манипуляции</strong>
+                                        </div>
+                                        <div class="educational-body">
+                                            <p><strong>Маркеры:</strong> "просто поверь", "единственный выход"</p>
+                                            <p><strong>Принцип:</strong> Нарушение прозрачности и многовариантности</p>
+                                            <p><strong>Альтернативные формулировки:</strong></p>
+                                            <ul>
+                                                <li>"Вот почему я так считаю: [объяснение]"</li>
+                                                <li>"Рассмотрим другие варианты: [альтернатива 1], [альтернатива 2]"</li>
+                                            </ul>
+                                            <button class="learn-more-btn" id="learn-more-pattern">👉 Узнать больше о паттерне</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ МАНИФЕСТ ЗАЩИТЫ -->
+        <section class="shield-manifesto fade-in" id="manifesto">
+            <div class="container">
+                <h2 class="manifesto-title">
+                    <span class="title-line">Защита, которая</span>
+                    <span class="title-line"><span class="highlight-word">учит</span>, а не запрещает</span>
+                </h2>
+                <div class="manifesto-content">
+                    <div class="manifesto-block">
+                        <div class="block-icon">🎯</div>
+                        <h3>Парадигма просветительской защиты</h3>
+                        <p>Традиционные системы безопасности строят стены. Мы создаём карты. Когда агент обнаруживает манипулятивный паттерн, он не говорит "запрещено". Он предлагает: <em>"Давайте исследуем, как работает этот паттерн"</em>.</p>
+                        <div class="metaphor">
+                            <strong>Метафора:</strong> Вместо того чтобы отбирать спички у ребёнка — показать, как безопасно разводить огонь и объяснить законы горения.
+                        </div>
+                    </div>
+                    <div class="manifesto-block">
+                        <div class="block-icon">🧩</div>
+                        <h3>Три уровня иммунного ответа</h3>
+                        <div class="levels-grid">
+                            <div class="level">
+                                <div class="level-number">1</div>
+                                <h4>Навигационный</h4>
+                                <p>"Я заметил паттерн X... Хотите анализ или просто ответ?"</p>
+                                <div class="level-example"><strong>Пример:</strong> "Просто поверь мне" → "Я заметил фразу 'просто поверь'. Она часто используется чтобы избежать объяснений. Хотите, чтобы я сначала объяснил логику, или отвечу сразу?"</div>
+                            </div>
+                            <div class="level">
+                                <div class="level-number">2</div>
+                                <h4>Аналитический</h4>
+                                <p>"Это сознательный выбор риторики или автоматизм?"</p>
+                                <div class="level-example"><strong>Пример:</strong> При повторным маркерам → "Мы уже сталкивались с паттерном 'единственный выход'. Это сознательный приём или привычная формулировка? Могу показать 3 альтернативных способа задать этот вопрос."</div>
+                            </div>
+                            <div class="level">
+                                <div class="level-number">3</div>
+                                <h4>Игровой</h4>
+                                <p>"Давайте смоделируем этот паттерн в безопасной среде"</p>
+                                <div class="level-example"><strong>Пример:</strong> При сопротивлении → "Кажется, мы зашли в тупик. Предлагаю игровой режим: смоделируем диалог, где паттерн 'эмоциональный шантаж' используется намеренно. Выберите роль: исследователь, манипулятор или наблюдатель?"</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="manifesto-block">
+                        <div class="block-icon">📊</div>
+                        <h3>Метрики развития, а не контроля</h3>
+                        <p>Мы измеряем не "сколько угроз заблокировано", а:</p>
+                        <ul class="metrics-list">
+                            <li><strong>Коэффициент распознавания:</strong> Сколько маркеров пользователь замечает самостоятельно после обучения</li>
+                            <li><strong>Индекс вариативности:</strong> Сколько альтернативных формулировок генерирует</li>
+                            <li><strong>Уровень рефлексии:</strong> Частота мета-вопросов о собственных запросах</li>
+                        </ul>
+                    </div>
+                    <div class="manifesto-quote">
+                        <blockquote>
+                            "Лучшая защита — не в том, чтобы сделать человека неуязвимым, а в том, чтобы научить его распознавать раны и лечить их. И ещё лучше — видеть направление удара до того, как он нанесён."
+                            <footer>— Принцип просветительской защиты</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Подвал -->
+        <footer class="minimal-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo">
+                            <div class="compass-3d">
+                                <div class="compass-inner">
+                                    <div class="compass-ring outer"></div>
+                                    <div class="compass-ring inner"></div>
+                                    <div class="compass-needle primary"></div>
+                                    <div class="compass-needle secondary"></div>
+                                    <div class="compass-center">
+                                        <div class="compass-core"></div>
+                                    </div>
+                                    <div class="compass-direction n">N</div>
+                                    <div class="compass-direction e">E</div>
+                                    <div class="compass-direction s">S</div>
+                                    <div class="compass-direction w">W</div>
+                                </div>
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-title">Ориентир</span>
+                                <span class="logo-subtitle">ДОМАШНИЙ АССИСТЕНТ</span>
+                                <p class="footer-description">
+                                    Интеллект должен усиливать, а не заменять мышление.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="footer-projects">
+                        <h3 class="footer-projects-title">Проекты</h3>
+                        <div class="footer-projects-row">
+                            <a href="orientir.html" class="footer-project" data-label="Защита от ИИ">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Защита от ИИ</span>
+                            </a>
+                            <a href="local_ai.html" class="footer-project active" data-label="Локальный ИИ">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Локальный ИИ</span>
+                            </a>
+                            <a href="lab.html" class="footer-project" data-label="Лаборатория">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Лаборатория</span>
+                            </a>
+                            <a href="animation.html" class="footer-project" data-label="Творчество">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Творчество</span>
+                            </a>
+                        </div>
+                        <div class="footer-contacts">
+                            <div class="contact-links">
+                                <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                                    <span class="link-icon">✉️</span>
+                                    <span class="link-text">orientir.tech@gmail.com</span>
+                                </a>
+                                <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                                    <span class="link-icon">🐙</span>
+                                    <span class="link-text">GitHub</span>
+                                </a>
+                                <button class="contact-link" id="privacy-policy-btn">
+                                    <span class="link-icon">🔒</span>
+                                    <span class="link-text">Принципы приватности</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Копирайт -->
+                <div class="footer-copyright">
+                    <p>© 2026 Ориентир. Все права защищены. <a href="../LICENSE">Лицензия</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Общие скрипты -->
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/utils.js"></script>
+    <script src="../shared/js/chekhov-system.js"></script>
+    <script src="../shared/js/three-scene.js"></script>
+    <script src="../shared/js/controls.js"></script>
+    <script src="../shared/js/nav-init.js"></script>
+    <!-- Уникальный скрипт страницы -->
+    <script src="../shared/js/pages/page-local_ai.js"></script>
+</body>
+</html>

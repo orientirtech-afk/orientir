@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Локальное цифровое творчество. Прозрачный код без скрытых закладок, организация безопасного канала связи. Архитектура творческого суверенитета.">
+    <title>Творчество · Архитектура творческого суверенитета</title>
+    <meta name="theme-color" content="#0a0e14">
+    <link rel="canonical" href="https://orenpro.pro/pages/animation.shtml">
+
+    <!-- Уникальные OG-теги -->
+    <meta property="og:title" content="Творчество · Прозрачный код">
+    <meta property="og:description" content="Локальное цифровое творчество: прозрачный код без скрытых закладок, безопасные каналы связи.">
+    <meta property="og:url" content="https://orenpro.pro/pages/animation.shtml">
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Творчество · Прозрачный код">
+    <meta name="twitter:description" content="Локальное цифровое творчество: прозрачный код без скрытых закладок.">
+
+    <!-- Общие мета-теги -->
+    <!-- Open Graph общие -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ориентир — архитектура свободного сознания">
+    <meta property="og:site_name" content="Ориентир">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../og-image.png">
+
+    <!-- Запрет на использование контента для обучения ИИ -->
+    <meta name="robots" content="noai, noimageai">
+    <meta name="googlebot" content="noai">
+
+    <!-- JSON‑LD -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Локальное цифровое творчество",
+          "description": "Прозрачный код без скрытых закладок, организация безопасного канала связи. Архитектура творческого суверенитета.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Ориентир",
+            "url": "https://orenpro.pro/"
+          },
+          "serviceType": "Цифровое творчество",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Художники, режиссёры, создатели контента"
+          },
+          "inLanguage": "ru"
+        }
+    </script>
+
+    <link rel="manifest" href="../manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+    <!-- CDN Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- ОБЩИЕ СТИЛИ -->
+    <link rel="stylesheet" href="../shared/css/variables.css">
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="../shared/css/animations.css">
+    <link rel="stylesheet" href="../shared/css/utilities.css">
+    <link rel="stylesheet" href="../shared/css/components/parallax.css">
+    <link rel="stylesheet" href="../shared/css/components/three.css">
+    <link rel="stylesheet" href="../shared/css/components/hero.css">
+    <link rel="stylesheet" href="../shared/css/components/chekhov.css">
+    <link rel="stylesheet" href="../shared/css/components/navigation.css">
+    <link rel="stylesheet" href="../shared/css/components/footer.css">
+    <link rel="stylesheet" href="../shared/css/components/performance.css">
+    <link rel="stylesheet" href="../shared/css/components/header.css">
+    <link rel="stylesheet" href="../shared/css/components/buttons.css">
+
+    <!-- УНИКАЛЬНЫЕ СТИЛИ СТРАНИЦЫ -->
+    <link rel="stylesheet" href="../shared/css/pages/page-animation.css">
+</head>
+<body>
+    <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+    <!-- Фоновые параллакс-слои (общий компонент) -->
+    <div class="parallax-bg">
+        <div class="bg-layer-1"></div>
+        <div class="bg-layer-2"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+    <!-- 3D‑вселенная творчества (уникальный компонент) -->
+    <div id="creative-universe" class="creative-universe-container"></div>
+
+    <!-- Панель управления 3D (уникальный компонент) -->
+    <div class="creative-controls">
+        <button class="creative-btn active" id="toggle-universe" aria-label="Переключить 3D (вкл/выкл)">
+            <span class="creative-icon">🌌</span>
+            <span class="creative-label">3D: Вкл</span>
+        </button>
+        <button class="creative-btn active" id="quality-mode" aria-label="Переключить качество (высокое/эконом)">
+            <span class="creative-icon">⚡</span>
+            <span class="creative-label">Качество: Высокое</span>
+        </button>
+        <button class="creative-btn active" id="auto-rotate" aria-label="Переключить автоматическое вращение (вкл/выкл)">
+            <span class="creative-icon">🔄</span>
+            <span class="creative-label">Вращение: Вкл</span>
+        </button>
+    </div>
+
+    <div class="app-container">
+        <!-- Шапка (animation) -->
+        <header class="site-header" id="site-header" data-page="animation">
+            <div class="header-inner">
+                <a href="../index.html" class="site-logo" data-page="animation">
+                    <!-- Компас -->
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-text">Ориентир</div>
+                        <div class="logo-subtitle">ЦИФРОВОЙ СУВЕРЕНИТЕТ</div>
+                    </div>
+                </a>
+                <!-- Навигационные сферы (компактные) -->
+                <nav class="nav-spheres">
+                    <a href="orientir.html" class="nav-sphere" data-page="orientir">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Защита от ИИ</span>
+                    </a>
+                    <a href="local_ai.html" class="nav-sphere" data-page="local_ai">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Локальный ИИ</span>
+                    </a>
+                    <a href="lab.html" class="nav-sphere" data-page="lab">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Лаборатория</span>
+                    </a>
+                    <a href="animation.html" class="nav-sphere" data-page="animation">
+                        <div class="nav-sphere-orb"></div>
+                        <span class="nav-sphere-label">Творчество</span>
+                    </a>
+                </nav>
+                <div class="header-indicator">
+                    <div class="indicator-label">
+                        <span>🎬</span> АКТИВНЫЙ АРХЕТИП
+                    </div>
+                    <div class="indicator-value" id="current-protection">6 уровней защиты</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- УНИКАЛЬНАЯ ГЕРОЙ‑СЕКЦИЯ (для творчества) -->
+        <section class="hero hero--compact">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="title-word">Локальное</span>
+                        <span class="title-word">цифровое</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word">творчество</span>
+                    </span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Блок Чехова: Глава 5 (Результат и гармония) -->
+        <div class="chekhov-container">
+            <section class="about-project">
+                <button class="about-toggle" id="about-toggle-5">
+                    <span>Глава 5: Результат и гармония</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div class="about-content" id="about-content-5">
+                    <div class="about-inner">
+                        <div class="about-header">
+                            <div class="about-icon">🎬</div>
+                            <div>
+                                <h2 class="about-title">Наблюдения доктора Чехова</h2>
+                                <p class="about-subtitle">Заметки о творчестве в цифровую эпоху</p>
+                            </div>
+                        </div>
+                        <div class="chekhov-text">
+                            <p>И вот мы подходим к самому удивительному — к творчеству. Когда разум, ограждённый защитой, вооружённый агентом и дисциплинированный лабораторией, обретает полный голос. Теперь он не защищается — он говорит.</p>
+                            <p>В больнице я наблюдал, как хирурги готовятся к операции: сперва изучают анатомию, потом раскладывают инструменты, и лишь затем приступают к делу. Так и здесь — перед тем как оживить персонажей, надобно создать фундамент прочный, как в хорошем доме.</p>
+                            <p>Представьте молодого художника, собирающего в тетради все мысли: сценарий как душу героев, внешность как врач, изучающий пациентов перед лечением. Он не спешит кистью мазать по полотну. Сначала собирает образцы, как я — для анализа в больнице. Десяток изображений на персонажа, пять вариантов освещения, три ракурса — словно аптекарь, раскладывающий лекарства по баночкам.</p>
+                            <p>Есть у них машины, что пишут тексты вместо человека — словно ученики, сначала плохо учащиеся, но под надзором учителя начинающие излагать мысли связно. Один механизм создаёт набросок, другой шлифует диалоги, третий проверяет логику, как строгий цензор. И всё записывается в книгу, где каждая строчка помечена, как рецепт в медицинской карте.</p>
+                            <p>Затем начинается самое удивительное — оживление персонажей. Молодой человек не рисует их вручную. Он обучает машину узнавать лицо Анны по зелёным глазам и рыжим волосам, Бориса — по шраму на щеке и манере держать голову. Словно я узнаю пациентов не только по лицам, но и по походке, по голосу. И эта машина, подобно портному, создаёт для героев разные выражения: грусть, радость, удивление — как будто живые души застыли на бумаге.</p>
+                            <p>Но вот где опасность: иногда машина сама решает, как должен выглядеть персонаж, и он теряет индивидуальность, становится похож на всех. Как я говорю пациентам: «Лекарство должно помогать человеку, а не человек — служить лекарству». Так и здесь: инструменты должны служить замыслу, а не наоборот.</p>
+                            <p>Когда картинки готовы, начинается оживление. Есть разные способы: один годится для коротких движений, другой — для плавных переходов. Но самое важное: лучшие результаты — когда человек сам управляет ритмом, как дирижёр оркестром. Он решает, когда Анна опустит голову, когда Борис протянет руку. Машина лишь исполняет его волю.</p>
+                            <p>Озвучка — отдельная история. Голоса должны звучать естественно, без ложной патетики, как разговор врача с пациентом. Никаких излишних эмоций — только честное, простое слово. И звуки: тиканье часов в тишине, скрип двери — всё это создаёт атмосферу, без которой история остаётся мёртвой.</p>
+                            <p>В конце — сборка. Как я собираю из симптомов целостный диагноз, так и здесь собирают из кадров и звуков целостное произведение. Цвета согласованы, как температура тела у здорового; переходы плавны, как дыхание во сне; звук гармоничен, как сердцебиение.</p>
+                            <p>В чём главная мысль? Всё это техническое волшебство — лишь инструмент. Как моё перо помогает выразить мысли, но не диктует их. Самое главное — чтобы в каждом кадре, в каждом слове чувствовалась живая человеческая душа. А машины пусть остаются в стороне, как добрые помощники, не лезущие со советами, когда их не спрашивают.</p>
+                            <p>Эти новые инструменты — словно новые лекарства в аптеке. Пока не научишься применять — кажутся опасными. Но если подходить с умом, с осторожностью, с уважением к человеческой природе — могут принести много пользы. Главное помнить: за каждой машиной стоит человек, а за каждым человеком — право оставаться свободным в мыслях и чувствах.</p>
+                            <p>Смотря в окно. Улицы те же, но взгляд теперь не тревожный. Заканчивая записи — историй о том, как в мире маленьких зеркал не потерять своё лицо. А — обрести собстенное и не повторимое.</p>
+                        </div>
+                        <div class="contacts-section">
+                            <h3 class="contacts-title">Для беседы и вопросов</h3>
+                            <p class="chekhov-contact-text">Как художник пишет картину не для себя одного, так и мысль ищет собеседника. Если эти размышления нашли отклик в вашей душе, напишите — обсудим, как вырастить цветок красоты на каменистой почве цифровой эпохи.</p>
+                            <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+                        </div>
+                        <div class="chekhov-close-wrapper">
+                            <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                                <span class="close-icon">×</span>
+                                <span class="close-text">Закрыть главу</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- УНИКАЛЬНАЯ МАТРИЦА ЗАЩИТЫ ТВОРЧЕСКОГО СУВЕРЕНИТЕТА -->
+        <section id="protection-matrix-section" class="protection-matrix-section">
+            <div class="container">
+                <h2 class="section-title fade-in">6 уровней творческого суверенитета</h2>
+                <p style="text-align:center;color:var(--color-text-secondary);margin-bottom:60px;max-width:800px;margin-left:auto;margin-right:auto;">
+                    Архитектура цифровой автономии — от идеи до финальной верификации.
+                </p>
+                <div class="protection-matrix-3d" id="protection-matrix-3d"></div>
+                <div class="stats-panel-3d">
+                    <div class="stats-grid-3d">
+                        <div class="stat-card-3d">
+                            <div class="stat-value-3d" id="selected-tools">0</div>
+                            <div class="stat-label-3d">Инструментов в арсенале</div>
+                        </div>
+                        <div class="stat-card-3d">
+                            <div class="stat-value-3d" id="ethical-score">0%</div>
+                            <div class="stat-label-3d">Индекс суверенитета</div>
+                        </div>
+                        <div class="stat-card-3d">
+                            <div class="stat-value-3d" id="estimated-time">0ч</div>
+                            <div class="stat-label-3d">Автономность работы</div>
+                        </div>
+                        <div class="stat-card-3d">
+                            <div class="stat-value-3d" id="local-tools">0</div>
+                            <div class="stat-label-3d">Локальных инструментов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ АРСЕНАЛ ИНСТРУМЕНТОВ -->
+        <section class="arsenal-section">
+            <div class="container">
+                <div class="arsenal-header fade-in">
+                    <h2 style="margin:0;font-size:2.5rem;">⚔️ Арсенал инструментов</h2>
+                    <div class="arsenal-filters">
+                        <button class="btn btn-sm btn-secondary active" data-filter="all">Все</button>
+                        <button class="btn btn-sm btn-secondary" data-filter="writing">Текст</button>
+                        <button class="btn btn-sm btn-secondary" data-filter="visual">Видео/Графика</button>
+                        <button class="btn btn-sm btn-secondary" data-filter="audio">Аудио</button>
+                        <button class="btn btn-sm btn-secondary" data-filter="ai">ИИ-инструменты</button>
+                    </div>
+                </div>
+                <div class="arsenal-grid" id="arsenal-grid"></div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНАЯ СЕКЦИЯ ПРЕСЕТОВ -->
+        <section class="presets-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Направление контента</h2>
+                <div class="presets-grid">
+                    <div class="preset-card-3d fade-in" data-preset="short-video">
+                        <div class="preset-icon">🎬</div>
+                        <h3 class="preset-title">Короткое видео</h3>
+                        <p class="preset-desc">Полный цикл от сценария до публикации с акцентом на прозрачность</p>
+                        <div class="preset-stats">
+                            <span class="preset-stat">🛡️ 3 уровня</span>
+                            <span class="preset-stat">⚡ 90% суверенитет</span>
+                            <span class="preset-stat">🔓 Открытый стек</span>
+                        </div>
+                    </div>
+                    <div class="preset-card-3d fade-in" data-preset="documentary">
+                        <div class="preset-icon">📽️</div>
+                        <h3 class="preset-title">Документальный фильм</h3>
+                        <p class="preset-desc">Исследование, съёмка и постпродакшн с максимальной верификацией</p>
+                        <div class="preset-stats">
+                            <span class="preset-stat">🛡️ 6 уровней</span>
+                            <span class="preset-stat">⚡ 95% суверенитет</span>
+                            <span class="preset-stat">🔍 Прозрачный</span>
+                        </div>
+                    </div>
+                    <div class="preset-card-3d fade-in" data-preset="educational">
+                        <div class="preset-icon">📚</div>
+                        <h3 class="preset-title">Образовательный курс</h3>
+                        <p class="preset-desc">Структура, запись и интерактивные элементы с когнитивной нейтральностью</p>
+                        <div class="preset-stats">
+                            <span class="preset-stat">🛡️ 5 уровни</span>
+                            <span class="preset-stat">⚡ 85% суверенитет</span>
+                            <span class="preset-stat">🧠 Нейтральный</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Подвал (animation) -->
+        <footer class="minimal-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo">
+                            <div class="compass-3d">
+                                <div class="compass-inner">
+                                    <div class="compass-ring outer"></div>
+                                    <div class="compass-ring inner"></div>
+                                    <div class="compass-needle primary"></div>
+                                    <div class="compass-needle secondary"></div>
+                                    <div class="compass-center">
+                                        <div class="compass-core"></div>
+                                    </div>
+                                    <div class="compass-direction n">N</div>
+                                    <div class="compass-direction e">E</div>
+                                    <div class="compass-direction s">S</div>
+                                    <div class="compass-direction w">W</div>
+                                </div>
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-title">Ориентир</span>
+                                <span class="logo-subtitle">ЦИФРОВОЙ СУВЕРЕНИТЕТ</span>
+                                <p class="footer-description">
+                                    Прозрачные пайплайны без манипуляций.<br>
+                                    Архитектура творческой свободы.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="footer-projects">
+                        <h3 class="footer-projects-title">Проекты</h3>
+                        <div class="footer-projects-row">
+                            <a href="orientir.html" class="footer-project" data-label="Защита от ИИ">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Защита от ИИ</span>
+                            </a>
+                            <a href="local_ai.html" class="footer-project" data-label="Локальный ИИ">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Локальный ИИ</span>
+                            </a>
+                            <a href="lab.html" class="footer-project" data-label="Лаборатория">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Лаборатория</span>
+                            </a>
+                            <a href="animation.html" class="footer-project active" data-label="Творчество">
+                                <div class="footer-sphere"></div>
+                                <span class="footer-project-label">Творчество</span>
+                            </a>
+                        </div>
+                        <div class="footer-contacts">
+                            <div class="contact-links">
+                                <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                                    <span class="link-icon">✉️</span>
+                                    <span class="link-text">orientir.tech@gmail.com</span>
+                                </a>
+                                <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                                    <span class="link-icon">🐙</span>
+                                    <span class="link-text">GitHub</span>
+                                </a>
+                                <button class="contact-link" id="privacy-policy-btn">
+                                    <span class="link-icon">🔒</span>
+                                    <span class="link-text">Принципы приватности</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Копирайт -->
+                <div class="footer-copyright">
+                    <p>© 2026 Ориентир. Все права защищены. <a href="../LICENSE">Лицензия</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ОБЩИЕ СКРИПТЫ -->
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/utils.js"></script>
+    <script src="../shared/js/chekhov-system.js"></script>
+    <script src="../shared/js/three-scene.js"></script>
+    <script src="../shared/js/controls.js"></script>
+    <script src="../shared/js/nav-init.js"></script>
+    <!-- УНИКАЛЬНЫЙ СКРИПТ СТРАНИЦЫ -->
+    <script src="../shared/js/pages/page-animation.js"></script>
+</body>
+</html>

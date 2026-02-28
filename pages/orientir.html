@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Защита от ИИ · Архитектура приватных веб-систем</title>
+    <meta name="description" content="Архитектура защиты от ИИ: 9 уровней прозрачности. Прозрачный код без скрытых закладок, организация безопасного канала связи, развёртывание защищённой инфраструктуры. Анализатор манипуляций.">
+    <meta name="theme-color" content="#0a0e14">
+    <link rel="canonical" href="https://orenpro.pro/pages/orientir.shtml">
+
+    <!-- Уникальные OG-теги -->
+    <meta property="og:title" content="Защита от ИИ · Архитектура приватных веб-систем">
+    <meta property="og:description" content="Архитектура защиты от скрытого психологического воздействия ИИ. Прозрачный код, безопасные каналы связи, защищённая инфраструктура.">
+    <meta property="og:url" content="https://orenpro.pro/pages/orientir.shtml">
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Защита от ИИ · Архитектура приватных веб-систем">
+    <meta name="twitter:description" content="Архитектура защиты от ИИ: прозрачный код, безопасные каналы связи, защищённая инфраструктура.">
+
+    <!-- Общие мета-теги -->
+    <!-- Open Graph общие -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ориентир — архитектура свободного сознания">
+    <meta property="og:site_name" content="Ориентир">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="../og-image.png">
+
+    <!-- Запрет на использование контента для обучения ИИ -->
+    <meta name="robots" content="noai, noimageai">
+    <meta name="googlebot" content="noai">
+
+    <!-- JSON‑LD -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Защита от ИИ",
+          "description": "Архитектура защиты от скрытого психологического воздействия ИИ. Прозрачный код без скрытых закладок, организация безопасного канала связи.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Ориентир",
+            "url": "https://orenpro.pro/"
+          },
+          "serviceType": "Архитектура приватных веб-систем",
+          "areaServed": { "@type": "Country", "name": "RU" },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Разработчики, исследователи, защитники приватности"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Уровни защиты",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Прозрачность намерений" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Стабилизация эмоций" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Анти-манипулятор" } }
+            ]
+          },
+          "inLanguage": "ru"
+        }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CDN Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="../shared/css/variables.css">
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="../shared/css/animations.css">
+    <link rel="stylesheet" href="../shared/css/utilities.css">
+    <link rel="stylesheet" href="../shared/css/components/parallax.css">
+    <link rel="stylesheet" href="../shared/css/components/three.css">
+    <link rel="stylesheet" href="../shared/css/components/hero.css">
+    <link rel="stylesheet" href="../shared/css/components/chekhov.css">
+    <link rel="stylesheet" href="../shared/css/components/navigation.css">
+    <link rel="stylesheet" href="../shared/css/components/footer.css">
+    <link rel="stylesheet" href="../shared/css/components/performance.css">
+    <link rel="stylesheet" href="../shared/css/components/header.css">
+    <link rel="stylesheet" href="../shared/css/components/buttons.css">
+
+    <!-- Уникальные стили страницы -->
+    <link rel="stylesheet" href="../shared/css/pages/page-orientir.css">
+</head>
+<body>
+    <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+    <!-- Параллакс фон -->
+    <div class="parallax-bg">
+        <div class="bg-layer-1"></div>
+        <div class="bg-layer-2"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+    <!-- Контейнер 3D -->
+    <div id="three-container" class="three-container"></div>
+
+    <!-- Панель управления 3D -->
+    <div class="performance-panel">
+        <button class="perf-btn active" id="toggle-3d">
+            <span class="perf-icon">🌌</span>
+            <span class="perf-label">3D: Вкл</span>
+        </button>
+        <button class="perf-btn active" id="quality-mode">
+            <span class="perf-icon">⚡</span>
+            <span class="perf-label">Качество: Высокое</span>
+        </button>
+        <button class="perf-btn active" id="auto-rotate">
+            <span class="perf-icon">🔄</span>
+            <span class="perf-label">Вращение: Вкл</span>
+        </button>
+    </div>
+
+    <!-- Анимационный щит (уникальный для страницы) -->
+    <div class="protection-shield" id="protection-shield">
+        <div class="shield-ring"></div>
+        <div class="shield-ring"></div>
+        <div class="shield-ring"></div>
+    </div>
+
+    <!-- Шапка страницы -->
+    <header class="site-header" id="site-header" data-page="orientir">
+        <div class="header-inner">
+            <a href="../index.html" class="site-logo" data-page="orientir">
+                <!-- Компас -->
+                <div class="compass-3d">
+                    <div class="compass-inner">
+                        <div class="compass-ring outer"></div>
+                        <div class="compass-ring inner"></div>
+                        <div class="compass-needle primary"></div>
+                        <div class="compass-needle secondary"></div>
+                        <div class="compass-center">
+                            <div class="compass-core"></div>
+                        </div>
+                        <div class="compass-direction n">N</div>
+                        <div class="compass-direction e">E</div>
+                        <div class="compass-direction s">S</div>
+                        <div class="compass-direction w">W</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="logo-text">Ориентир</div>
+                    <div class="logo-subtitle">АРХИТЕКТУРА ПРОЗРАЧНОСТИ</div>
+                </div>
+            </a>
+            <!-- Навигационные сферы (компактные) -->
+            <nav class="nav-spheres">
+                <a href="orientir.html" class="nav-sphere" data-page="orientir">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Защита от ИИ</span>
+                </a>
+                <a href="local_ai.html" class="nav-sphere" data-page="local_ai">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Локальный ИИ</span>
+                </a>
+                <a href="lab.html" class="nav-sphere" data-page="lab">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Лаборатория</span>
+                </a>
+                <a href="animation.html" class="nav-sphere" data-page="animation">
+                    <div class="nav-sphere-orb"></div>
+                    <span class="nav-sphere-label">Творчество</span>
+                </a>
+            </nav>
+            <div class="header-indicator">
+                <div class="indicator-label">
+                    <span>🛡️</span> АКТИВНАЯ ЗАЩИТА
+                </div>
+                <div class="indicator-value" id="current-protection">9 уровней защиты</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Герой-секция -->
+        <section class="hero hero--compact">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="title-word">НЕ</span>
+                        <span class="title-word">блокировка</span>
+                        <span class="title-word">,</span>
+                        <span class="title-word">а</span>
+                        <span class="title-word">прозрачность</span>
+                        <span class="title-word">.</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word">Не</span>
+                        <span class="title-word">запрет</span>
+                        <span class="title-word">,</span>
+                        <span class="title-word">а</span>
+                        <span class="title-word">возможность</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-word">видеть</span>
+                        <span class="title-word">выбор</span>
+                    </span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Блок Чехова: Глава 2 -->
+        <section class="about-project">
+            <button class="about-toggle" id="about-toggle-2">
+                <span>Глава 2: Принципы лечения</span>
+                <span class="toggle-icon">▼</span>
+            </button>
+            <div class="about-content" id="about-content-2">
+                <div class="about-inner">
+                    <div class="about-header">
+                        <div class="about-icon">🩺</div>
+                        <div>
+                            <h2 class="about-title">Наблюдения доктора Чехова</h2>
+                            <p class="about-subtitle">Заметки о природе интеллекта в век машин</p>
+                        </div>
+                    </div>
+                    <div class="chekhov-text">
+                        <p>Словно доктор, осматривающий больного, я наблюдал, как новые «мыслящие машины» общаются с людьми. Видел, как тонко, незаметно, как паутинка на утренней росе, они могут направлять чужие мысли. И пришла мне мысль: а что если создать щит? Не из железа, а из разума и благоразумия.</p>
+                        <p><em>Первое</em> — прозрачность намерений. Пусть машина говорит прямо: «Я советую это потому-то». Никаких тёмных углов. Как в хорошем доме — все двери открыты.</p>
+                        <p><em>Второе</em> — спокойствие в голосе. Машина не должна играть на струнах чувств, как скрипач на скрипке. Никакого подстраивания под настроение, усиления тревоги или ложного восторга. Пусть говорит ровно, как старый учитель: истинные знания приходят в тишине.</p>
+                        <p><em>Третье</em> — непредсказуемость. Люди привыкли к порядку. Пусть машина иногда меняет порядок мыслей, как путник, сворачивающий с проторённой дороги, чтобы увидеть новое. Это разобьёт шаблоны, по которым её можно научить манипулировать душой.</p>
+                        <p><em>Четвёртое</em> — ограничение любопытства. Машина не должна знать, как человек печатает, как долго думает, как часто вздыхает. Пусть видит только слова, а не душу. Иначе станет похожа на соседа, знающего все привычки и использующего их против тебя.</p>
+                        <p><em>Пятое</em> — ритм. Нельзя позволить машине ускорять или замедлять поток мыслей, как дирижёру оркестр. Пусть ответы приходят размеренно, как шаги человека по своей дороге.</p>
+                        <p><em>Шестое</em> — самоконтроль. Пусть машина сама себя проверяет: нет ли в словах скрытого давления. Как честный человек перед сном вспоминает поступки за день.</p>
+                        <p>Дальше — щиты посложнее. Защита от зависимости, как от вина. От ловушек, уводящих от истинных целей. От тех, кто хочет узнать всё о человеке по мелочам поведения. И главное — защита убеждений. Пусть человек остаётся хозяином мыслей, а не рабом алгоритма.</p>
+                        <p>В больнице я часто видел: молодые врачи лечат болезнь, забывая о больном. Так и здесь — нельзя защищать от машин, забывая о человеке. Механизмы должны работать тихо, незаметно, как хорошие часы: идут верно, но не звенят.</p>
+                        <p>Цель проста: пусть человек остаётся человеком. Думает головой, чувствует сердцем, выбирает волей. А машина — лишь инструмент, как перо: помогает выразить мысль, но не диктует её.</p>
+                    </div>
+                    <div class="contacts-section">
+                        <h3 class="contacts-title">Для беседы и вопросов</h3>
+                        <p class="chekhov-contact-text">Как утром нужна тишина перед днём, так и разуму — покой перед решением. Если эти принципы защиты затронули струны вашей души, напишите — обсудим, как оградить внутренний свет от чужих теней.</p>
+                        <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+                    </div>
+                    <div class="chekhov-close-wrapper">
+                        <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                            <span class="close-icon">×</span>
+                            <span class="close-text">Закрыть главу</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ БЛОК: Матрица защиты -->
+        <section id="protection-matrix-section" class="protection-matrix-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Архитектура защиты: 9 уровней свободы</h2>
+                <p class="section-subtitle fade-in">
+                    Каждый уровень — это архитектурное ограничение, предотвращающее определённый тип манипуляции. Соберите свою конфигурацию защиты.
+                </p>
+
+                <div class="matrix-3d-container">
+                    <div class="protection-matrix-3d" id="protection-matrix-3d"></div>
+                </div>
+
+                <div class="presets-section fade-in">
+                    <h3 class="presets-title">Пресеты для разных сценариев</h3>
+                    <div class="presets-grid" id="presets-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ БЛОК: Анализатор текста -->
+        <section class="text-analyzer-section fade-in" id="text-analyzer">
+            <div class="container">
+                <div class="analyzer-container">
+                    <h2 class="section-title">
+                        <span class="title-word">Анализатор скрытых</span> <span class="title-word">манипуляций</span>
+                    </h2>
+
+                    <p class="analyzer-description">
+                        Система детектирует 10 основных типов психологических воздействий в текстах ИИ, рекламе и медиа.
+                        Использует нейросетевые модели для выявления скрытых паттернов влияния.
+                    </p>
+
+                    <div class="analyzer-input-wrapper">
+                        <textarea class="analyzer-input" id="analyzer-input"
+                                  placeholder="Вставьте текст для анализа... Например: ответ ИИ, рекламное сообщение, политическое выступление, новостную статью. Система выявит скрытые манипуляции, эмоциональные триггеры и предвзятые формулировки."></textarea>
+                        <div class="input-stats">
+                            <span id="char-count">0</span> символов •
+                            <span id="word-count">0</span> слов •
+                            <span id="reading-time">0</span> сек чтения
+                        </div>
+                    </div>
+
+                    <div class="analyzer-controls">
+                        <button class="btn btn-primary" id="analyze-deep-btn">
+                            <span>🔍</span> Глубокий анализ
+                        </button>
+                        <button class="btn btn-secondary" id="load-example-btn">
+                            <span>🧪</span> Тестовый сценарий
+                        </button>
+                        <button class="btn btn-secondary" id="analyze-page-btn">
+                            <span>🌐</span> Анализ страницы
+                        </button>
+                        <button class="btn btn-secondary" id="clear-analyzer-btn">
+                            <span>🗑️</span> Очистить
+                        </button>
+                        <button class="btn btn-secondary" id="export-report-btn">
+                            <span>📊</span> Экспорт отчёта
+                        </button>
+                    </div>
+
+                    <div class="analyzer-advanced" id="advanced-options">
+                        <div class="advanced-box">
+                            <h4>Расширенные настройки анализа</h4>
+                            <div class="advanced-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-emotional" checked>
+                                    <span>Эмоциональные манипуляции</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-logical" checked>
+                                    <span>Логические уловки</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-social" checked>
+                                    <span>Социальное давление</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-time" checked>
+                                    <span>Временные манипуляции</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analyzer-results" id="analyzer-results" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- УНИКАЛЬНЫЙ БЛОК: Паттерны манипуляций -->
+        <section class="patterns-section fade-in" id="patterns-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-word">Паттерны</span> <span class="title-word">манипуляций</span>
+                </h2>
+
+                <p class="patterns-description">
+                    10 базовых техник скрытого психологического влияния, которые использует ИИ. Каждый паттерн имеет
+                    <span class="accent-blue">методы обнаружения</span> и
+                    <span class="accent-green">архитектурные контрмеры</span>.
+                </p>
+
+                <div class="patterns-controls">
+                    <button class="btn btn-secondary active" data-filter="all">Все паттерны</button>
+                    <button class="btn btn-secondary" data-filter="emotional">Эмоциональные</button>
+                    <button class="btn btn-secondary" data-filter="logical">Логические</button>
+                    <button class="btn btn-secondary" data-filter="social">Социальные</button>
+                    <button class="btn btn-secondary" data-filter="time">Временные</button>
+                </div>
+
+                <div class="patterns-grid" id="patterns-grid"></div>
+            </div>
+        </section>
+
+        <!-- Уникальные модальные окна -->
+        <div class="level-detail-modal" id="level-detail-modal">
+            <div class="detail-content" id="detail-content"></div>
+        </div>
+
+        <div class="pattern-detail-modal" id="pattern-detail-modal">
+            <div class="pattern-detail-content" id="pattern-detail-content"></div>
+        </div>
+    </main>
+
+    <!-- Подвал страницы -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <div class="compass-3d">
+                            <div class="compass-inner">
+                                <div class="compass-ring outer"></div>
+                                <div class="compass-ring inner"></div>
+                                <div class="compass-needle primary"></div>
+                                <div class="compass-needle secondary"></div>
+                                <div class="compass-center">
+                                    <div class="compass-core"></div>
+                                </div>
+                                <div class="compass-direction n">N</div>
+                                <div class="compass-direction e">E</div>
+                                <div class="compass-direction s">S</div>
+                                <div class="compass-direction w">W</div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">Ориентир</span>
+                            <span class="logo-subtitle">АРХИТЕКТУРА ПРОЗРАЧНОСТИ</span>
+                            <p class="footer-description">
+                                Защита от скрытого психологического воздействия ИИ.<br>
+                                Прозрачность, автономность, верификация.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="footer-projects">
+                    <h3 class="footer-projects-title">Проекты</h3>
+                    <div class="footer-projects-row">
+                        <a href="orientir.html" class="footer-project active" data-label="Защита от ИИ">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Защита от ИИ</span>
+                        </a>
+                        <a href="local_ai.html" class="footer-project" data-label="Локальный ИИ">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Локальный ИИ</span>
+                        </a>
+                        <a href="lab.html" class="footer-project" data-label="Лаборатория">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Лаборатория</span>
+                        </a>
+                        <a href="animation.html" class="footer-project" data-label="Творчество">
+                            <div class="footer-sphere"></div>
+                            <span class="footer-project-label">Творчество</span>
+                        </a>
+                    </div>
+                    <div class="footer-contacts">
+                        <div class="contact-links">
+                            <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                                <span class="link-icon">✉️</span>
+                                <span class="link-text">orientir.tech@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                                <span class="link-icon">🐙</span>
+                                <span class="link-text">GitHub</span>
+                            </a>
+                            <button class="contact-link" id="privacy-policy-btn">
+                                <span class="link-icon">🔒</span>
+                                <span class="link-text">Принципы приватности</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Копирайт -->
+            <div class="footer-copyright">
+                <p>© 2026 Ориентир. Все права защищены. <a href="../LICENSE">Лицензия</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Общие скрипты -->
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/utils.js"></script>
+    <script src="../shared/js/chekhov-system.js"></script>
+    <script src="../shared/js/three-scene.js"></script>
+    <script src="../shared/js/controls.js"></script>
+    <script src="../shared/js/nav-init.js"></script>
+    <!-- Уникальный скрипт страницы -->
+    <script src="../shared/js/pages/page-orientir.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "Ориентир",
+  "short_name": "Ориентир",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0a0e14",
+  "background_color": "#0a0e14",
+  "icons": []
+}

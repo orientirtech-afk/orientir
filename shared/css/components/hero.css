@@ -1,0 +1,112 @@
+﻿/* ============================================================================
+   Герой-секция (общий компонент)
+   ============================================================================ */
+
+.hero,
+.manifest-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(80px, 15vh, 160px) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title,
+.manifest-title {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: clamp(32px, 4vw, 48px);
+    position: relative;
+}
+
+.title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: titleReveal 1s var(--transition-smooth) forwards;
+}
+
+    .title-line:nth-child(1) {
+        animation-delay: 0.3s;
+    }
+
+    .title-line:nth-child(2) {
+        animation-delay: 0.6s;
+    }
+
+    .title-line:nth-child(3) {
+        animation-delay: 0.9s;
+    }
+
+.title-word {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+
+    .title-word:hover {
+        color: transparent;
+        background: linear-gradient( 90deg, var(--color-accent-blue), var(--color-accent-green), var(--color-accent-yellow), var(--color-accent-pink) );
+        -webkit-background-clip: text;
+        background-clip: text;
+        transform: translateY(-5px);
+    }
+
+.hero-subtitle {
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    color: var(--color-text-secondary);
+    max-width: 900px;
+    margin: 0 auto clamp(48px, 6vh, 72px);
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: titleReveal 1s var(--transition-smooth) 0.9s forwards;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+}
+
+    .scroll-hint::after {
+        content: '';
+        width: 2px;
+        height: 60px;
+        background: linear-gradient(to bottom, var(--color-accent-blue), transparent);
+        border-radius: 1px;
+        animation: scrollHint 2s ease-in-out infinite;
+    }
+
+.hero-cta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+/* --- Компактный вариант для страниц orientir, local_ai, lab, animation --- */
+.hero--compact {
+    min-height: auto;
+    padding: clamp(20px, 5vh, 40px) 0 clamp(10px, 2vh, 20px) 0;
+}
+
+    .hero--compact .hero-title,
+    .hero--compact .manifest-title {
+        margin-bottom: clamp(16px, 3vh, 24px);
+    }

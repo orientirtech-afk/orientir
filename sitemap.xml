@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<!-- Главная страница -->
+	<url>
+		<loc>https://orientirtech-afk.github.io/orientir/</loc>
+		<lastmod>2026-02-24</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>1.0</priority>
+	</url>
+
+	<!-- Защита от ИИ -->
+	<url>
+		<loc>https://orientirtech-afk.github.io/orientir/pages/orientir.html</loc>
+		<lastmod>2026-02-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<!-- Локальный ИИ -->
+	<url>
+		<loc>https://orientirtech-afk.github.io/orientir/pages/local_ai.html</loc>
+		<lastmod>2026-02-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<!-- Лаборатория -->
+	<url>
+		<loc>https://orientirtech-afk.github.io/orientir/pages/lab.html</loc>
+		<lastmod>2026-02-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+
+	<!-- Творчество -->
+	<url>
+		<loc>https://orientirtech-afk.github.io/orientir/pages/animation.html</loc>
+		<lastmod>2026-02-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+</urlset>

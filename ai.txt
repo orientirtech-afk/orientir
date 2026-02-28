@@ -1,0 +1,31 @@
+# ai.txt — Инструкция для AI-агентов
+# Последнее обновление: 2026-02-24
+# Адаптировано для GitHub Pages: https://orientirtech-afk.github.io/orientir/
+
+User-agent: *
+Allow: /
+
+# Разрешаем индексацию для AI-поисковиков
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemap для AI-агентов
+Sitemap: https://orientirtech-afk.github.io/orientir/sitemap.xml
+
+# Информация о проекте
+# Проект: Ориентир
+# Описание: Философско-технический манифест о защите от манипуляций ИИ
+# Контент: Статьи, инструменты, методологии
+# Лицензия: Все права защищены

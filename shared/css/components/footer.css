@@ -1,0 +1,340 @@
+﻿/* ============================================================================
+   Подвал – стандартная версия
+   Используется на страницах: orientir, local_ai, lab, animation
+   ============================================================================ */
+
+.minimal-footer {
+    padding: 60px 0 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: linear-gradient(to top, rgba(10,14,20,0.95), rgba(10,14,20,0.85));
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: var(--z-content);
+    margin-top: 40px;
+}
+
+    .minimal-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient( 90deg, transparent, rgba(79,195,247,0.3), rgba(165,214,167,0.3), rgba(255,204,128,0.3), rgba(244,143,177,0.3), transparent );
+    }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 clamp(24px,5vw,64px);
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.footer-brand {
+    grid-column: 1;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(16px,2vw,24px);
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.logo-title {
+    font-size: clamp(1.8rem,2.5vw,2.2rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.1;
+}
+
+.logo-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 400px;
+    margin-top: 12px;
+}
+
+.footer-projects {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .footer-projects {
+        grid-column: 1;
+    }
+}
+
+.footer-projects-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .footer-projects-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-projects-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Заголовок "Проекты" */
+.footer-projects-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+}
+
+.footer-contacts {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+    .contact-link:focus-visible {
+        outline: 2px solid var(--color-accent-blue);
+        outline-offset: 2px;
+    }
+
+.link-icon {
+    font-size: 1rem;
+    opacity: 0.8;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    padding-top: 16px;
+    margin-top: 16px;
+}
+
+.copyright-note {
+    margin-top: 8px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* 3D-компас */
+.compass-3d {
+    width: clamp(72px,6vw,96px);
+    height: clamp(72px,6vw,96px);
+    position: relative;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.compass-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCompass 25s linear infinite;
+    transition: transform 0.8s var(--ease-soft);
+}
+
+.compass-ring {
+    position: absolute;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+    .compass-ring.outer {
+        width: 100%;
+        height: 100%;
+        border: 3px solid transparent;
+        background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-purple), var(--color-accent-cyan)) border-box;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        transform: rotateX(65deg);
+        box-shadow: inset 0 0 30px rgba(79,195,247,0.4), 0 0 60px rgba(79,195,247,0.3), 0 0 100px rgba(79,195,247,0.2);
+        animation: pulseRing 4s ease-in-out infinite;
+    }
+
+    .compass-ring.inner {
+        width: 70%;
+        height: 70%;
+        top: 15%;
+        left: 15%;
+        border: 2px solid rgba(255,204,128,0.6);
+        transform: rotateX(65deg) rotateY(180deg);
+        box-shadow: inset 0 0 20px rgba(255,204,128,0.3), 0 0 40px rgba(255,204,128,0.2);
+        animation: rotateCompassReverse 15s linear infinite;
+    }
+
+.compass-needle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top center;
+    border-radius: 2px;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+    .compass-needle.primary {
+        width: 4px;
+        height: 45%;
+        background: linear-gradient(to bottom, transparent, var(--color-accent-pink), var(--color-accent-yellow));
+        transform: translateX(-50%) rotateZ(45deg);
+        animation: needlePulse 3s ease-in-out infinite;
+    }
+
+    .compass-needle.secondary {
+        width: 2px;
+        height: 40%;
+        background: linear-gradient(to bottom, transparent, var(--color-accent-blue), var(--color-accent-teal));
+        transform: translateX(-50%) rotateZ(-45deg);
+        animation: needlePulse 3s ease-in-out infinite reverse;
+    }
+
+.compass-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.compass-core {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-neon, var(--color-accent-blue)), transparent 70%);
+    border-radius: 50%;
+    animation: corePulse 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(79,195,247,0.6), 0 0 40px rgba(79,195,247,0.3), inset 0 0 20px rgba(255,255,255,0.2);
+}
+
+.compass-direction {
+    position: absolute;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+}
+
+    .compass-direction.n {
+        top: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .compass-direction.e {
+        top: 50%;
+        right: 8%;
+        transform: translateY(-50%);
+    }
+
+    .compass-direction.s {
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .compass-direction.w {
+        top: 50%;
+        left: 8%;
+        transform: translateY(-50%);
+    }
+
+.footer-logo:hover .compass-inner {
+    animation-duration: 8s;
+    transform: rotateY(180deg) rotateX(75deg) scale(1.1);
+}
+
+.footer-logo:hover .compass-core {
+    animation-duration: 1s;
+}
+
+/* ============================================================================
+   Модификатор для подвала главной страницы (.footer--index)
+   ============================================================================ */
+
+.minimal-footer.footer--index .footer-grid {
+    grid-template-columns: 1fr;
+}
+
+.footer--index .footer-logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(24px, 4vw, 48px);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.footer--index .footer-logo {
+    margin-bottom: 0;
+}
+
+.footer--index .author-sphere-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Стили для авторской сферы – они остаются в page-index.css как уникальные */

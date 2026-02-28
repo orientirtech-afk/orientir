@@ -1,0 +1,270 @@
+﻿/* ==========================================================================
+   Полноразмерные навигационные сферы (для главной страницы)
+   ========================================================================== */
+
+.sphere-nav-section {
+    padding: clamp(80px, 10vh, 120px) 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: clamp(60px, 8vh, 100px);
+    position: relative;
+}
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--principle-1, #60a5fa), var(--principle-2, #34d399), var(--principle-3, #fbbf24), var(--principle-4, #f472b6));
+        border-radius: 2px;
+    }
+
+.sphere-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+@media (min-width: 1200px) {
+    .sphere-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+    }
+}
+
+.sphere-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 30px;
+    border-radius: 24px;
+    transition: all var(--transition-smooth, 0.6s cubic-bezier(0.33,1,0.68,1));
+    text-decoration: none;
+    color: var(--color-text-secondary, rgba(160,179,201,0.8));
+    z-index: 2;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(26,31,41,0.3), rgba(16,21,31,0.3));
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+    .sphere-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+        transition: left 0.8s var(--ease-soft, cubic-bezier(0.33,1,0.68,1));
+        z-index: -1;
+    }
+
+    .sphere-link:hover::before {
+        left: 100%;
+    }
+
+    .sphere-link:hover {
+        color: var(--color-text-primary, rgba(230,238,245,0.95));
+        background: linear-gradient(145deg, rgba(36,41,51,0.4), rgba(26,31,41,0.4));
+        transform: translateY(-10px);
+        border-color: currentColor;
+        box-shadow: 0 25px 80px rgba(0,0,0,0.4), 0 0 0 1px currentColor, 0 0 40px rgba(var(--sphere-color-rgb), 0.3);
+    }
+
+        .sphere-link:hover .sphere {
+            transform: scale(1.15);
+            animation: spherePulse 2s var(--ease-soft, cubic-bezier(0.33,1,0.68,1)) infinite;
+            filter: brightness(1.3) drop-shadow(0 15px 40px rgba(var(--sphere-color-rgb), 0.5));
+        }
+
+        .sphere-link:hover .sphere-label {
+            color: var(--color-text-primary);
+            transform: translateY(-3px);
+        }
+
+        .sphere-link:hover .sphere-desc {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    .sphere-link.particle-hover {
+        color: var(--color-text-primary);
+        background: linear-gradient(145deg, rgba(36,41,51,0.5), rgba(26,31,41,0.5));
+        border-color: currentColor;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px currentColor, 0 0 30px rgba(var(--sphere-color-rgb), 0.4);
+    }
+
+        .sphere-link.particle-hover .sphere {
+            transform: scale(1.1);
+            filter: brightness(1.2) drop-shadow(0 10px 30px rgba(var(--sphere-color-rgb), 0.4));
+            animation: spherePulse 1.5s var(--ease-soft) infinite;
+        }
+
+.sphere {
+    width: var(--sphere-size, 120px);
+    height: var(--sphere-size, 120px);
+    border-radius: 50%;
+    margin-bottom: 25px;
+    transition: all 0.8s var(--ease-float, cubic-bezier(0.4,0,0.2,1));
+    position: relative;
+    opacity: 0.9;
+    filter: brightness(1.1);
+    animation: sphereFloat 8s var(--ease-smooth, cubic-bezier(0.16,1,0.3,1)) infinite;
+}
+
+    .sphere::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        background: inherit;
+        opacity: 0;
+        filter: blur(20px);
+        transition: opacity var(--transition-smooth, 0.6s cubic-bezier(0.33,1,0.68,1));
+        z-index: -1;
+    }
+
+.sphere-link:hover .sphere::before,
+.sphere-link.particle-hover .sphere::before {
+    opacity: 0.4;
+}
+
+#sphere-1 {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-blue, rgba(79,195,247,0.95)), transparent 70%);
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.1), 0 0 40px rgba(79,195,247,0.3), 0 0 80px rgba(79,195,247,0.15);
+}
+
+.sphere-link[data-label="Защита от манипуляций ИИ"] .sphere {
+    --sphere-color-rgb: 79,195,247;
+}
+
+#sphere-2 {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-green, rgba(165,214,167,0.95)), transparent 70%);
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.1), 0 0 40px rgba(165,214,167,0.3), 0 0 80px rgba(165,214,167,0.15);
+}
+
+.sphere-link[data-label="Локальный ИИ"] .sphere {
+    --sphere-color-rgb: 165,214,167;
+}
+
+#sphere-3 {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-yellow, rgba(255,204,128,0.95)), transparent 70%);
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.1), 0 0 40px rgba(255,204,128,0.3), 0 0 80px rgba(255,204,128,0.15);
+}
+
+.sphere-link[data-label="Лаборатория"] .sphere {
+    --sphere-color-rgb: 255,204,128;
+}
+
+#sphere-4 {
+    background: radial-gradient(circle at 30% 30%, var(--color-accent-pink, rgba(244,143,177,0.95)), transparent 70%);
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.1), 0 0 40px rgba(244,143,177,0.3), 0 0 80px rgba(244,143,177,0.15);
+}
+
+.sphere-link[data-label="Творчество"] .sphere {
+    --sphere-color-rgb: 244,143,177;
+}
+
+@keyframes sphereFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+}
+
+@keyframes spherePulse {
+    0%, 100% {
+        box-shadow: inset 0 0 40px rgba(255,255,255,0.15), 0 0 60px rgba(var(--sphere-color-rgb), 0.5), 0 0 120px rgba(var(--sphere-color-rgb), 0.3);
+    }
+
+    50% {
+        box-shadow: inset 0 0 50px rgba(255,255,255,0.2), 0 0 80px rgba(var(--sphere-color-rgb), 0.7), 0 0 150px rgba(var(--sphere-color-rgb), 0.4);
+    }
+}
+
+.sphere-label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: all 0.5s var(--ease-soft);
+    position: relative;
+    letter-spacing: 0.03em;
+}
+
+    .sphere-label::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: currentColor;
+        transition: width 0.5s var(--ease-soft);
+    }
+
+.sphere-link:hover .sphere-label::after,
+.sphere-link.particle-hover .sphere-label::after {
+    width: 80%;
+}
+
+.sphere-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    transition: all 0.6s var(--ease-soft);
+    max-width: 240px;
+    color: var(--color-text-muted, rgba(98,117,151,0.6));
+}
+
+/* Адаптация под мобильные */
+@media (max-width: 1024px) {
+    .sphere-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sphere-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sphere {
+        width: calc(var(--sphere-size) * 0.9);
+        height: calc(var(--sphere-size) * 0.9);
+    }
+}
+
+@media (max-width: 480px) {
+    .sphere {
+        width: calc(var(--sphere-size) * 0.8);
+        height: calc(var(--sphere-size) * 0.8);
+    }
+
+    .sphere-link {
+        padding: 20px;
+    }
+}

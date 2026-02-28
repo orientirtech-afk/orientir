@@ -1,0 +1,92 @@
+﻿/* ============================================================================
+   Панель управления 3D (общая для всех страниц)
+   ============================================================================ */
+
+.performance-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: var(--z-controls);
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+    .performance-panel:hover {
+        opacity: 1;
+    }
+
+.perf-btn {
+    padding: 10px 16px;
+    background: rgba(10,14,20,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    color: var(--color-text-primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-soft);
+    min-width: 180px;
+}
+
+    .perf-btn:focus-visible {
+        outline: 2px solid var(--color-accent-blue);
+        outline-offset: 2px;
+    }
+
+    .perf-btn:hover {
+        background: rgba(79,195,247,0.15);
+        border-color: rgba(79,195,247,0.4);
+        transform: translateY(-3px);
+    }
+
+    .perf-btn.active {
+        background: rgba(79,195,247,0.25);
+        border-color: rgba(79,195,247,0.6);
+    }
+
+.perf-icon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    transition: transform 0.5s var(--ease-soft);
+}
+
+.perf-btn:hover .perf-icon {
+    transform: scale(1.2);
+}
+
+.perf-label {
+    white-space: nowrap;
+    flex: 1;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .performance-panel {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .perf-btn {
+        min-width: auto;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        flex: 1;
+    }
+
+    .perf-label {
+        display: none;
+    }
+}

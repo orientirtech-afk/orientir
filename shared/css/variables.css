@@ -1,0 +1,72 @@
+﻿/* ============================================================================
+   Переменные дизайн-системы (общие для всех страниц)
+   ============================================================================ */
+
+:root {
+    /* === Цветовая палитра – основа === */
+    --color-bg: #0a0e14;
+    --color-bg-secondary: #0f1419;
+    --color-surface: #1a1f29;
+    --color-surface-transparent: rgba(26,31,41,0.6);
+    /* Акцентные цвета проектов (RGB для вычислений) */
+    --color-accent-blue: rgba(79,195,247,0.95);
+    --color-accent-blue-rgb: 79,195,247;
+    --color-accent-green: rgba(165,214,167,0.95);
+    --color-accent-green-rgb: 165,214,167;
+    --color-accent-yellow: rgba(255,204,128,0.95);
+    --color-accent-yellow-rgb: 255,204,128;
+    --color-accent-pink: rgba(244,143,177,0.95);
+    --color-accent-pink-rgb: 244,143,177;
+    --color-accent-purple: rgba(179,157,219,0.95);
+    --color-accent-purple-rgb: 179,157,219;
+    --color-accent-cyan: rgba(128,203,196,0.95);
+    --color-accent-cyan-rgb: 128,203,196;
+    --color-accent-orange: rgba(255,171,145,0.95);
+    --color-accent-orange-rgb: 255,171,145;
+    --color-accent-lavender: rgba(206,147,216,0.95);
+    --color-accent-lavender-rgb: 206,147,216;
+    --color-accent-teal: rgba(128,222,234,0.95);
+    --color-accent-teal-rgb: 128,222,234;
+    --color-accent-red: rgba(239,68,68,0.95);
+    --color-accent-red-rgb: 239,68,68;
+    --color-accent-warm: var(--color-accent-yellow);
+    --color-accent-warm-rgb: var(--color-accent-yellow-rgb);
+    /* === Текст === */
+    --color-text-primary: rgba(230,238,245,0.95);
+    --color-text-secondary: rgba(200, 220, 240, 0.95);
+    --color-text-muted: rgba(140, 160, 190, 0.8);
+    /* === Функции плавности === */
+    --ease-soft: cubic-bezier(0.33,1,0.68,1);
+    --ease-float: cubic-bezier(0.4,0,0.2,1);
+    --ease-smooth: cubic-bezier(0.16,1,0.3,1);
+    --ease-bounce: cubic-bezier(0.68,-0.25,0.27,1.25);
+    --ease-extra-soft: cubic-bezier(0.25,0.46,0.45,0.94);
+    --ease-slow-open: cubic-bezier(0.12,0,0.39,0);
+    /* === Размеры и отступы === */
+    --container-max-width: 1400px;
+    --sphere-size: 120px;
+    --sphere-size-hover: 180px;
+    --heart-size: 100px; /* для страницы index */
+    /* === Транзиции === */
+    --transition-smooth: 0.6s var(--ease-soft);
+    --transition-bounce: 0.8s var(--ease-bounce);
+    --transition-extra-smooth: 1.2s var(--ease-extra-soft);
+    --transition-slow-open: 2s var(--ease-slow-open);
+    /* === Z-индексы === */
+    --z-below: -1;
+    --z-base: 1;
+    --z-3d: 0;
+    --z-content: 10;
+    --z-controls: 1000;
+    --z-modal: 2000;
+    /* === Тени === */
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+    --shadow-xl: 0 25px 80px rgba(0,0,0,0.7);
+    --shadow-xxl: 0 40px 120px rgba(0,0,0,0.8);
+    /* === Скругления === */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-2xl: 40px;
+}
