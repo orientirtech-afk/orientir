@@ -72,7 +72,7 @@
 - ✅ Запрет на обучение ИИ (noai, noimageai)
 
 ---
-
+```
 ## 📂 Структура проекта
 orientir/
 ├── index.html
@@ -126,7 +126,7 @@ orientir/
 ├── page-local_ai.js
 ├── page-lab.js
 └── page-animation.js
-
+```
 
 ---
 
@@ -220,3 +220,4 @@ orientir/
 | **GitHub** | [https://github.com/orientirtech-afk](https://github.com/orientirtech-afk) |
 
 | **Email** | [orientir.tech@gmail.com](mailto:orientir.tech@gmail.com) |
+
