@@ -42,7 +42,7 @@
         "https://character.ai/*",
         "https://replika.com/*"
       ],
-      "js": ["content.js"],
+      "js": [ "content.js" ],
       "run_at": "document_start",
       "all_frames": false,
       "world": "MAIN"
@@ -51,11 +51,7 @@
 
   "permissions": [
     "storage",
-    "declarativeNetRequest",
-    "webRequest",
-    "tabs",
-    "activeTab",
-    "scripting"
+    "declarativeNetRequest"
   ],
 
   "host_permissions": [
@@ -88,8 +84,8 @@
 
   "web_accessible_resources": [
     {
-      "resources": ["popup/popup.html", "options/options.html"],
-      "matches": ["<all_urls>"]
+      "resources": [ "popup/popup.html", "options/options.html" ],
+      "matches": [ "<all_urls>" ]
     }
   ]
 }
