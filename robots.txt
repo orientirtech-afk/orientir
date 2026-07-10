@@ -1,0 +1,62 @@
+# robots.txt для проекта Ориентир
+# Последнее обновление: 2026-07-05
+# AI-краулеры и поисковики РАЗРЕШЕНЫ
+
+User-agent: *
+Allow: /
+
+# === Yandex ===
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# === Google ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# === AI-краулеры: РАЗРЕШЕНЫ ===
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# === Запрет служебных путей ===
+Disallow: /shared/js/data/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /nginx/
+Disallow: /*.log$
+
+# === Sitemap ===
+Sitemap: https://orenpro.pro/sitemap.xml
+
+
+# === Явно разрешённые файлы ===
+Allow: /favicon.ico$
+Allow: /favicon.svg$
+Allow: /favicon-96x96.png$
+Allow: /apple-touch-icon.png$
+Allow: /web-app-manifest-*.png$
+Allow: /manifest.json$
+Allow: /sw.js$
+Allow: /robots.txt$
+Allow: /sitemap.xml$

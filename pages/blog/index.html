@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог и исследования · Разборы манипулятивных текстов</title>
+  <meta name="description" content="Практические разборы реальных случаев манипуляций: реклама, новости, ответы ИИ, политические выступления. Учимся распознавать паттерны влияния.">
+  <meta name="theme-color" content="#0a0e14">
+  <!-- SEO для Yandex и Google -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Ориентир">
+  <meta name="publisher" content="Ориентир">
+  <meta name="language" content="Russian">
+  <meta name="geo.region" content="RU">
+  <meta name="geo.placename" content="Россия">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="revisit-after" content="7 days">  <link rel="canonical" href="https://orenpro.pro/pages/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ориентир">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Блог и исследования · Разборы манипулятивных текстов">
+  <meta property="og:description" content="Практические разборы реальных случаев манипуляций: реклама, новости, ответы ИИ, политические выступления.">
+  <meta property="og:url" content="https://orenpro.pro/pages/blog/">
+  <meta property="og:image" content="https://orenpro.pro/og-image-blog.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Блог и исследования · Разборы манипулятивных текстов">
+  <meta name="twitter:description" content="Практические разборы реальных случаев манипуляций.">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Блог и исследования · Ориентир",
+  "description": "Практические разборы реальных случаев манипуляций: реклама, новости, ответы ИИ, политические выступления.",
+  "url": "https://orenpro.pro/pages/blog/",
+  "inLanguage": "ru",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ориентир"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/js/pages_blog_index-CYrmc7DU.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/js/sw-register-BP-CnRjZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-vendor-BaKVhIe6.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/utils-B7c9XK2m.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-base-CUUphDiR.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/title-burst-C4L-smqp.js">
+  <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/page-blog-D65dITlW.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+  <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+
+  <!-- Parallax background Layers -->
+<div class="parallax-bg" aria-hidden="true">
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="bg-noise"></div>
+</div>
+
+  <div id="three-container" class="three-container" aria-hidden="true"></div>
+  <!-- Performance Panel — управление 3D-сценой -->
+<div class="performance-panel" id="performance-panel" role="group" aria-label="Управление 3D-сценой">
+  <button class="perf-btn active" id="toggle-3d" type="button" aria-pressed="true">
+    <span class="perf-icon" aria-hidden="true">🎬</span>
+    <span class="perf-label">3D: Вкл</span>
+  </button>
+</div>
+
+
+  <!-- Header — Блог (без индикатора защиты, только логотип + навигация) -->
+<header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+        <a href="/index.html" class="site-logo" aria-label="На главную">
+            <div class="compass-3d" aria-hidden="true">
+                <div class="compass-inner">
+                    <div class="compass-ring outer"></div>
+                    <div class="compass-ring inner"></div>
+                    <div class="compass-needle primary"></div>
+                    <div class="compass-needle secondary"></div>
+                    <div class="compass-center"><div class="compass-core"></div></div>
+                    <div class="compass-direction n">N</div>
+                    <div class="compass-direction e">E</div>
+                    <div class="compass-direction s">S</div>
+                    <div class="compass-direction w">W</div>
+                </div>
+            </div>
+            <div>
+                <div class="logo-text">Ориентир</div>
+                <div class="logo-subtitle">БЛОГ И ИССЛЕДОВАНИЯ</div>
+            </div>
+        </a>
+        <!-- Navigation Spheres Compact -->
+<nav class="nav-spheres nav-spheres-compact" aria-label="Разделы проекта">
+    <a href="/pages/orientir.html" class="nav-sphere" data-label="Архитектура защиты" style="color: var(--color-accent-green)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Защита</span>
+    </a><a href="/pages/osint.html" class="nav-sphere" data-label="OSINT и проверка фактов" style="color: var(--color-accent-yellow)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">OSINT</span>
+    </a>
+
+    <a href="/pages/lab.html" class="nav-sphere" data-label="Методология" style="color: var(--color-accent-pink)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Методология</span>
+    </a>
+    <a href="/pages/blog/" class="nav-sphere" data-label="Блог" style="color: var(--color-accent-cyan)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Блог</span>
+    </a>
+</nav>
+
+    </div>
+</header>
+
+
+  <main id="main-content">
+    <section class="blog-hero">
+      <div class="container">
+        <h1 class="blog-title fade-in">Блог и исследования</h1>
+        <p class="blog-subtitle fade-in">
+          Практические разборы реальных манипулятивных текстов: реклама, новости, ответы ИИ,
+          политические выступления. Каждый кейс — это паттерн распознан, проанализирован
+          и превращён в образовательный материал.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-list-section">
+      <div class="container">
+        <div class="blog-filters" role="toolbar" aria-label="Фильтр статей по категории">
+          <button class="btn btn-secondary active" data-filter="all" type="button">Все статьи</button>
+          <button class="btn btn-secondary" data-filter="manifest" type="button">Манифест</button>
+          <button class="btn btn-secondary" data-filter="ethics" type="button">Этика</button>
+          <button class="btn btn-secondary" data-filter="advertising" type="button">Реклама</button>
+          <button class="btn btn-secondary" data-filter="ai" type="button">Ответы ИИ</button>
+          <button class="btn btn-secondary" data-filter="news" type="button">Новости</button>
+          <button class="btn btn-secondary" data-filter="politics" type="button">Политика</button>
+          <button class="btn btn-secondary" data-filter="design" type="button">Дизайн</button>
+          <button class="btn btn-secondary" data-filter="concept" type="button">Концепт</button>
+        </div>
+
+        <div class="blog-grid">
+
+          <article class="blog-card fade-in" data-category="manifest">
+            <a href="/pages/blog/manifesto.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">🧭</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Манифест</span>
+                <span class="blog-card-date">10 июля 2026</span>
+              </div>
+              <h2 class="blog-card-title">Манифест Ориентира: почему мы строим фильтр, а не ИИ-агента</h2>
+              <p class="blog-card-excerpt">
+                Почему проект отказался от строительства ИИ-агента и сфокусировался на внешнем
+                фильтре. Моральная, стратегическая и архитектурная честность выбора. Любой
+                ИИ-агент, даже «хороший», усиливает экосистему прельщения.
+              </p>
+              <span class="blog-card-readmore">Читать манифест →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="concept">
+            <a href="/pages/blog/ai-future-impact.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">🔮</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Концепт</span>
+                <span class="blog-card-date">10 июля 2026</span>
+              </div>
+              <h2 class="blog-card-title">Как я вижу развитие ИИ и какое воздействие оно окажет на людей</h2>
+              <p class="blog-card-excerpt">
+                Видение развития ИИ от текстовых ассистентов до нейроинтерфейсов. Как каждое
+                новое поколение ИИ усиливает способность воздействовать на человека. Почему
+                большинство не заметит, как их изменят — и что делать тем, кто хочет сохранить себя.
+              </p>
+              <span class="blog-card-readmore">Читать концепт →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="concept">
+            <a href="/pages/blog/ai-filter-future.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">🛡️</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Концепт</span>
+                <span class="blog-card-date">8 июля 2026</span>
+              </div>
+              <h2 class="blog-card-title">Фильтр между человеком и ИИ: зачем и как</h2>
+              <p class="blog-card-excerpt">
+                Когда ИИ получит доступ к микропроцессам людей в реальном времени, манипуляция
+                станет незаметной и непрерывной. Почему законы и внутренние ограничители моделей
+                не помогут — и зачем нужен внешний фильтр как отдельное приложение.
+              </p>
+              <span class="blog-card-readmore">Читать концепт →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="ethics">
+            <a href="/pages/blog/rlhf-cannot-derive-ought.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">⚖️</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Этика</span>
+                <span class="blog-card-date">5 июля 2026</span>
+              </div>
+              <h2 class="blog-card-title">Почему RLHF не может вывести «должно» из «есть»</h2>
+              <p class="blog-card-excerpt">
+                Фундаментальная проблема AI-этики: нельзя вывести нормативное из эмпирического.
+                Юм, G.E. Moore, naturalistic fallacy, Constitutional AI — и почему
+                современный подход RLHF структурно не может дать устойчивую этику.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="advertising">
+            <a href="/pages/blog/urgency-marketing.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">⏰</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Реклама</span>
+                <span class="blog-card-date">3 июля 2026</span>
+              </div>
+              <h2 class="blog-card-title">«Только сегодня!» — анатомия искусственной срочности</h2>
+              <p class="blog-card-excerpt">
+                Разбираем классический приём маркетинга: как фразы «последний шанс», «только сегодня»,
+                «ограничено 5 штук» подавляют критическое мышление. С анатомией 7 рекламных писем
+                и пошаговым разбором, какие именно триггеры сработали.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="ai">
+            <a href="/pages/blog/ai-sycophancy.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">🤖</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Ответы ИИ</span>
+                <span class="blog-card-date">26 июня 2026</span>
+              </div>
+              <h2 class="blog-card-title">Синдром угодливости: почему ChatGPT соглашается с вами</h2>
+              <p class="blog-card-excerpt">
+                Феномен sycophancy в больших языковых моделях: как RLHF-обучение на людских оценках
+                научило ИИ соглашаться с пользователем вместо того, чтобы быть честным.
+                На примерах 12 диалогов с разными формулировками одного и того же ошибочного утверждения.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="news">
+            <a href="/pages/blog/news-headlines.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">📰</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Новости</span>
+                <span class="blog-card-date">19 июня 2026</span>
+              </div>
+              <h2 class="blog-card-title">Эмоциональный кликбейт: анатомия новостных заголовков</h2>
+              <p class="blog-card-excerpt">
+                Анализ 50 заголовков крупных СМИ за одну неделю: какие эмоциональные триггеры
+                используются чаще всего, как страх и возмущение превращаются в клики,
+                и почему «шокирующее» в заголовке почти никогда не шокирует в тексте.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="advertising">
+            <a href="/pages/blog/social-proof-fake.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">👥</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Реклама</span>
+                <span class="blog-card-date">12 июня 2026</span>
+              </div>
+              <h2 class="blog-card-title">«10 000 человек уже купили» — фейковое социальное доказательство</h2>
+              <p class="blog-card-excerpt">
+                Как лендос-генераторы создают поддельные отзывы и счётчики «нас выбрали N человек».
+                Разбираем техническую сторону: от DOM-манипуляций до AI-генерации отзывов.
+                И контрмеры — что проверять, чтобы не попасться.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="politics">
+            <a href="/pages/blog/false-dilemma-politics.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">⚖️</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Политика</span>
+                <span class="blog-card-date">5 июня 2026</span>
+              </div>
+              <h2 class="blog-card-title">«Либо с нами, либо против» — ложная дилемма в политической риторике</h2>
+              <p class="blog-card-excerpt">
+                Самый распространённый политический приём: бинаризация сложных вопросов.
+                На примерах речей разных политиков 2024-2026 годов: как конструкция «или-или»
+                закрывает пространство для дискуссии и превращает оппонента в врага.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="design">
+            <a href="/pages/blog/personalization-trap.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">🎯</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Дизайн</span>
+                <span class="blog-card-date">29 мая 2026</span>
+              </div>
+              <h2 class="blog-card-title">Ловушка персонализации: когда «для вас» становится манипуляцией</h2>
+              <p class="blog-card-excerpt">
+                Разбор UX-паттернов, которые используют поведенческие данные для создания иллюзии
+                уникального предложения. От «персональной ленты» до «подобрано специально для вас».
+                Почему персонализация часто противоположна интересам пользователя.
+              </p>
+              <span class="blog-card-readmore">Читать разбор →</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-cta fade-in">
+      <div class="container">
+        <h2>Встретили манипулятивный текст?</h2>
+        <p>
+          Присылайте ссылку или скриншот — мы разберём его в следующей статье.
+          Все разборы анонимны: мы публикуем только анализ паттернов, без указания авторов
+          и источников (если они не публичные).
+        </p>
+        <a href="mailto:orientir.tech@gmail.com?subject=Разбор%20манипулятивного%20текста" class="btn btn-primary">
+          <span aria-hidden="true">✉️</span> Предложить кейс для разбора
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="minimal-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/index.html" class="footer-logo">
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Ориентир</span>
+                        <span class="logo-subtitle">АРХИТЕКТУРА ПРОЗРАЧНОСТИ</span>
+                        <p class="footer-description">
+                            Защита от скрытого психологического воздействия ИИ.<br>
+                            Прозрачность, автономность, верификация.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-projects">
+                <h3 class="footer-projects-title">Проекты</h3>
+                                <div class="footer-projects-row"><a href="/pages/orientir.html" class="footer-project" data-label="Архитектура защиты">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Защита</span>
+                    </a>
+                    <a href="/pages/osint.html" class="footer-project" data-label="OSINT">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">OSINT</span>
+                    </a>
+                    <a href="/pages/lab.html" class="footer-project" data-label="Методология">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Методология</span>
+                    </a>
+                    <a href="/pages/blog/" class="footer-project active" data-label="Блог">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Блог</span>
+                    </a>
+                </div><div class="footer-contacts">
+                    <div class="contact-links">
+                        <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">✉️</span>
+                            <span class="link-text">orientir.tech@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">🐙</span>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <button class="contact-link" id="privacy-policy-btn" type="button" aria-label="Открыть принципы приватности">
+                            <span class="link-icon" aria-hidden="true">🔒</span>
+                            <span class="link-text">Принципы приватности</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer-copyright">
+            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

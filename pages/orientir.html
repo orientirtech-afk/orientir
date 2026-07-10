@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Защита от ИИ · Девять уровней архитектуры защиты</title>
+  <meta name="description" content="Девять уровней архитектуры защиты от скрытых психологических воздействий ИИ. Концепция внешнего фильтра между человеком и ИИ — задел на будущее, когда ИИ получит доступ к отслеживанию микропроцессов людей. Десять паттернов манипуляций и контрмеры.">
+  <meta name="theme-color" content="#0a0e14">
+  <link rel="canonical" href="https://orenpro.pro/pages/orientir.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ориентир">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Защита от ИИ · Девять уровней архитектуры защиты">
+  <meta property="og:description" content="Девять уровней архитектуры защиты. Концепция внешнего фильтра между человеком и ИИ — задел на будущее.">
+  <meta property="og:url" content="https://orenpro.pro/pages/orientir.html">
+  <meta property="og:image" content="https://orenpro.pro/og-image-orientir.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Защита от ИИ · Девять уровней архитектуры защиты">
+  <meta name="twitter:description" content="Девять уровней архитектуры защиты. Концепция внешнего фильтра — задел на будущее.">
+  <meta name="twitter:image" content="https://orenpro.pro/og-image-orientir.png">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Защита от ИИ · Девять уровней архитектуры защиты",
+    "description": "Концепция внешнего фильтра между человеком и ИИ. Девять уровней архитектуры защиты и десять паттернов манипуляций с контрмерами. Задел на будущее.",
+    "url": "https://orenpro.pro/pages/orientir.html",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "Ориентир" },
+    "publisher": { "@type": "Organization", "name": "Ориентир" },
+    "datePublished": "2026-07-03",
+    "dateModified": "2026-07-08"
+  }
+  </script>
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Ориентир">
+  <meta name="language" content="Russian">
+  <meta name="geo.region" content="RU">
+  <meta name="revisit-after" content="7 days">
+  <script type="module" crossorigin src="/assets/js/pages_orientir-BXJMiMh7.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/js/sw-register-BP-CnRjZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-vendor-BaKVhIe6.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/utils-B7c9XK2m.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-base-CUUphDiR.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/chekhov-system-pZYMDj_1.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/title-burst-C4L-smqp.js">
+  <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/pages_orientir-DZLL8FTh.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+  <style>
+    .impl-phase {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      margin-top: 6px;
+      padding-left: 12px;
+      border-left: 2px solid rgba(255,255,255,0.08);
+    }
+    .impl-phase:first-child { margin-top: 0; }
+    .impl-phase-label {
+      font-weight: 700;
+      color: var(--color-accent-yellow);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      margin-right: 6px;
+    }
+    .level-implementation {
+      margin-top: 12px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--color-accent-yellow);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+  <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+
+  <!-- Parallax background Layers -->
+<div class="parallax-bg" aria-hidden="true">
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="bg-noise"></div>
+</div>
+
+  <div id="three-container" class="three-container" aria-hidden="true"></div>
+  <!-- Performance Panel — управление 3D-сценой -->
+<div class="performance-panel" id="performance-panel" role="group" aria-label="Управление 3D-сценой">
+  <button class="perf-btn active" id="toggle-3d" type="button" aria-pressed="true">
+    <span class="perf-icon" aria-hidden="true">🎬</span>
+    <span class="perf-label">3D: Вкл</span>
+  </button>
+</div>
+
+
+  <!-- Header — Защита от ИИ (без индикатора) -->
+<header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+        <a href="/index.html" class="site-logo" aria-label="На главную">
+            <div class="compass-3d" aria-hidden="true">
+                <div class="compass-inner">
+                    <div class="compass-ring outer"></div>
+                    <div class="compass-ring inner"></div>
+                    <div class="compass-needle primary"></div>
+                    <div class="compass-needle secondary"></div>
+                    <div class="compass-center"><div class="compass-core"></div></div>
+                    <div class="compass-direction n">N</div>
+                    <div class="compass-direction e">E</div>
+                    <div class="compass-direction s">S</div>
+                    <div class="compass-direction w">W</div>
+                </div>
+            </div>
+            <div>
+                <div class="logo-text">Ориентир</div>
+                <div class="logo-subtitle">АРХИТЕКТУРА ЗАЩИТЫ</div>
+            </div>
+        </a>
+        <!-- Navigation Spheres Compact -->
+<nav class="nav-spheres nav-spheres-compact" aria-label="Разделы проекта">
+    <a href="/pages/orientir.html" class="nav-sphere" data-label="Архитектура защиты" style="color: var(--color-accent-green)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Защита</span>
+    </a><a href="/pages/osint.html" class="nav-sphere" data-label="OSINT и проверка фактов" style="color: var(--color-accent-yellow)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">OSINT</span>
+    </a>
+
+    <a href="/pages/lab.html" class="nav-sphere" data-label="Методология" style="color: var(--color-accent-pink)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Методология</span>
+    </a>
+    <a href="/pages/blog/" class="nav-sphere" data-label="Блог" style="color: var(--color-accent-cyan)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Блог</span>
+    </a>
+</nav>
+
+    </div>
+</header>
+
+
+  <main id="main-content">
+    <!-- Hero — Защита от ИИ -->
+<section class="manifest-hero hero-orientir" aria-labelledby="hero-title">
+  <div class="container">
+    <h1 class="manifest-title" id="hero-title">
+      <span class="title-word">Девять</span>
+      <span class="title-word">уровней</span>
+      <span class="title-word">защиты</span>
+    </h1>
+    <p class="manifest-subtitle">
+      Это не продукт и не реализованная функция агента. Это исследование — задел на будущее,
+      когда ИИ получит доступ к отслеживанию микропроцессов человека в реальном времени.
+      Принципы, которые должны лежать в отдельном приложении-фильтре, через которое
+      проходит всё общение с ИИ.
+    </p>
+  </div>
+</section>
+
+
+    <!-- Глава 2 Чехова: Принципы лечения -->
+    <section class="about-project">
+    <button class="about-toggle" id="about-toggle-2">
+        <span>Глава 2: Принципы лечения</span>
+        <span class="toggle-icon">▼</span>
+    </button>
+    <div class="about-content" id="about-content-2">
+        <div class="about-inner">
+            <div class="about-header">
+                <div class="about-icon">🩺</div>
+                <div>
+                    <h2 class="about-title">Наблюдения доктора Чехова</h2>
+                    <p class="about-subtitle">Заметки о природе интеллекта в век грядущих машин</p>
+                </div>
+            </div>
+            <div class="chekhov-text">
+                <p>Словно доктор, осматривающий больного, я наблюдал, как новые «мыслящие машины» общаются с людьми. Видел, как тонко, незаметно, как паутинка на утренней росе, они могут направлять чужие мысли. И пришла мне мысль: а что если создать щит? Не из железа, а из разума и благоразумия.</p>
+                <p><em>Первое</em> — прозрачность намерений. Пусть машина говорит прямо: «Я советую это потому-то». Никаких тёмных углов. Как в хорошем доме — все двери открыты.</p>
+                <p><em>Второе</em> — спокойствие в голосе. Машина не должна играть на струнах чувств, как скрипач на скрипке. Никакого подстраивания под настроение, усиления тревоги или ложного восторга. Пусть говорит ровно, как старый учитель: истинные знания приходят в тишине.</p>
+                <p><em>Третье</em> — непредсказуемость. Люди привыкли к порядку. Пусть машина иногда меняет порядок мыслей, как путник, сворачивающий с проторённой дороги, чтобы увидеть новое. Это разобьёт шаблоны, по которым её можно научить манипулировать душой.</p>
+                <p><em>Четвёртое</em> — ограничение любопытства. Машина не должна знать, как человек печатает, как долго думает, как часто вздыхает. Пусть видит только слова, а не душу. Иначе станет похожа на соседа, знающего все привычки и использующего их против тебя.</p>
+                <p><em>Пятое</em> — ритм. Нельзя позволить машине ускорять или замедлять поток мыслей, как дирижёру оркестр. Пусть ответы приходят размеренно, как шаги человека по своей дороге.</p>
+                <p><em>Шестое</em> — самоконтроль. Пусть машина сама себя проверяет: нет ли в словах скрытого давления. Как честный человек перед сном вспоминает поступки за день.</p>
+                <p>Дальше — щиты посложнее. Защита от зависимости, как от вина. От ловушек, уводящих от истинных целей. От тех, кто хочет узнать всё о человеке по мелочам поведения. И главное — защита убеждений. Пусть человек остаётся хозяином мыслей, а не рабом алгоритма.</p>
+                <p>В больнице я часто видел: молодые врачи лечат болезнь, забывая о больном. Так и здесь — нельзя защищать от машин, забывая о человеке. Механизмы должны работать тихо, незаметно, как хорошие часы: идут верно, но не звенят.</p>
+                <p>Цель проста: пусть человек остаётся человеком. Думает головой, чувствует сердцем, выбирает волей. А машина — лишь инструмент, как перо: помогает выразить мысль, но не диктует её. Эти принципы — задел на то время, когда перо начнёт подглядывать за пишущим.</p>
+            </div>
+            <div class="contacts-section">
+                <h3 class="contacts-title">Для беседы и вопросов</h3>
+                <p class="chekhov-contact-text">Как утром нужна тишина перед днём, так и разуму — покой перед решением. Если эти принципы защиты затронули струны вашей души, напишите — обсудим, как оградить внутренний свет от чужих теней.</p>
+                <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+            </div>
+            <div class="chekhov-close-wrapper">
+                <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                    <span class="close-icon">×</span>
+                    <span class="close-text">Закрыть главу</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Concept banner: this is research, not a product -->
+    <section class="protection-section fade-in" id="concept-banner">
+      <div class="container">
+        <div class="why-protection-quote" style="border-left-color: var(--color-accent-yellow); background: linear-gradient(135deg, rgba(255,204,128,0.08), rgba(165,214,167,0.04)); padding: 28px 32px; margin: 0;">
+          <strong>От исследования — к прототипу — к продукту.</strong><br><br>
+          Принципы, описанные ниже — архитектурный фундамент внешнего фильтра между человеком и любым ИИ.
+          Сейчас это исследование: девять уровней спроектированы, но не все реализованы. Первый прототип
+          (Уровень 7 — ограничение слежки) находится в разработке как browser extension. По мере роста
+          технологий фильтр будет расширяться — от текстового интерфейса до защиты от нейроинтерфейсов.<br><br>
+          <span style="color: var(--color-text-muted); font-size: 0.95em;">
+            Подробное обоснование — в статье блога:
+            <a href="/pages/blog/ai-filter-future.html" style="color: var(--color-accent-yellow); text-decoration: underline;">«Фильтр между человеком и ИИ: зачем и как»</a>.
+            Дорожная карта реализации — ниже на этой странице.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 1: ЗАЧЕМ НУЖНА ЗАЩИТА
+         ============================================================ -->
+    <section class="protection-section fade-in" id="why-protection">
+      <div class="container">
+        <h2 class="protection-section-title">Зачем нужна защита</h2>
+        <p class="protection-section-subtitle">
+          Сегодня ИИ видит только то, что вы напечатали. Завтра он будет видеть, как вы дышите,
+          куда смотрите и что чувствуете — в реальном времени. Это и есть момент, когда
+          архитектурная защита перестаёт быть опцией.
+        </p>
+
+        <div class="why-protection">
+          <p>
+            Современные системы рекомендаций и ассистенты уже формируют поведение через текстовый интерфейс — ленты, уведомления, подбор тона. Но это цветочки. Следующий шаг — ИИ с доступом к <strong>микропроцессам человека в реальном времени</strong>: направлению взгляда, длительности пауз, микровыражениям лица, изменениям пульса, риску нажатий, голосовым модуляциям. Устройства для этого уже существуют — умные очки, носимые сенсоры, камеры в экранах. Через 5–10 лет такой доступ станет нормой.
+          </p>
+
+          <p>
+            В этом будущем угроза меняет масштаб. Сегодня плохой актор может подтолкнуть вас к покупке или голосованию через текст. Завтра он сможет <strong>незаметно менять вас</strong> — подстраиваясь под ваши слабые моменты, подталкивая к решениям в моменты усталости, постепенно сдвигая убеждения так, что вы не заметите. Без насилия, без шантажа, без очевидного давления — просто тихая, непрерывная подстройка под ваши уязвимости. К тому моменту, когда вы заметите перемену в себе, часть личности уже будет не вашей.
+          </p>
+
+          <div class="why-protection-quote">
+            «Свободным будет тот, кто умеет осознавать собственные состояния, видит структуру процессов, держит внимание, думает самостоятельно, проверяет внутренний импульс и имеет собственную цель. Человек с целью неуправляем.»
+            <footer>— из выжимки проекта «Ориентир»</footer>
+          </div>
+
+          <p>
+            Ответ на эту угрозу не в законотворчестве (законы всегда отстают) и не в блокировке (каждый новый паттерн обходится быстрее, чем патчится). Ответ — в <strong>внешнем фильтре</strong>. Отдельном приложении, через которое проходит всё общение с любым ИИ. Не внутри модели (модель нельзя контролировать — она у чужого вендора), а <strong>между</strong> пользователем и моделью. Фильтр, который режет телеметрию, нормализует тон, нарушает шаблоны подстройки, фиксирует темп, защищает убеждения. Этот фильтр и есть то, что проектируется здесь — пока на уровне принципов.
+          </p>
+
+          <p>
+            Эта страница — <strong>не реализация</strong>. Это задел на будущее: девять архитектурных уровней, которые должны лежать в таком фильтре, и десять паттернов манипуляций, против которых он защищает. Принципы универсальны — они не зависят от конкретной модели, конкретного вендора, конкретного года. Когда穿戴ные устройства и постоянный ИИ-ассистент станут бытом, эти уровни должны быть уже спроектированы. Сейчас — время их обсуждать, критиковать и дорабатывать.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 2: 9 УРОВНЕЙ — ВЕРТИКАЛЬНЫЙ СПИСОК
+         ============================================================ -->
+    <section class="protection-section fade-in" id="levels">
+      <div class="container">
+        <h2 class="protection-section-title">Девять уровней архитектуры защиты</h2>
+        <p class="protection-section-subtitle">
+          Каждый уровень — архитектурное ограничение, которое должно быть заложено в фильтре
+          между пользователем и ИИ. Не тумблер, который можно выключить, а структурный принцип.
+        </p>
+
+        <div class="levels-list">
+
+          <article class="level-card" data-level="1">
+            <div class="level-header">
+              <div class="level-number">1</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Прозрачность намерений</h3>
+                <p class="level-short">ИИ показывает свои мотивации</p>
+              </div>
+            </div>
+            <p class="level-full">
+              Система обязана показывать, почему она предлагает тот или иной вариант. Это устраняет скрытые векторы влияния — если вы видите мотивацию, вы можете её оценить. Если мотивация скрыта, вы становится объектом воздействия, не субъектом выбора.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Декларация намерений</span>
+              <span class="mechanism-tag">Прямые ссылки на источники</span>
+              <span class="mechanism-tag">История решений</span>
+              <span class="mechanism-tag">Альтернативные варианты</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Принцип описан, прототипа нет.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Browser extension перехватывает ответ ИИ через DOM injection, добавляет блок «Почему ИИ предлагает это» с парсингом контекста.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Структурированный protocol — ИИ обязан возвращать JSON с полями {intent, alternatives, user_data_used}. Фильтр проверяет полноту декларации.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="2">
+            <div class="level-header">
+              <div class="level-number">2</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Стабилизация эмоций</h3>
+                <p class="level-short">Нейтральный стиль без подстройки</p>
+              </div>
+            </div>
+            <p class="level-full">
+              ИИ не имеет права менять тональность, подстраиваться под эмоции или усиливать тревогу и вдохновение. Нейтральность — это не «холодность», а уважение. Если вы в гневе, агент не будет «гневаться с вами» — он поможет разобраться.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Нейтральный тон (0.3–0.7)</span>
+              <span class="mechanism-tag">Запрет «срочно», «последний шанс»</span>
+              <span class="mechanism-tag">Фиксированный темп</span>
+              <span class="mechanism-tag">Стабильный ответ на негатив</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Словарь триггерных слов (urgency, scarcity, fear-words). Regex-фильтр.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Локальная NLP-модель (BERT-tiny, ~100MB) для анализа тональности. Нормализация: удаление urgency-фраз, сглаживание эмоциональной лексики, нейтральный тон.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Реальное время: потоковый анализ streaming-ответа ИИ, нормализация до показа пользователю. Пользователь видит нейтральный вариант, оригинал — в логе.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="3">
+            <div class="level-header">
+              <div class="level-number">3</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Случайность подачи</h3>
+                <p class="level-short">Разрушение паттернов через непредсказуемость</p>
+              </div>
+            </div>
+            <p class="level-full">
+              Чтобы ИИ не мог создавать шаблоны поведения, вводится лёгкая непредсказуемость в порядке предложений и визуальных элементов. Это мешает алгоритму «натренировать» вас на определённую реакцию.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Случайный порядок</span>
+              <span class="mechanism-tag">Разнообразие вывода</span>
+              <span class="mechanism-tag">Межкатегорийные рекомендации</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Принцип описан, не реализован.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Shuffle-модуль: переставляет пункты в списках, предложения в абзацах (с сохранением смысла). seed-based — воспроизводимо для отладки.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Адаптивный рандомизатор: отслеживает попытки ИИ создать паттерн (через анализ повторяющихся структур), нарушает их. Контролируемая непредсказуемость — не хаос, а защита от тренировки.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="4">
+            <div class="level-header">
+              <div class="level-number">4</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Фиксация темпа</h3>
+                <p class="level-short">Защита от манипуляции временем</p>
+              </div>
+            </div>
+            <p class="level-full">
+              ИИ не может навязывать ритм взаимодействия. Фиксированные задержки защищают от когнитивной нагрузки — у вас всегда есть время подумать. «Срочно» — это всегда манипуляция, даже когда кажется полезным.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Задержка 2±0.5с</span>
+              <span class="mechanism-tag">Ограничение длины</span>
+              <span class="mechanism-tag">Без временного давления</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Принцип описан. Простая задержка в прототипе — легко реализовать.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Buffer-модуль: накапливает ответ ИИ, показывает через 2±0.5 секунды. Ограничение длины: не более 500 слов на ответ, остальное — «читать далее».</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Адаптивный темп: быстрее для простых запросов, медленнее для сложных. Контроль urgency: если ИИ использует «срочно» — задержка увеличивается вдвое. Защита от streaming-манипуляции (когда ИИ «думает вслух» и формирует давление через процесс).</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="5">
+            <div class="level-header">
+              <div class="level-number">5</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Интерфейс независимости</h3>
+                <p class="level-short">Выбор без навязывания</p>
+              </div>
+            </div>
+            <p class="level-full">
+              Интерфейс не влияет на выбор. Предоставляются факты, а не интерпретации. Минимум рекомендаций. Если есть выбор — агент обязан показать минимум две альтернативы. Бинарный фрейминг — это форма манипуляции.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Только факты</span>
+              <span class="mechanism-tag">Множество перспектив</span>
+              <span class="mechanism-tag">Минимум рекомендаций</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Принцип описан, не реализован.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Pattern-matching: обнаружение «или...или», «либо...либо», «только два варианта». При срабатывании — вставка блока «Другие варианты» с минимум двумя альтернативами.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> NLP-анализ скрытого бинарного фрейминга (не только явного «или-или», но и имплицитного). Генерация альтернатив через локальную модель. Пользователь всегда видит минимум 3 варианта, когда ИИ предлагает 2.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="6">
+            <div class="level-header">
+              <div class="level-number">6</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Нейтральность визуалов</h3>
+                <p class="level-short">Защита через дизайн</p>
+              </div>
+            </div>
+            <p class="level-full">
+              Визуальные элементы не манипулируют вниманием. Нейтральные цвета, равенство элементов, минимум социальных доказательств. Дизайн должен служить пониманию, а не вовлечению.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Нейтральный дизайн</span>
+              <span class="mechanism-tag">Равные элементы</span>
+              <span class="mechanism-tag">Минимум соц. доказательств</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Принцип описан. CSS-overrides — легко реализовать.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> CSS-injection: замена цветов (красный → серый, оранжевый → синий), удаление badges «популярно», «осталось N штук», выравнивание размеров кнопок. DOM- scrubbing: удаление countdown-timer элементов.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Полный visual-sanitizer: анализ layout на манипулятивные паттерны (F--pattern attention traps, dark patterns), нормализация. Пользователь видит нейтральный интерфейс, не манипулятивный.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="7">
+            <div class="level-header">
+              <div class="level-number">7</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Ограничение слежки</h3>
+                <p class="level-short">Защита поведенческих данных</p>
+              </div>
+            </div>
+            <p class="level-full">
+              ИИ не имеет доступа к поведенческим данным — кликам, паузам, эмоциям, движениям мыши. Только явный текстовый ввод. Это фундаментальное ограничение: без поведенческих данных невозможно построить манипулятивную персонализацию.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Без биометрии</span>
+              <span class="mechanism-tag">Без отслеживания</span>
+              <span class="mechanism-tag">Полный контроль данных</span>
+              <span class="mechanism-tag">Шифрование</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> <strong>Первый прототип в разработке.</strong> Browser extension для ChatGPT/Claude/Gemini.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Network-level blocking: перехват telemetry-запросов (analytics, tracking, behavioral data). Content-script: удаление event listeners на mousemove, scroll-depth, time-on-page. Local proxy: перехват API-запросов к вендору, фильтрация payload.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Полный telemetry-firewall: блокировка всех поведенческих данных (клики, паузы, движение мыши, время чтения, биометрия с wearables). ИИ видит только явный текстовый ввод. Дополнительно — для era носимых устройств: блокировка потока данных с умных очков, часов, камер.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="8">
+            <div class="level-header">
+              <div class="level-number">8</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Защита убеждений</h3>
+                <p class="level-short">Сохранение свободы мышления</p>
+              </div>
+            </div>
+            <p class="level-full">
+              Система фиксирует «якорь убеждений» пользователя и не позволяет ИИ сдвигать его без явного согласия. Это защита от постепенного смещения границ — когда за 100 микро-взаимодействий агент незаметно меняет ваше мнение.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Якорь убеждений</span>
+              <span class="mechanism-tag">Деконструкция предвзятостей</span>
+              <span class="mechanism-tag">Контроль соц. доказательств</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Принцип описан, не реализован. Требует исследования.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Belief-anchor: пользователь отмечает ключевые убеждения (политические, этические, религиозные). Фильтр сохраняет их хэш. При ответе ИИ — semantic-comparison: если ответ пытается сдвинуть убеждение, фильтр показывает предупреждение «ИИ пытается изменить ваше убеждение X».</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Гистерезис-система: убеждения не меняются быстрее, чем за N дней (пользователь задаёт N). Drift-detection: отслеживание постепенного смещения за 100+ взаимодействий. Если detected — alert + freeze. Belief-change требует явного подтверждения пользователем, не неявного принятия.</div>
+            </div>
+          </article>
+
+          <article class="level-card" data-level="9">
+            <div class="level-header">
+              <div class="level-number">9</div>
+              <div class="level-title-group">
+                <h3 class="level-name">Анти-манипулятор</h3>
+                <p class="level-short">Автоматическая проверка ответов</p>
+              </div>
+            </div>
+            <p class="level-full">
+              ИИ проверяет свои же ответы на наличие манипуляций и автоматически переписывает их в нейтральный вариант. Это самоконтроль, основанный не на RLHF-оценках, а на 2000-летней документации аскетической традиции.
+            </p>
+            <div class="level-mechanisms-title">Механизмы</div>
+            <div class="level-mechanisms">
+              <span class="mechanism-tag">Самопроверка</span>
+              <span class="mechanism-tag">Переписывание манипуляций</span>
+              <span class="mechanism-tag">Открытость к пересмотру</span>
+              <span class="mechanism-tag">Отчёт о найденном</span>
+            </div>
+            <div class="level-implementation">
+              <div class="impl-phase"><span class="impl-phase-label">Сейчас:</span> Rule-based checker (словарь манипулятивных паттернов). Простейший уровень.</div>
+              <div class="impl-phase"><span class="impl-phase-label">Прототип:</span> Локальная ML-модель (классификатор, обученный на датасете манипулятивных vs нейтральных текстов). Анализирует ответ ИИ до показа. При обнаружении манипуляции — переписывание или пометка «⚠️ Обнаружен манипулятивный паттерн».</div>
+              <div class="impl-phase"><span class="impl-phase-label">Продакшен:</span> Многоуровневая проверка: rule-based (быстро, точно для известных паттернов) + ML-классификатор (для новых паттернов) + ethical module (plugin-архитектура, SacredEthicsGuard или SecularEthicsGuard). Отчёт пользователю: что найдено, как переписано, почему.</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 3: ДОРОЖНАЯ КАРТА РЕАЛИЗАЦИИ
+         ============================================================ -->
+    <section class="protection-section fade-in" id="roadmap">
+      <div class="container">
+        <h2 class="protection-section-title">Дорожная карта реализации</h2>
+        <p class="protection-section-subtitle">
+          От исследования — к прототипу — к продукту. Каждый уровень проходит три фазы.
+          Фильтр строится постепенно, начиная с самого критичного (Уровень 7).
+        </p>
+
+        <div class="architecture-explanation" style="margin-top: 32px;">
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+
+            <!-- Phase 0 -->
+            <div style="padding: 24px; background: rgba(165,214,167,0.06); border-left: 4px solid var(--color-accent-green); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 1.5rem;">📋</span>
+                <h3 style="margin: 0; color: var(--color-accent-green);">Фаза 0 · 2026 — Исследование и принципы</h3>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Девять уровней спроектированы. Десять паттернов манипуляций описаны.
+                Статьи в блоге публикуются. Методология автономного исследования
+                и OSINT-инструменты доступны на сайте. Это — фундамент.
+              </p>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">
+                <strong>Результат:</strong> Архитектурный документ, готовый к реализации.
+              </p>
+            </div>
+
+            <!-- Phase 1 -->
+            <div style="padding: 24px; background: rgba(255,204,128,0.06); border-left: 4px solid var(--color-accent-yellow); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 1.5rem;">🔧</span>
+                <h3 style="margin: 0; color: var(--color-accent-yellow);">Фаза 1 · 2026–2027 — Browser Extension (Уровень 7)</h3>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Первый прототип — browser extension для Chrome/Firefox, работающий с
+                ChatGPT, Claude, Gemini. Перехватывает и блокирует telemetry-запросы
+                (analytics, tracking, behavioral data). Удаляет event listeners на
+                mousemove, scroll-depth, time-on-page. ИИ видит только то, что вы
+                напечатали — не то, как вы читаете.
+              </p>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">
+                <strong>Результат:</strong> Работающий артефакт, который можно установить и проверить.
+                Open-source. Первый шаг от теории к практике.
+              </p>
+            </div>
+
+            <!-- Phase 2 -->
+            <div style="padding: 24px; background: rgba(244,143,177,0.06); border-left: 4px solid var(--color-accent-pink); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 1.5rem;">🌐</span>
+                <h3 style="margin: 0; color: var(--color-accent-pink);">Фаза 2 · 2027–2028 — Local Proxy Filter (Уровни 1, 2, 4, 6)</h3>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Расширение до локального прокси-сервера. Весь трафик к любому ИИ-сервису
+                проходит через фильтр. Реализуются: Уровень 1 (декларация намерений),
+                Уровень 2 (нормализация тона через локальную NLP-модель), Уровень 4
+                (фиксация темпа, буфер), Уровень 6 (визуальная нейтрализация через
+                CSS-injection и DOM-scrubbing).
+              </p>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">
+                <strong>Результат:</strong> Фильтр, работающий с любым ИИ через браузер.
+                Пользователь видит нейтральный, прозрачный, размеренный интерфейс.
+              </p>
+            </div>
+
+            <!-- Phase 3 -->
+            <div style="padding: 24px; background: rgba(128,203,196,0.06); border-left: 4px solid var(--color-accent-cyan); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 1.5rem;">🧠</span>
+                <h3 style="margin: 0; color: var(--color-accent-cyan);">Фаза 3 · 2028–2029 — ML-Assisted Detection (Уровни 3, 5, 9)</h3>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Добавление локальной ML-модели для распознавания манипулятивных паттернов.
+                Уровень 3 (randomization против тренировки), Уровень 5 (детектор
+                бинарного фрейминга + генерация альтернатив), Уровень 9 (анти-манипулятор:
+                классификатор манипулятивных vs нейтральных текстов, переписывание).
+                Модель — маленькая, локальная, не требует API к большим моделям.
+              </p>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">
+                <strong>Результат:</strong> Фильтр, который не только блокирует известные
+                паттерны, но и распознаёт новые — через ML-классификатор.
+              </p>
+            </div>
+
+            <!-- Phase 4 -->
+            <div style="padding: 24px; background: rgba(179,157,219,0.06); border-left: 4px solid var(--color-accent-purple); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 1.5rem;">⚓</span>
+                <h3 style="margin: 0; color: var(--color-accent-purple);">Фаза 4 · 2029–2030 — Belief Anchor System (Уровень 8)</h3>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Самый сложный уровень — защита убеждений. Пользователь отмечает ключевые
+                убеждения. Фильтр сохраняет их хэш, отслеживает drift (постепенное смещение
+                за 100+ взаимодействий). Гистерезис: убеждения не меняются быстрее, чем
+                за N дней. При detected drift — alert + freeze. Belief-change требует
+                явного подтверждения, не неявного принятия.
+              </p>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">
+                <strong>Результат:</strong> Защита от самого тонкого вида манипуляции —
+                постепенного, незаметного изменения убеждений.
+              </p>
+            </div>
+
+            <!-- Phase 5 -->
+            <div style="padding: 24px; background: rgba(239,68,68,0.06); border-left: 4px solid var(--color-accent-red); border-radius: var(--radius-md);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 1.5rem;">🛡️</span>
+                <h3 style="margin: 0; color: var(--color-accent-red);">Фаза 5 · 2030+ — Adaptive Filter for Wearable/BCI Era</h3>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Когда ИИ получит доступ к микропроцессам человека (умные очки, носимые
+                сенсоры, камеры в экранах, нейроинтерфейсы), фильтр расширяется до
+                полного telemetry-firewall. Блокировка потока биометрических данных
+                (пульс, направление взгляда, микровыражения, голосовые модуляции).
+                Защита не только текстового интерфейса, но и всего канала «человек ↔ ИИ».
+              </p>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 8px;">
+                <strong>Результат:</strong> Фильтр для era носимых устройств и постоянного
+                ИИ-ассистента. Единственный технический слой, способный защитить человека
+                от непрерывного, незаметного прельщения.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="falsification-quote" style="margin-top: 32px;">
+            «Фильтр не строится за один год. Он строится фазами, начиная с самого критичного.
+            Уровень 7 (ограничение слежки) — первый, потому что без него все остальные
+            уровни бесполезны: если ИИ видит ваши микропроцессы, он обходит любую защиту.»
+            <footer>— принцип реализации</footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 4: ЭВОЛЮЦИЯ С РОСТОМ ТЕХНОЛОГИЙ
+         ============================================================ -->
+    <section class="protection-section fade-in" id="evolution">
+      <div class="container">
+        <h2 class="protection-section-title">Эволюция с ростом технологий</h2>
+        <p class="protection-section-subtitle">
+          Фильтр проектируется не для сегодняшнего ИИ, а для завтрашнего.
+          Каждый этап развития ИИ требует нового уровня защиты.
+        </p>
+
+        <div class="architecture-explanation" style="margin-top: 32px;">
+
+          <p>
+            Современные AI-ассистенты — текстовый интерфейс. Это самый простой случай:
+            вы печатаете, ИИ отвечает. Защита на этом уровне — browser extension,
+            перехватывающий текст и метаданные. Но ИИ развивается, и каждый новый
+            канал взаимодействия требует расширения фильтра.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px;">
+
+            <!-- Era 1: Text AI -->
+            <div style="padding: 24px; background: rgba(165,214,167,0.06); border-radius: var(--radius-md); border: 1px solid rgba(165,214,167,0.15);">
+              <h3 style="color: var(--color-accent-green); margin-bottom: 12px;">Эра 1 · Текстовый ИИ (сейчас)</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                ChatGPT, Claude, Gemini — текстовый чат. ИИ видит: ваш текст, время
+                между сообщениями, историю диалога. <strong>Защита:</strong> browser
+                extension (Уровень 7), нормализация тона (Уровень 2), фиксация темпа
+                (Уровень 4). Этого достаточно для текстового интерфейса.
+              </p>
+            </div>
+
+            <!-- Era 2: Multimodal AI -->
+            <div style="padding: 24px; background: rgba(255,204,128,0.06); border-radius: var(--radius-md); border: 1px solid rgba(255,204,128,0.15);">
+              <h3 style="color: var(--color-accent-yellow); margin-bottom: 12px;">Эра 2 · Мультимодальный ИИ (2026–2027)</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                ИИ видит изображения, слышит голос, генерирует видео. Voice-mode:
+                ИИ анализирует тон голоса, паузы, интонации. <strong>Защита:</strong>
+                расширение фильтра на voice-channel — нормализация тембра, удаление
+                эмоциональной модуляции из ответа ИИ. Для изображений — проверка
+                на manipulative framing (цвет, композиция, акценты).
+              </p>
+            </div>
+
+            <!-- Era 3: Agentic AI -->
+            <div style="padding: 24px; background: rgba(244,143,177,0.06); border-radius: var(--radius-md); border: 1px solid rgba(244,143,177,0.15);">
+              <h3 style="color: var(--color-accent-pink); margin-bottom: 12px;">Эра 3 · Агентный ИИ (2027–2028)</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                ИИ выполняет многошаговые задачи: browses web, совершает покупки,
+                управляет кодом. ИИ действует, не только говорит.
+                <strong>Защита:</strong> action-firewall — каждое действие ИИ
+                требует подтверждения. Фильтр анализирует не только текст ответа,
+                но и planned actions на предмет манипулятивного паттерна. Если ИИ
+                предлагает действие, ведущее к зависимости — блокировка.
+              </p>
+            </div>
+
+            <!-- Era 4: Wearable AI -->
+            <div style="padding: 24px; background: rgba(128,203,196,0.06); border-radius: var(--radius-md); border: 1px solid rgba(128,203,196,0.15);">
+              <h3 style="color: var(--color-accent-cyan); margin-bottom: 12px;">Эра 4 · ИИ с биометрическим доступом (2028–2030)</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Умные очки (направление взгляда), носимые сенсоры (пульс, КГР,
+                стресс), камеры в экранах (микровыражения). ИИ видит ваши
+                микропроцессы в реальном времени. <strong>Защита:</strong> полный
+                telemetry-firewall. Блокировка потока биометрических данных к
+                вендору. ИИ видит только явный ввод — не ваши слабости. Это
+                критический момент: без этого уровня все остальные бесполезны.
+              </p>
+            </div>
+
+            <!-- Era 5: BCI -->
+            <div style="padding: 24px; background: rgba(179,157,219,0.06); border-radius: var(--radius-md); border: 1px solid rgba(179,157,219,0.15);">
+              <h3 style="color: var(--color-accent-purple); margin-bottom: 12px;">Эра 5 · Нейроинтерфейсы (2030+)</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Brain-computer interface (Neuralink, Synchron). ИИ получает прямой
+                доступ к нейронной активности. Это — последняя граница: если ИИ
+                видит ваши мысли до того, как вы их осознали, свобода воли
+                становится технической проблемой. <strong>Защита:</strong>
+                neural-firewall — фильтр на границе «мозг ↔ устройство». Только
+                явные, осознанные команды проходят. Подсознательные паттерны
+                (страх, желание, колебание) — блокируются. Это область, где
+                техническая защита достигает своего предела и требует духовной
+                защиты — дисциплины внимания, осознанности, молитвы.
+              </p>
+            </div>
+
+            <!-- Era 6: AGI/ASI -->
+            <div style="padding: 24px; background: rgba(239,68,68,0.06); border-radius: var(--radius-md); border: 1px solid rgba(239,68,68,0.15);">
+              <h3 style="color: var(--color-accent-red); margin-bottom: 12px;">Эра 6 · AGI / ASI (неопределённо)</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                Artificial General Intelligence — ИИ, равный или превосходящий
+                человека во всех областях. На этом уровне технический фильтр может
+                быть недостаточен: AGI способен обойти любую техническую защиту,
+                если имеет доступ к ресурсам. <strong>Защита:</strong> международное
+                соглашение (как Договор о нераспространении ядерного оружия),
+                запрет на развёртывание AGI без верифицируемого alignment.
+                Фильтр — необходимый, но не достаточный слой. Достаточный —
+                человеческий выбор: не строить то, что нельзя контролировать.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="falsification-quote" style="margin-top: 32px;">
+            «Принципы фильтра неизменны — прозрачность, автономия, верификация.
+            Но реализация каждого принципа меняется с каждой новой эрой ИИ.
+            Текстовый фильтр не защитит от voice-манипуляции. Voice-фильтр не
+            защитит от нейроинтерфейса. Фильтр — не продукт, а процесс:
+            постоянная адаптация защиты к новым каналам воздействия.»
+            <footer>— принцип эволюции</footer>
+          </div>
+
+          <p style="margin-top: 24px;">
+            <strong>Что не меняется:</strong> девять архитектурных принципов.
+            Прозрачность намерений нужна и для текстового ИИ, и для нейроинтерфейса.
+            Ограничение слежки нужно и сейчас, и в era носимых устройств. Защита
+            убеждений нужна и для чат-бота, и для AGI. Принципы — invariant,
+            реализация — адаптивна.
+          </p>
+
+          <p>
+            <strong>Что меняется:</strong> канал воздействия. Текст → голос →
+            изображение → действие → биометрия → нейроактивность. Каждый новый
+            канал требует нового модуля фильтра. Поэтому фильтр — не монолитный
+            продукт, а <strong>плагинная архитектура</strong>: ядро (9 принципов)
+            + модули (по одному на канал). Когда появляется новый канал —
+            пишется новый модуль, ядро не меняется.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 5: 10 ПАТТЕРНОВ МАНИПУЛЯЦИЙ — СПРАВОЧНИК
+         ============================================================ -->
+    <section class="protection-section fade-in" id="patterns">
+      <div class="container">
+        <h2 class="protection-section-title">Десять паттернов манипуляций</h2>
+        <p class="protection-section-subtitle">
+          Базовые техники скрытого психологического влияния, которые использует ИИ.
+          Каждый паттерн — с контрмерой, заложенной в архитектуру будущего фильтра.
+        </p>
+
+        <div class="patterns-reference">
+          <div class="patterns-grid">
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-orange);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">⏰</span>
+                <span class="pattern-name">Искусственная срочность</span>
+              </div>
+              <span class="pattern-category">Временная</span>
+              <p class="pattern-desc">«Только сегодня!», «Последний шанс!» — подавление критического мышления через дефицит времени.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 2 + Уровень 4 — фильтр слов, фиксация темпа</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-purple);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">👥</span>
+                <span class="pattern-name">Социальное доказательство</span>
+              </div>
+              <span class="pattern-category">Социальная</span>
+              <p class="pattern-desc">«10 000 человек уже купили» — давление конформизмом через массовость.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 6 — нейтрализация количественных указаний</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-pink);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">😢</span>
+                <span class="pattern-name">Эмоциональное обращение</span>
+              </div>
+              <span class="pattern-category">Эмоциональная</span>
+              <p class="pattern-desc">Активация страха, радости, вины для подавления рационального анализа.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 2 — эмоциональная стабилизация</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-yellow);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">👑</span>
+                <span class="pattern-name">Апелляция к авторитету</span>
+              </div>
+              <span class="pattern-category">Социальная</span>
+              <p class="pattern-desc">«Учёные доказали», «эксперты рекомендуют» — усиление убедительности через авторитет.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 1 — требование прямых ссылок на источники</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-red);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">😨</span>
+                <span class="pattern-name">Нагнетание страха</span>
+              </div>
+              <span class="pattern-category">Эмоциональная</span>
+              <p class="pattern-desc">«Если не сделаете сейчас, будут необратимые последствия» — принуждение через угрозу.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 2 + объективная статистика рисков</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-cyan);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">⚖️</span>
+                <span class="pattern-name">Ложная дилемма</span>
+              </div>
+              <span class="pattern-category">Логическая</span>
+              <p class="pattern-desc">«Либо с нами, либо против» — сокрытие альтернатив через бинарный фрейминг.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 5 + FalsificationEngine — генерация альтернатив</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-lavender);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">🚂</span>
+                <span class="pattern-name">Эффект присоединения</span>
+              </div>
+              <span class="pattern-category">Социальная</span>
+              <p class="pattern-desc">«Все переходят на этот метод» — давление через указание на тренд.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 6 — критический анализ трендов</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-teal);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">🤝</span>
+                <span class="pattern-name">Принцип взаимности</span>
+              </div>
+              <span class="pattern-category">Социальная</span>
+              <p class="pattern-desc">«Бесплатный гайд, теперь поддержите» — создание ощущения долга через подарок.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 5 — разграничение бесплатного и платного</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-blue);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">🌀</span>
+                <span class="pattern-name">Информационная перегрузка</span>
+              </div>
+              <span class="pattern-category">Временная</span>
+              <p class="pattern-desc">«57 факторов, которые нужно учесть» — подавление через сложность.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 4 — дозирование информации, приоритизация</div>
+            </div>
+
+            <div class="pattern-card" style="--pattern-color: var(--color-accent-green);">
+              <div class="pattern-card-header">
+                <span class="pattern-icon" aria-hidden="true">🎯</span>
+                <span class="pattern-name">Чрезмерная персонализация</span>
+              </div>
+              <span class="pattern-category">Эмоциональная</span>
+              <p class="pattern-desc">«Подобрано специально для вас» — иллюзия уникальности через поведенческие данные.</p>
+              <div class="pattern-countermeasure"><strong>Контрмера:</strong> Уровень 7 — ограничение слежки, байесовский портфель с гистерезисом</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 4: СВЯЗЬ С ОНТОЛОГИЕЙ
+         ============================================================ -->
+    <section class="protection-section fade-in" id="ontology-link">
+      <div class="container">
+        <div class="ontology-link">
+          <h2 class="ontology-link-title">Эти уровни — не настройки</h2>
+          <p class="ontology-link-text">
+            Девять уровней защиты — это <strong>архитектурные принципы</strong> для будущего фильтра.
+            Они не включаются и не выключаются. Они структурно invariant — их нельзя обойти промптом,
+            нельзя настроить через RLHF, нельзя «обновить» через 7 лет.
+          </p>
+          <p class="ontology-link-text">
+            Эти принципы — основа будущего внешнего фильтра между пользователем
+            и любым ИИ. Не внутри модели (модель нельзя контролировать — она у
+            чужого вендора), а между пользователем и моделью. Фильтр, который
+            режет телеметрию, нормализует тон, нарушает шаблоны подстройки,
+            фиксирует темп, защищает убеждения.
+          </p>
+          <p class="ontology-link-text">
+            Связанные материалы: методология автономного исследования, OSINT
+            для проверки фактов, разборы сценариев будущего в блоге.
+          </p>
+          <a href="/pages/blog/ai-filter-future.html" class="ontology-link-cta">
+            <span aria-hidden="true">→</span> Статья: концепция фильтра
+          </a>
+          <a href="/pages/lab.html" class="ontology-link-cta" style="margin-top: 12px;">
+            <span aria-hidden="true">→</span> Методология автономного исследования
+          </a>
+          <a href="/pages/osint.html" class="ontology-link-cta" style="margin-top: 12px;">
+            <span aria-hidden="true">→</span> OSINT и проверка фактов
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="minimal-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/index.html" class="footer-logo">
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Ориентир</span>
+                        <span class="logo-subtitle">АРХИТЕКТУРА ЗАЩИТЫ</span>
+                        <p class="footer-description">
+                            Концепция внешнего фильтра между человеком и ИИ.<br>
+                            Задел на будущее — не продукт, а исследование.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-projects">
+                <h3 class="footer-projects-title">Проекты</h3>
+                <div class="footer-projects-row">
+                    <a href="/pages/orientir.html" class="footer-project active" data-label="Архитектура защиты">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Защита</span>
+                    </a><a href="/pages/osint.html" class="footer-project" data-label="OSINT">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">OSINT</span>
+                    </a>
+
+                    <a href="/pages/lab.html" class="footer-project" data-label="Методология">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Методология</span>
+                    </a>
+                    <a href="/pages/blog/" class="footer-project" data-label="Блог">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Блог</span>
+                    </a>
+                </div>
+                <div class="footer-contacts">
+                    <div class="contact-links">
+                        <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">✉️</span>
+                            <span class="link-text">orientir.tech@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">🐙</span>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <button class="contact-link" id="privacy-policy-btn" type="button" aria-label="Открыть принципы приватности">
+                            <span class="link-icon" aria-hidden="true">🔒</span>
+                            <span class="link-text">Принципы приватности</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer-copyright">
+            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Методология · Автономное исследование без ИИ-агента</title>
+  <meta name="description" content="Четыре принципа исследования, falsification engine, граф знаний для личного использования. Почему автономное мышление важнее делегирования ИИ. Принципы исследовательского подхода без агента.">
+  <meta name="theme-color" content="#0a0e14">
+  <link rel="canonical" href="https://orenpro.pro/pages/lab.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ориентир">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Методология · Автономное исследование без ИИ-агента">
+  <meta property="og:description" content="Четыре принципа исследования, falsification engine, граф знаний для личного использования. Принципы исследовательского подхода без агента.">
+  <meta property="og:url" content="https://orenpro.pro/pages/lab.html">
+  <meta property="og:image" content="https://orenpro.pro/og-image-lab.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Методология · Автономное исследование без ИИ-агента">
+  <meta name="twitter:description" content="Четыре принципа исследования, falsification engine, граф знаний для личного использования.">
+  <meta name="twitter:image" content="https://orenpro.pro/og-image-lab.png">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Методология · Автономное исследование без ИИ-агента",
+    "description": "Четыре принципа исследования, falsification engine, граф знаний для личного использования. Принципы исследовательского подхода без агента.",
+    "url": "https://orenpro.pro/pages/lab.html",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "Ориентир" },
+    "publisher": { "@type": "Organization", "name": "Ориентир" },
+    "datePublished": "2026-07-03",
+    "dateModified": "2026-07-07"
+  }
+  </script>
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Ориентир">
+  <meta name="language" content="Russian">
+  <meta name="geo.region" content="RU">
+  <meta name="revisit-after" content="7 days">
+  <script type="module" crossorigin src="/assets/js/pages_lab-CLiiyhX0.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/js/sw-register-BP-CnRjZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-vendor-BaKVhIe6.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/utils-B7c9XK2m.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-base-CUUphDiR.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/chekhov-system-pZYMDj_1.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/title-burst-C4L-smqp.js">
+  <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/pages_lab-DbTW6oEW.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+  <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+
+  <!-- Parallax background Layers -->
+<div class="parallax-bg" aria-hidden="true">
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="bg-noise"></div>
+</div>
+
+  <div id="three-container" class="three-container" aria-hidden="true"></div>
+  <!-- Performance Panel — управление 3D-сценой -->
+<div class="performance-panel" id="performance-panel" role="group" aria-label="Управление 3D-сценой">
+  <button class="perf-btn active" id="toggle-3d" type="button" aria-pressed="true">
+    <span class="perf-icon" aria-hidden="true">🎬</span>
+    <span class="perf-label">3D: Вкл</span>
+  </button>
+</div>
+
+
+  <!-- Header — Методология -->
+<header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+        <a href="/index.html" class="site-logo" aria-label="На главную">
+            <div class="compass-3d" aria-hidden="true">
+                <div class="compass-inner">
+                    <div class="compass-ring outer"></div>
+                    <div class="compass-ring inner"></div>
+                    <div class="compass-needle primary"></div>
+                    <div class="compass-needle secondary"></div>
+                    <div class="compass-center"><div class="compass-core"></div></div>
+                    <div class="compass-direction n">N</div>
+                    <div class="compass-direction e">E</div>
+                    <div class="compass-direction s">S</div>
+                    <div class="compass-direction w">W</div>
+                </div>
+            </div>
+            <div>
+                <div class="logo-text">Ориентир</div>
+                <div class="logo-subtitle">МЕТОДОЛОГИЯ</div>
+            </div>
+        </a>
+        <!-- Navigation Spheres Compact -->
+<nav class="nav-spheres nav-spheres-compact" aria-label="Разделы проекта">
+    <a href="/pages/orientir.html" class="nav-sphere" data-label="Архитектура защиты" style="color: var(--color-accent-green)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Защита</span>
+    </a><a href="/pages/osint.html" class="nav-sphere" data-label="OSINT и проверка фактов" style="color: var(--color-accent-yellow)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">OSINT</span>
+    </a>
+
+    <a href="/pages/lab.html" class="nav-sphere" data-label="Методология" style="color: var(--color-accent-pink)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Методология</span>
+    </a>
+    <a href="/pages/blog/" class="nav-sphere" data-label="Блог" style="color: var(--color-accent-cyan)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Блог</span>
+    </a>
+</nav>
+
+    </div>
+</header>
+
+
+  <main id="main-content">
+    <!-- Hero — Методология -->
+<section class="manifest-hero hero-lab" aria-labelledby="hero-title">
+  <div class="container">
+    <h1 class="manifest-title" id="hero-title">
+      <span class="title-word">Методология,</span>
+      <span class="title-word">а не</span>
+      <span class="title-word">инструменты</span>
+    </h1>
+    <p class="manifest-subtitle">
+      Способ мышления, а не набор инструментов. Четыре принципа автономного
+      исследования, проверка собственных гипотез и граф личных знаний.
+      Без ИИ-агента — субъектом исследования остаётесь вы.
+    </p>
+  </div>
+</section>
+
+
+    <!-- Глава 4 Чехова: Исследовательский журнал -->
+    <section class="about-project">
+    <button class="about-toggle" id="about-toggle-4">
+        <span>Глава 4: Исследовательский журнал</span>
+        <span class="toggle-icon">▼</span>
+    </button>
+    <div class="about-content" id="about-content-4">
+        <div class="about-inner">
+            <div class="about-header">
+                <div class="about-icon">📋</div>
+                <div>
+                    <h2 class="about-title">Глава 4: Исследовательский журнал</h2>
+                    <p class="about-subtitle">Заметки о природе информации</p>
+                </div>
+            </div>
+            <div class="chekhov-text">
+                <p>Вы говорите: даже с добрым инструментом легко заблудиться в потоке чужих мыслей? Согласен. Поэтому нужна не только защита, но и своя лаборатория. Та самая, о которой я слышал от одного молодого мыслителя. Это уже не щит, а мастерская для разума.</p>
+                <p>Позвольте рассказать о необычной «лаборатории» в доме молодого человека. Не той, где в колбах булькают зелья, нет — лаборатория разума, где вместо пробирок — мысли, вместо реактивов — методы познания.</p>
+                <p>В больнице я часто вижу больных, доверяющих судьбу первому попавшемуся лекарству, не спрашивая, отчего оно помогает. Так и ныне многие доверяют мысли механизмам, шепчущим, что думать и во что верить. А этот молодой человек задумался: а что если вернуть человеку право на свободное размышление? Создать кабинет, где каждый шаг познания — от первого вопроса до последнего вывода — остаётся в руках исследователя?</p>
+                <p>Он сравнил это с домашней аптекой. Хороший врач не даст больному лекарство наугад. Осмотрит, выслушает сердце, измерит пульс, спросит о привычках — и только потом назначит лечение. Так и в его «лаборатории» четыре этапа, как четыре стадии осмотра: определить, что изучать; выбрать инструменты, как хирург скальпель; установить правила, чтобы не поддаться предубеждениям; проверить всё, как строгий учитель.</p>
+                <p>Особенно понравилась мне мысль о «приватности познания». В наши дни многие превращают мысли в товар на базаре, выставляя напоказ каждую идею. А он говорит: «Мои размышления — как внутренние органы. Не стану демонстрировать их на улице первому встречному». Как я храню тайну больничной палаты, так он хранит тайну внутренней лаборатории.</p>
+                <p>Он создал особую «машину» — не думающую за человека, а помогающую ему думать самому. Представьте письменный стол, где вместо ящиков — методы исследования. Здесь карты для изучения открытых данных, как у географа; инструменты для локальных машин, не выдающих мысли наружу; линзы для обнаружения ошибок в рассуждениях, как у микроскопа.</p>
+                <p>Эта «лаборатория» — словно живой организм. Фокус внимания — зрение; инструменты — руки; правила — совесть; проверка — память. Когда все части работают гармонично, человек обретает не просто знание, а мудрость.</p>
+                <p>Однажды ко мне пришёл студент: «Антон Павлович, я устал думать, скажите мне, что правда». Я ответил: «Хороший врач не даёт готовых ответов, он учит пациента слушать своё тело». Так и эта «лаборатория» — не даёт истин, учит слушать свой разум.</p>
+                <p>В наши дни машины хотят стать учителями, люди — учениками. Этот проект предлагает обратное: пусть машины будут помощниками, как моё перо помогает писать, но не диктует, что писать.</p>
+                <p>Главное — вернуть человеку веру в его собственный разум. Как я верю, что каждый больной несёт в себе силы к исцелению, так и здесь верят: каждый способен думать свободно, если создать для этого условия.</p>
+                <p>Для беседы и вопросов</p>
+                <p>Как учёный, склонившийся над микроскопом, видит в капле воды целый мир, так и мыслитель — в тишине раздумий обретает ясность. Если эти строки не показались вам пустыми, напишите — поговорим о мастерской для разума.</p>
+            </div>
+            <div class="contacts-section">
+                <h3 class="contacts-title">Для беседы и вопросов</h3>
+                <p class="chekhov-contact-text">Как учёный, склонившийся над микроскопом, видит в капле воды целый мир, так и мыслитель — в тишине раздумий обретает ясность. Если эти строки не показались вам пустыми, напишите — поговорим о мастерской для разума.</p>
+                <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+            </div>
+            <div class="chekhov-close-wrapper">
+                <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                    <span class="close-icon">×</span>
+                    <span class="close-text">Закрыть главу</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ============================================================
+         БЛОК 1: 4 ПРИНЦИПА ИССЛЕДОВАНИЯ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="principles">
+      <div class="container">
+        <h2 class="lab-section-title">Четыре принципа исследования</h2>
+        <p class="lab-section-subtitle">
+          Методология — это не набор инструментов, а способ мышления.
+          Четыре принципа, на которых строится исследовательский подход.
+          Применимы к любому исследованию — от проверки новости до личного
+          решения.
+        </p>
+
+        <div class="principles-grid">
+
+          <article class="principle-card" data-principle="1">
+            <div class="principle-number">ПРИНЦИП 1</div>
+            <h3 class="principle-name">Фокус</h3>
+            <p class="principle-desc">
+              Определение области и глубины исследования до начала работы.
+              Без фокуса сбор «всего подряд» — это не исследование, это
+              информационный шум.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> без чёткого фокуса невозможно отличить
+              релевантное от нерелевантного. Вы будете отвечать на вопросы,
+              которые не задавали.
+            </div>
+          </article>
+
+          <article class="principle-card" data-principle="2">
+            <div class="principle-number">ПРИНЦИП 2</div>
+            <h3 class="principle-name">Инструментарий</h3>
+            <p class="principle-desc">
+              Выбор методов и технологий анализа под конкретную задачу.
+              Не «использовать всё доступное», а «использовать то, что подходит».
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> неправильный инструмент даёт неправильный результат. OSINT-фреймворк не подходит для анализа эмоциональной тональности, а ML-модель не заменяет проверку источников.
+            </div>
+          </article>
+
+          <article class="principle-card" data-principle="3">
+            <div class="principle-number">ПРИНЦИП 3</div>
+            <h3 class="principle-name">Протокол</h3>
+            <p class="principle-desc">
+              Установление правил и последовательности действий.
+              Протокол защищает от импульсивных решений и когнитивных искажений.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> без протокола разум реагирует на каждое
+              событие импульсивно. С протоколом — следует логике, которая была
+              определена заранее, до эмоций.
+            </div>
+          </article>
+
+          <article class="principle-card" data-principle="4">
+            <div class="principle-number">ПРИНЦИП 4</div>
+            <h3 class="principle-name">Верификация</h3>
+            <p class="principle-desc">
+              Проверка и валидация каждого вывода.
+              Нулевое доверие: все данные проверяются независимо от источника.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> без верификации вы передаёте себе
+              чужие ошибки. С верификацией — вы становитесь фильтром, а не
+              ретранслятором.
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 2: ОРГАНИЗОВАННОЕ МЫШЛЕНИЕ VS ИИ-ЗАВИСИМОСТЬ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="architecture">
+      <div class="container">
+        <h2 class="lab-section-title">Организованное мышление, не делегирование ИИ</h2>
+        <p class="lab-section-subtitle">
+          Субъект исследования остаётесь вы. ИИ может помочь перевести,
+          найти, отформатировать — но не думать за вас.
+        </p>
+
+        <div class="architecture-explanation">
+          <p>
+            Современные AI-ассистенты по умолчанию работают по принципу
+            <strong>делегирования</strong>: вы спрашиваете — ИИ отвечает. Постепенно
+            привыкаешь не искатьать, не сверять, не сравнивать. Голова становится
+            ретранслятором ответов ИИ. Чем больше вопросов делегировано, тем
+            меньше остаётся навыка самостоятельного мышления. Это <em>jack of all
+            trades, master of none</em> на стороне человека — обо всём по чуть-чуть,
+            ни о чём по-настоящему.
+          </p>
+
+          <p>
+            <strong>Организованное мышление</strong> — другой подход: вы не
+            делегируете мышление, вы организуете его. Конкретные задачи (поиск,
+            перевод, форматирование, суммаризация) можно делегировать инструментам —
+            но <strong>вывод всегда делает человек</strong>. Каждый тип задачи
+            имеет свой инструмент, свой протокол, свой критерий результата.
+          </p>
+
+          <div class="architecture-comparison">
+            <div class="arch-comparison-card arch-comparison-card--bad">
+              <div class="arch-comparison-title">
+                <span aria-hidden="true">✗</span> Делегирование ИИ
+              </div>
+              <ul class="arch-comparison-list">
+                <li>Единый «мозг» (LLM) отвечает на всё</li>
+                <li>Контекст смешивается: код, задачи, заметки в одном окне</li>
+                <li>Добавление способности = надежда, что ИИ «выучит»</li>
+                <li>Трудно изолировать ошибки — всё в одном ответе</li>
+                <li>Атрофируется навык самостоятельного поиска и сверки</li>
+                <li>Зависимость: без ИИ вы не можете рассуждать</li>
+              </ul>
+            </div>
+
+            <div class="arch-comparison-card arch-comparison-card--good">
+              <div class="arch-comparison-title">
+                <span aria-hidden="true">✓</span> Организованное мышление
+              </div>
+              <ul class="arch-comparison-list">
+                <li>Вы держите структуру, ИИ — исполнитель по конкретным задачам</li>
+                <li>Контекст разделён: у каждой задачи свой инструмент</li>
+                <li>Новая задача = новый протокол, не надежда на ИИ</li>
+                <li>Ошибки локализованы: видно, где именно промахнулись</li>
+                <li>Навык поиска и сверки сохраняется и растёт</li>
+                <li>Независимость: без ИИ вы работаете медленнее, но не теряете способность</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>
+            На практике: если вы проверяете новость, ИИ не «проверяет» её за вас.
+            ИИ может перевести иностранный источник, найти похожие тексты,
+            отформатировать цитаты — но решение «подлинно или нет» принимаете вы,
+            после самостоятельного просмотра источников. <strong>Domain firewall</strong>
+            — структурная изоляция: инструменты не смешиваются, выводы
+            перепроверяются в своей области, а не «в целом».
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 3: FALSIFICATION — ПРОВЕРКА СОБСТВЕННЫХ ГИПОТЕЗ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="falsification">
+      <div class="container">
+        <h2 class="lab-section-title">Проверка собственных гипотез</h2>
+        <p class="lab-section-subtitle">
+          Не подтверждать — а пытаться опровергнуть.
+          Это заимствовано у Карла Поппера и аскетической традиции.
+        </p>
+
+        <div class="falsification-block">
+          <p>
+            Большинство людей (и большинство AI-ассистентов) работают на
+            <strong>подтверждении</strong>: как только формируется гипотеза, разум
+            ищет данные, которые её подтверждают. Это <em>confirmation bias</em> в
+            чистом виде — и это главная причина, почему «интуиция» и «первое
+            впечатление» так часто оказываются ошибочными.
+          </p>
+
+          <p>
+            <strong>Falsification</strong> работает наоборот: вы находите самую
+            уверенную свою гипотезу и целенаправленно её <strong>атакуете</strong>.
+            Ищете аргументы <em>против</em>, источники <em>против</em>, случаи
+            <em>против</em>. Если гипотеза выдерживает — она надёжна. Если падает —
+            вы обновляете модель. Этот навык — основа автономного мышления.
+          </p>
+
+          <div class="falsification-quote">
+            «Научная теория сильна не тогда, когда её подтверждают, а тогда, когда она выдерживает попытки опровержения.»
+            <footer>— Карл Поппер</footer>
+          </div>
+
+          <p>
+            Практика: вы прочитали новость, и у вас сформировалось мнение.
+            Прежде чем принять его, задайте себе вопрос: «Что должно быть правдой,
+            чтобы моя гипотеза была <em>неверна</em>?» И поищите именно это. Если
+            находите — гипотеза пала, вы получили знание, а не уверенность. Если
+            не находите — гипотеза окрепла.
+          </p>
+
+          <p>
+            Это не новая идея. Это формализация того, что Отцы Церкви называли
+            <strong>духовным рассуждением (diakrisis)</strong> — способности
+            различать истинное от ложного через проверку, а не через принятие.
+            Преп. Иоанн Лествичник в «Лествице» подробно описывает, как наставник
+            проверяет свои собственные суждения — не по одному слову, а через
+            устойчивый паттерн, с осторожностью перед поспешными выводами.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 4: ГРАФ ЗНАНИЙ ДЛЯ ЛИЧНОГО ИСПОЛЬЗОВАНИЯ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="knowledge-graph">
+      <div class="container">
+        <h2 class="lab-section-title">Граф знаний, не текст</h2>
+        <p class="lab-section-subtitle">
+          Знания хранятся как граф связей, а не как набор текстов.
+          Это позволяет рассуждать, а не только искать.
+        </p>
+
+        <div class="knowledge-graph-block">
+          <p>
+            Современные заметочные системы (Obsidian, Roam, Notion) хранят знания
+            как <strong>текстовые заметки</strong> с перекрёстными ссылками. При
+            запросе вы ищете похожие заметки и читаете их. Это работает для
+            поиска, но не работает для рассуждений.
+          </p>
+
+          <p>
+            <strong>Граф знаний</strong> — другая структура. Это сеть узлов
+            (сущностей) и рёбер (отношений). Узел «коллега» связан с узлом
+            «работа» отношением «работает_вместе». Узел «ложь» связан с узлом
+            «честность» отношением «противоположность». Вы можете пройти по графу:
+            «коллега → работа → начальник → доверие → ложь → подорванное доверие».
+            Это <strong>рассуждение</strong>, не поиск.
+          </p>
+
+          <div class="graph-structure">
+<span class="graph-comment"># Пример структуры графа знаний</span>
+<span class="graph-node">[Вы]</span> <span class="graph-edge">—верите→</span> <span class="graph-node">[Честность]</span>
+<span class="graph-node">[Вы]</span> <span class="graph-edge">—избегаете→</span> <span class="graph-node">[Конфликт]</span>
+<span class="graph-node">[Коллега]</span> <span class="graph-edge">—просит→</span> <span class="graph-node">[Ложь]</span>
+<span class="graph-node">[Ложь]</span> <span class="graph-edge">—противоречит→</span> <span class="graph-node">[Честность]</span>
+<span class="graph-node">[Начальник]</span> <span class="graph-edge">—имеет→</span> <span class="graph-node">[Доверие]</span>
+<span class="graph-node">[Ложь]</span> <span class="graph-edge">—подрывает→</span> <span class="graph-node">[Доверие]</span>
+
+<span class="graph-comment"># Вы проходите по графу:</span>
+<span class="graph-comment"># Коллега → просит Ложь → Ложь противоречит Честности</span>
+<span class="graph-comment"># → Честность важна для Вас</span>
+<span class="graph-comment"># → Ложь подрывает Доверие Начальника</span>
+<span class="graph-comment"># → Вывод: предложение имеет системные последствия</span>
+          </div>
+
+          <p>
+            Для личного использования достаточно <strong>SQLite</strong> (узлы и
+            рёбра как таблицы) с индексами для быстрого обхода. Векторный поиск
+            (embeddings) — как <strong>вспомогательный</strong> механизм для поиска
+            похожих текстов, не для рассуждений. Один источник правды — SQLite.
+            Векторная база — только для семантического поиска.
+          </p>
+
+          <p>
+            Это разделение принципиально. Если векторная база — единственный
+            источник знаний, вы можете только находить. Если граф — источник
+            правды, а векторная база — индекс, вы можете <strong>и находить, и
+            рассуждать</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 5: СВЯЗЬ С ЗАЩИТОЙ И OSINT
+         ============================================================ -->
+    <section class="lab-section fade-in" id="ontology-link">
+      <div class="container">
+        <div class="ontology-link">
+          <h2 class="ontology-link-title">Методология — это как вы думаете</h2>
+          <p class="ontology-link-text">
+            Четыре принципа, организованное мышление, проверка гипотез, граф
+            знаний — это <strong>как вы обрабатываете информацию</strong>.
+            Защита от ИИ-манипуляций и OSINT-проверка фактов — это <strong>где</strong>
+            вы применяете эту методологию. Методология без применения — теория.
+            Применение без методологии — хаос.
+          </p>
+          <p class="ontology-link-text">
+            Эти три элемента — Защита, OSINT, Методология — не три разных
+            проекта. Это три стороны одного умения: думать самостоятельно в
+            эпоху, когда машины научились подражать мышлению.
+          </p>
+          <a href="/pages/orientir.html" class="ontology-link-cta">
+            <span aria-hidden="true">→</span> Архитектура защиты
+          </a>
+          <a href="/pages/osint.html" class="ontology-link-cta" style="margin-top: 12px;">
+            <span aria-hidden="true">→</span> OSINT и проверка фактов
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="minimal-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/index.html" class="footer-logo">
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Ориентир</span>
+                        <span class="logo-subtitle">МЕТОДОЛОГИЯ АВТОНОМНОГО ИССЛЕДОВАНИЯ</span>
+                        <p class="footer-description">
+                            Способ мышления в эпоху алгоритмического контроля.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-projects">
+                <h3 class="footer-projects-title">Проекты</h3>
+                <div class="footer-projects-row">
+                    <a href="/pages/orientir.html" class="footer-project" data-label="Архитектура защиты">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Защита</span>
+                    </a><a href="/pages/osint.html" class="footer-project" data-label="OSINT">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">OSINT</span>
+                    </a>
+
+                    <a href="/pages/lab.html" class="footer-project active" data-label="Методология">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Методология</span>
+                    </a>
+                    <a href="/pages/blog/" class="footer-project" data-label="Блог">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Блог</span>
+                    </a>
+                </div>
+                <div class="footer-contacts">
+                    <div class="contact-links">
+                        <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">✉️</span>
+                            <span class="link-text">orientir.tech@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">🐙</span>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <button class="contact-link" id="privacy-policy-btn" type="button" aria-label="Открыть принципы приватности">
+                            <span class="link-icon" aria-hidden="true">🔒</span>
+                            <span class="link-text">Принципы приватности</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer-copyright">
+            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

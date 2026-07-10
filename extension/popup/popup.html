@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ориентир — Защита</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 340px;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0e14;
+      color: #e6eef5;
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px 14px;
+      background: linear-gradient(135deg, rgba(165,214,167,0.08), rgba(79,195,247,0.05));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(165,214,167,0.9), rgba(79,195,247,0.6));
+      box-shadow: 0 0 12px rgba(165,214,167,0.4);
+      position: relative;
+    }
+
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255,255,255,0.8);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #e6eef5;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-subtitle {
+      font-size: 10px;
+      color: rgba(160,180,210,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 2px;
+      background: #888;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle input:checked + .toggle-slider {
+      background: rgba(165,214,167,0.3);
+      border-color: rgba(165,214,167,0.4);
+    }
+
+    .toggle input:checked + .toggle-slider::before {
+      transform: translateX(20px);
+      background: #a5d6a7;
+      box-shadow: 0 0 8px rgba(165,214,167,0.6);
+    }
+
+    .status {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+    }
+
+    .status-label {
+      font-size: 12px;
+      color: rgba(160,180,210,0.9);
+      font-weight: 500;
+    }
+
+    .status-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e6eef5;
+    }
+
+    .status-value.active { color: #a5d6a7; }
+    .status-value.inactive { color: #666; }
+
+    .stats {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .stats-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(160,180,210,0.7);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat-block {
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .stat-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffcc80;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-number.green { color: #a5d6a7; }
+    .stat-number.blue { color: #4fc3f7; }
+
+    .stat-label {
+      font-size: 10px;
+      color: rgba(160,180,210,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .domains {
+      padding: 14px 20px;
+      max-height: 140px;
+      overflow-y: auto;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .domains-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(160,180,210,0.7);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .domain-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 0;
+      font-size: 11px;
+    }
+
+    .domain-name {
+      color: rgba(200,220,240,0.9);
+      font-family: 'JetBrains Mono', monospace;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 200px;
+    }
+
+    .domain-count {
+      color: #ef5350;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .domains-empty {
+      font-size: 11px;
+      color: rgba(160,180,210,0.5);
+      font-style: italic;
+      padding: 8px 0;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: #e6eef5;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .btn-primary {
+      background: rgba(165,214,167,0.1);
+      border-color: rgba(165,214,167,0.3);
+      color: #a5d6a7;
+    }
+
+    .btn-primary:hover {
+      background: rgba(165,214,167,0.15);
+    }
+
+    .footer {
+      padding: 10px 20px;
+      background: rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: rgba(160,180,210,0.6);
+    }
+
+    .footer a {
+      color: #4fc3f7;
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    /* Скроллбар */
+    .domains::-webkit-scrollbar { width: 4px; }
+    .domains::-webkit-scrollbar-track { background: transparent; }
+    .domains::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <div class="logo-title">Ориентир</div>
+        <div class="logo-subtitle">Защита от слежки</div>
+      </div>
+    </div>
+    <label class="toggle">
+      <input type="checkbox" id="toggle-enabled" checked>
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+
+  <div class="status">
+    <div class="status-row">
+      <span class="status-label">Состояние</span>
+      <span class="status-value active" id="status-state">Активна</span>
+    </div>
+    <div class="status-row">
+      <span class="status-label">Текущий сайт</span>
+      <span class="status-value" id="status-site">—</span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stats-title">Статистика</div>
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-number green" id="stat-session">0</div>
+        <div class="stat-label">За сессию</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number" id="stat-total">0</div>
+        <div class="stat-label">Всего</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="domains">
+    <div class="domains-title">Заблокированные домены</div>
+    <div id="domains-list">
+      <div class="domains-empty">Пока ничего не заблокировано</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" id="btn-reset-session">Сброс сессии</button>
+    <button class="btn btn-primary" id="btn-options">Настройки</button>
+  </div>
+
+  <div class="footer">
+    <span>Уровень 7 · v0.1</span>
+    <a href="https://orenpro.pro/pages/orientir.html" target="_blank">Подробнее →</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

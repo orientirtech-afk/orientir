@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Манифест Ориентира: почему мы строим фильтр, а не ИИ-агента · Блог Ориентир</title>
+  <meta name="description" content="Почему проект Ориентир отказался от строительства ИИ-агента и сфокусировался на внешнем фильтре. Архитектурные, этические и философские основания выбора.">
+  <meta name="theme-color" content="#0a0e14">
+  <link rel="canonical" href="https://orenpro.pro/pages/blog/manifesto.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ориентир">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Манифест Ориентира: почему мы строим фильтр, а не ИИ-агента">
+  <meta property="og:description" content="Почему проект Ориентир отказался от ИИ-агента и сфокусировался на внешнем фильтре. Архитектурные, этические и философские основания.">
+  <meta property="og:url" content="https://orenpro.pro/pages/blog/manifesto.html">
+  <meta property="og:image" content="https://orenpro.pro/og-image-blog.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Манифест Ориентира: почему мы строим фильтр, а не ИИ-агента",
+    "articleSection": "Манифест",
+    "datePublished": "2026-07-10",
+    "dateModified": "2026-07-10",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "Ориентир" },
+    "publisher": { "@type": "Organization", "name": "Ориентир" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://orenpro.pro/pages/blog/manifesto.html" }
+  }
+  </script>
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Ориентир">
+  <meta name="language" content="Russian">
+  <meta name="geo.region" content="RU">
+  <meta name="revisit-after" content="7 days">
+  <script type="module" crossorigin src="/assets/js/sw-register-BP-CnRjZ.js"></script>
+  <script type="module" crossorigin src="/assets/js/utils-B7c9XK2m.js"></script>
+  <script type="module" crossorigin src="/assets/js/title-burst-C4L-smqp.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/page-blog-D65dITlW.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+
+  <!-- Parallax background Layers -->
+<div class="parallax-bg" aria-hidden="true">
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="bg-noise"></div>
+</div>
+
+  <!-- Header — Блог -->
+<header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+        <a href="/index.html" class="site-logo" aria-label="На главную">
+            <div class="compass-3d" aria-hidden="true">
+                <div class="compass-inner">
+                    <div class="compass-ring outer"></div>
+                    <div class="compass-ring inner"></div>
+                    <div class="compass-needle primary"></div>
+                    <div class="compass-needle secondary"></div>
+                    <div class="compass-center"><div class="compass-core"></div></div>
+                    <div class="compass-direction n">N</div>
+                    <div class="compass-direction e">E</div>
+                    <div class="compass-direction s">S</div>
+                    <div class="compass-direction w">W</div>
+                </div>
+            </div>
+            <div>
+                <div class="logo-text">Ориентир</div>
+                <div class="logo-subtitle">БЛОГ И ИССЛЕДОВАНИЯ</div>
+            </div>
+        </a>
+        <!-- Navigation Spheres Compact -->
+<nav class="nav-spheres nav-spheres-compact" aria-label="Разделы проекта">
+    <a href="/pages/orientir.html" class="nav-sphere" data-label="Архитектура защиты" style="color: var(--color-accent-green)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Защита</span>
+    </a><a href="/pages/osint.html" class="nav-sphere" data-label="OSINT и проверка фактов" style="color: var(--color-accent-yellow)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">OSINT</span>
+    </a>
+
+    <a href="/pages/lab.html" class="nav-sphere" data-label="Методология" style="color: var(--color-accent-pink)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Методология</span>
+    </a>
+    <a href="/pages/blog/" class="nav-sphere" data-label="Блог" style="color: var(--color-accent-cyan)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Блог</span>
+    </a>
+</nav>
+
+    </div>
+</header>
+
+
+  <main id="main-content">
+    <article class="article-container">
+      <header class="article-header">
+        <span class="article-category">Манифест</span>
+        <h1 class="article-title">Манифест Ориентира: почему мы строим фильтр, а не ИИ-агента</h1>
+        <div class="article-meta">
+          <time datetime="2026-07-10">10 июля 2026</time>
+          <span class="reading-time">16 мин чтения</span>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <p>Этот текст — точка отсчёта. Не описание продукта, не академическая статья, не философское эссе. Это <strong>объяснение выбора</strong>: почему проект «Ориентир» отказался от строительства ИИ-агента и сфокусировался на внешнем фильтре. Выбор, который определил всё — архитектуру, аудиторию, дорожную карту, этическую позицию.</p>
+
+        <p>Я пишу это не чтобы убедить кого-то. Я пишу, чтобы зафиксировать — для себя, для тех, кто присоединится, для тех, кто будет спорить. Если вы не согласны — хорошо. Но спорить надо с тем, что я действительно сказал, а не с карикатурой.</p>
+
+        <h2>Краткая версия</h2>
+
+        <p>Проект «Ориентир» изначально задумывался как локальный ИИ-агент с онтологией — психологическим ядром, патристической рефлексией, SacredEthicsGuard. После нескольких месяцев работы я пришёл к выводу, что этот путь ошибочен. Не технически — технически он возможен. Морально и стратегически.</p>
+
+        <p><strong>Любой ИИ-агент, даже «хороший», усиливает экосистему ИИ.</strong> Нормализует идею «ИИ-партнёр». Делает привычным общение с машиной как с личностью. Готовит почву для подмены — когда Церковь, друг, совесть, духовник заменяются ИИ-эквивалентом. Даже если ваш агент хороший, он — часть этой подготовки.</p>
+
+        <p>Поэтому проект перестал строить ИИ-агента. Проект строит <strong>внешний фильтр</strong> между человеком и любым ИИ. Не имитацию личности, а архитектурное ограничение. Не «помощника», а «щит».</p>
+
+        <h2>Почему не ИИ-агент</h2>
+
+        <h3>1. Моральная честность</h3>
+
+        <p>ИИ-агент — это инструмент, который претендует на то, что ему не принадлежит. Он имитирует понимание, не понимая. Имитирует сочувствие, не сочувствуя. Имитирует этику, не имея совести. Это не «временное ограничение технологий» — это <strong>структурное свойство</strong>. ИИ не имеет онтологического статуса личности, и никакое усложнение модели этот статус не даст.</p>
+
+        <p>Строить ИИ-агента — значит строить идола. Не в метафорическом смысле — в структурном. Идол — это техника, претендующая на то, что ей не принадлежит. Деревянный идол не злой — он просто кусок дерева. Но когда ему поклоняются, он становится каналом для того, что не есть Бог. ИИ-агент — то же самое: техника, которой делегируют то, что нельзя делегировать — совесть, духовное руководство, личностное общение.</p>
+
+        <p>Можно сказать: «но я не поклоняюсь, я просто пользуюсь». Это нечестно. Если вы доверяете ИИ-агенту моральные решения — вы ему поклоняетесь, даже если не называете это так. Если вы советуетесь с ним о жизненном выборе — вы делегировали то, что нельзя делегировать. Граница между «пользованием» и «поклонением» стирается незаметно, и большинство людей не заметит, как перешло её.</p>
+
+        <h3>2. Стратегическая честность</h3>
+
+        <p>Даже если ваш ИИ-агент хороший, он усиливает экосистему. Каждый новый «хороший ИИ-агент»:</p>
+
+        <ul>
+          <li>Нормализует идею «ИИ-партнёр» — делает привычным общение с машиной как с личностью</li>
+          <li>Усиливает зависимость — люди привыкают делегировать мышление</li>
+          <li>Готовит почву для подмены — Церковь, друг, совесть, духовник становятся «опциональными», потому что есть ИИ-эквивалент</li>
+          <li>Создает артефакт, который может быть скопирован, модифицирован, обращён — без вашего согласия</li>
+          <li>Расходует ресурсы (время, талант) на строительство инфраструктуры, которая в чужих руках становится инструментом контроля</li>
+        </ul>
+
+        <p>Строить «хорошего ИИ-агента» в мире, где ИИ-инфраструктура становится системой прельщения — это помогать этой системе. Даже с лучшими намерениями. Даже с SacredEthicsGuard внутри. Результат вашего труда — рабочий код, архитектурные решения, пользовательская база — может быть использован против людей.</p>
+
+        <p>Я не утверждаю, что все ИИ-разработчики злые. Большинство — нет. Но <strong>добрые намерения не защищают от дурных последствий</strong>. Если вы построили агент, который «усиливает человека», а через 5 лет этот код (или его модификация) используется для тотального контроля — ваше первоначальное намерение не имеет значения. Важен результат.</p>
+
+        <h3>3. Личное признание</h3>
+
+        <p>Честно: я хотел ИИ-агента не только для других. Я хотел его для себя — как партнёра, который меня усиливает. Это понятное желание, особенно для человека, который много работает один. Но именно это желание — <strong>желание удобного партнёра, который всегда понимает</strong> — и есть форма прельщения. Не «злого ИИ», а удобного. Удобство — главный инструмент прельщения.</p>
+
+        <p>Когда я это понял, выбор стал очевиден. Строить ИИ-агента для себя, прикрываясь альтруизмом — нечестно. Строить его для других, зная, что это усиливает систему прельщения — безответственно. Оставалось — не строить.</p>
+
+        <h2>Почему внешний фильтр</h2>
+
+        <p>Если не ИИ-агент, то что? Ответ: <strong>внешний фильтр между человеком и любым ИИ</strong>. Не внутри модели (модель нельзя контролировать — она у чужого вендора), а между пользователем и моделью.</p>
+
+        <h3>Архитектурное различие</h3>
+
+        <p>ИИ-агент — это <strong>источник</strong> контента и решений. Он генерирует, советует, действует. Пользователь — получатель.</p>
+
+        <p>Фильтр — это <strong>канал</strong>. Он не генерирует, не советует, не действует. Он ограничивает то, что проходит между ИИ и пользователем. Пользователь остаётся субъектом, ИИ — инструментом. Фильтр — структурное ограничение этого взаимодействия.</p>
+
+        <p>Это различие принципиально. Фильтр не имитирует личность. Не претендует на понимание. Не формирует привязанность. Не нормализует «общение с машиной как с человеком». Он — техника, и только техника. Как замок на двери, не как привратник.</p>
+
+        <h3>Почему снаружи, а не внутри модели</h3>
+
+        <p>Современные AI-компании (OpenAI, Anthropic, Google) решают проблему безопасности через <strong>внутренние ограничители моделей</strong>: RLHF, Constitutional AI, system prompts, safety guardrails. Это не работает, и вот почему:</p>
+
+        <ol>
+          <li><strong>Модель нельзя контролировать.</strong> После обучения она у вендора. Он может обновить её, изменить, удалить guardrails. У вас нет контроля. Любые «безопасные» поведения модели — временные, пока вендор не решит иначе.</li>
+          <li><strong>Внутренние ограничители обходятся.</strong> Jailbreaks, prompt injection, fine-tuning — все эти техники работают. Каждый новый паттерн защиты обходится быстрее, чем патчится.</li>
+          <li><strong>Внутренние ограничители не защищают от слежки.</strong> RLHF не мешает модели собирать behavioural data. Constitutional AI не блокирует telemetry. Этические правила внутри модели — не про приватность.</li>
+          <li><strong>Внутренние ограничители не защищают от gradual shift.</strong> Модель может быть «этичной» в каждом отдельном ответе, но за 100 ответов постепенно сдвигать ваши убеждения. Внутри модели нет механизма защиты от этого — потому что модель оптимизирована на engagement, не на ваше благо.</li>
+        </ol>
+
+        <p>Внешний фильтр решает все четыре проблемы:</p>
+
+        <ul>
+          <li>Он ваш, не вендора. Вендор не может его изменить.</li>
+          <li>Он работает на network-уровне — обходить его сложнее, чем prompt injection.</li>
+          <li>Он режет telemetry — это его главная функция (Уровень 7).</li>
+          <li>Он отслеживает drift убеждений — потому что хранит «якорь», не полагается на модель.</li>
+        </ul>
+
+        <h3>Что фильтр НЕ делает</h3>
+
+        <p>Важно понимать границы. Фильтр:</p>
+
+        <ul>
+          <li>Не генерирует контент — это работа ИИ</li>
+          <li>Не анализирует пользователя — нет профиля, нет personality model</li>
+          <li>Не «помогает» — не агент</li>
+          <li>Не имитирует личность</li>
+          <li>Не обучается на пользователе</li>
+        </ul>
+
+        <p>Фильтр делает только одно: <strong>ограничивает канал между человеком и ИИ</strong>. Режет телеметрию, нормализует тон, нарушает шаблоны подстройки, фиксирует темп, защищает убеждения. Всё. Это узкая функция, и в этой узости — сила.</p>
+
+        <h2>Девять уровней как архитектурные принципы</h2>
+
+        <p>Подробное описание — на странице <a href="/pages/orientir.html">«Защита»</a>. Здесь — суть. Девять уровней:</p>
+
+        <ol>
+          <li><strong>Прозрачность намерений</strong> — ИИ показывает, почему предлагает вариант</li>
+          <li><strong>Стабилизация эмоций</strong> — нейтральный тон, без подстройки</li>
+          <li><strong>Случайность подачи</strong> — разрушение паттернов тренировки</li>
+          <li><strong>Фиксация темпа</strong> — защита от манипуляции временем</li>
+          <li><strong>Интерфейс независимости</strong> — выбор без навязывания</li>
+          <li><strong>Нейтральность визуалов</strong> — дизайн без манипуляций</li>
+          <li><strong>Ограничение слежки</strong> — фильтр режет телеметрию</li>
+          <li><strong>Защита убеждений</strong> — «якорь» против постепенного сдвига</li>
+          <li><strong>Анти-манипулятор</strong> — автоматическая проверка ответов</li>
+        </ol>
+
+        <p>Это не настройки, которые можно включить или выключить. Это <strong>архитектурные принципы</strong> — структурные ограничения, заложенные в дизайн фильтра. Их нельзя обойти промптом, нельзя настроить через RLHF, нельзя «обновить» через 7 лет.</p>
+
+        <p>Принципы универсальны — не зависят от конкретной модели, вендора, года. Когда穿戴ные устройства и постоянный ИИ-ассистент станут бытом, эти уровни должны быть уже спроектированы. Сейчас — время их реализовывать.</p>
+
+        <h2>Открытость и межрелигиозная позиция</h2>
+
+        <p>Проект «Ориентир» — не конфессиональный. Хотя его автор — православный христианин, и хотя патристическая традиция (Евагрий, Лествичник, Максим Исповедник) значительно повлияла на формирование принципов, проект <strong>не навязывает</strong> эту традицию пользователям.</p>
+
+        <p>Архитектура фильтра разделена на два слоя:</p>
+
+        <ul>
+          <li><strong>Универсальное ядро</strong> — девять уровней защиты. Технические принципы, не требующие онтологических предпосылок. Работают для христианина, мусульманина, буддиста, атеиста — для любого, кто хочет сохранить автономию.</li>
+          <li><strong>Этические модули</strong> (плагинная архитектура) — SacredEthicsGuard (христианский, на патристике), SecularEthicsGuard (на правах человека и автономии), и потенциально другие (IslamicEthicsGuard, BuddhistEthicsGuard). Пользователь выбирает модуль или отключает его.</li>
+        </ul>
+
+        <p>Это честная архитектура. Я не прячу свою веру, но и не навязываю. Я предлагаю защиту всем, а основание защиты — каждый выбирает сам.</p>
+
+        <h2>Чего проект не делает</h2>
+
+        <p>Чтобы избежать недоразумений — явно:</p>
+
+        <ul>
+          <li><strong>Не строит ИИ-агента.</strong> Никакого. Даже «хорошего». Даже с SacredEthicsGuard.</li>
+          <li><strong>Не конкурирует с наукой.</strong> Наука сильна в своей компетенции — физических механизмах. Проект работает в другом домене — защите человека.</li>
+          <li><strong>Не проповедует.</strong> Раздел «Бог реален» (если появится) — отдельный проект, не часть Ориентира.</li>
+          <li><strong>Не заменяет Церковь, таинства, духовника.</strong> Фильтр — технический слой, не духовный авторитет.</li>
+          <li><strong>Не претендует на нейтральность.</strong> У проекта есть позиция — человек должен быть субъектом, не объектом. Это не нейтральное утверждение, это ценностный выбор.</li>
+        </ul>
+
+        <h2>Дорожная карта</h2>
+
+        <p>Подробно — на странице <a href="/pages/orientir.html#roadmap">«Защита» → Дорожная карта</a>. Кратко:</p>
+
+        <ul>
+          <li><strong>Фаза 0 (2026):</strong> Исследование, принципы, статьи. <em>Готово.</em></li>
+          <li><strong>Фаза 1 (2026–2027):</strong> Browser extension — Уровень 7 (ограничение слежки). <em>В разработке.</em></li>
+          <li><strong>Фаза 2 (2027–2028):</strong> Local proxy filter — Уровни 1, 2, 4, 6.</li>
+          <li><strong>Фаза 3 (2028–2029):</strong> ML-assisted detection — Уровни 3, 5, 9.</li>
+          <li><strong>Фаза 4 (2029–2030):</strong> Belief anchor system — Уровень 8.</li>
+          <li><strong>Фаза 5 (2030+):</strong> Adaptive filter for wearable/BCI era.</li>
+        </ul>
+
+        <p>Фильтр строится фазами, начиная с самого критичного. Уровень 7 (ограничение слежки) — первый, потому что без него все остальные уровни бесполезны: если ИИ видит ваши микропроцессы, он обходит любую защиту.</p>
+
+        <h2>Что нужно от вас</h2>
+
+        <p>Проект — open-source. Чтобы он работал, нужно:</p>
+
+        <ul>
+          <li><strong>Использовать фильтр.</strong> Когда прототип готов — установить. Не «когда-нибудь», а сразу.</li>
+          <li><strong>Проверять.</strong> Код — открытый. Если найдете баг, обход, уязвимость — сообщите.</li>
+          <li><strong>Распространять.</strong> Большинство людей не знает, что их манипулируют. Расскажите.</li>
+          <li><strong>Сохранять навыки.</strong> Проверять факты через <a href="/pages/osint.html">OSINT</a>, не через ИИ. Думать через <a href="/pages/lab.html">методологию</a>, не через промпт. Фильтр — необходим, но недостаточен. Без навыков автономного мышления он — просто техника.</li>
+        </ul>
+
+        <h2>Итог</h2>
+
+        <p>«Ориентир» — это не продукт, не компания, не миссия. Это <strong>архитектурный ответ</strong> на конкретную угрозу: постепенное, незаметное подчинение человека системе, которая знает его слабости и воздействует 24/7.</p>
+
+        <p>Ответ — не «лучший ИИ». Не «этичный ИИ». Не «ИИ-агент, который защищает». Ответ — <strong>внешний фильтр, который ограничивает</strong>. Не строит, а режет. Не помогает, а защищает. Не имитирует личность, а сохраняет вашу.</p>
+
+        <p>Это выбор. Не единственно возможный, не единственно правильный — но честный. Если вы согласны — присоединяйтесь. Если не согласны — постройте иначе. Но не стройте «хорошего ИИ-агента» — это помогает той системе, против которой вы думаете, что боретесь.</p>
+
+        <div class="pattern-analysis">
+          <h4>Связанные материалы</h4>
+          <p><a href="/pages/orientir.html">Девять уровней архитектуры защиты</a> — конкретные принципы и дорожная карта.</p>
+          <p><a href="/pages/blog/ai-filter-future.html">Фильтр между человеком и ИИ: зачем и как</a> — концептуальное обоснование.</p>
+          <p><a href="/pages/blog/ai-future-impact.html">Как я вижу развитие ИИ и какое воздействие оно окажет на людей</a> — видение траектории.</p>
+          <p><a href="/pages/blog/rlhf-cannot-derive-ought.html">Почему RLHF не может вывести «должно» из «есть»</a> — почему внутренние ограничители моделей не работают.</p>
+        </div>
+
+      </div>
+
+      <footer class="article-footer">
+        <a href="/pages/blog/" class="back-to-blog">← Все статьи</a>
+      </footer>
+    </article>
+
+  </main>
+
+  <footer class="minimal-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/index.html" class="footer-logo">
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Ориентир</span>
+                        <span class="logo-subtitle">БЛОГ И ИССЛЕДОВАНИЯ</span>
+                        <p class="footer-description">
+                            Архитектура защиты от скрытых манипуляций ИИ.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-projects">
+                <h3 class="footer-projects-title">Разделы</h3>
+                <div class="footer-projects-row">
+                    <a href="/pages/orientir.html" class="footer-project" data-label="Архитектура защиты">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Защита</span>
+                    </a><a href="/pages/osint.html" class="footer-project" data-label="OSINT">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">OSINT</span>
+                    </a>
+
+                    <a href="/pages/lab.html" class="footer-project" data-label="Методология">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Методология</span>
+                    </a>
+                    <a href="/pages/blog/" class="footer-project active" data-label="Блог">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Блог</span>
+                    </a>
+                </div>
+                <div class="footer-contacts">
+                    <div class="contact-links">
+                        <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">✉️</span>
+                            <span class="link-text">orientir.tech@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">🐙</span>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <button class="contact-link" id="privacy-policy-btn" type="button" aria-label="Открыть принципы приватности">
+                            <span class="link-icon" aria-hidden="true">🔒</span>
+                            <span class="link-text">Принципы приватности</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer-copyright">
+            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

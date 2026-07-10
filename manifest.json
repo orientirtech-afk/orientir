@@ -1,0 +1,104 @@
+{
+  "id": "/",
+  "name": "Ориентир · Архитектура свободного сознания",
+  "short_name": "Ориентир",
+  "description": "Архитектура защиты от скрытых манипуляций ИИ. Девять уровней фильтра, OSINT-методология проверки фактов, автономное мышление.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "ru",
+  "dir": "ltr",
+  "theme_color": "#0a0e14",
+  "background_color": "#0a0e14",
+  "categories": [
+    "education",
+    "books",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Защита от ИИ",
+      "short_name": "Защита",
+      "description": "Концепция внешнего фильтра между человеком и ИИ — задел на будущее",
+      "url": "/pages/orientir.html",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "OSINT и проверка фактов",
+      "short_name": "OSINT",
+      "description": "Методология и инструменты проверки фактов без ИИ-агента",
+      "url": "/pages/osint.html",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Методология",
+      "short_name": "Методология",
+      "description": "Четыре принципа автономного исследования",
+      "url": "/pages/lab.html",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Блог и исследования",
+      "short_name": "Блог",
+      "description": "Разборы реальных случаев манипулятивных текстов",
+      "url": "/pages/blog/",
+      "icons": [
+        {
+          "src": "/web-app-manifest-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

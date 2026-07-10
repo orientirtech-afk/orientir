@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSINT · Проверяй, а не верь</title>
+  <meta name="description" content="OSINT-методология и инструменты проверки фактов без ИИ-агента. Поисковики, reverse image search, архивы, fact-checking. Принципы верификации в эпоху синтетического контента и дипфейков.">
+  <meta name="theme-color" content="#0a0e14">
+  <link rel="canonical" href="https://orenpro.pro/pages/osint.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ориентир">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="OSINT · Проверяй, а не верь">
+  <meta property="og:description" content="OSINT-методология и инструменты проверки фактов без ИИ-агента. Принципы верификации в эпоху синтетического контента.">
+  <meta property="og:url" content="https://orenpro.pro/pages/osint.html">
+  <meta property="og:image" content="https://orenpro.pro/og-image-osint.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OSINT · Проверяй, а не верь">
+  <meta name="twitter:description" content="OSINT-методология и инструменты проверки фактов без ИИ-агента.">
+  <meta name="twitter:image" content="https://orenpro.pro/og-image-osint.png">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "OSINT · Проверяй, а не верь",
+    "description": "OSINT-методология и инструменты проверки фактов без ИИ-агента. Принципы верификации в эпоху синтетического контента.",
+    "url": "https://orenpro.pro/pages/osint.html",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "Ориентир" },
+    "publisher": { "@type": "Organization", "name": "Ориентир" },
+    "datePublished": "2026-07-10",
+    "dateModified": "2026-07-10"
+  }
+  </script>
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Ориентир">
+  <meta name="language" content="Russian">
+  <meta name="geo.region" content="RU">
+  <meta name="revisit-after" content="7 days">
+  <script type="module" crossorigin src="/assets/js/pages_lab-CLiiyhX0.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/js/sw-register-BP-CnRjZ.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-vendor-BaKVhIe6.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/utils-B7c9XK2m.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/three-base-CUUphDiR.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/chekhov-system-pZYMDj_1.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/title-burst-C4L-smqp.js">
+  <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/pages_lab-DbTW6oEW.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+  <!-- ORIENTIR-PROJECT-UNIQUE-2026 -->
+
+  <!-- Parallax background Layers -->
+<div class="parallax-bg" aria-hidden="true">
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="bg-noise"></div>
+</div>
+
+  <div id="three-container" class="three-container" aria-hidden="true"></div>
+  <!-- Performance Panel — управление 3D-сценой -->
+<div class="performance-panel" id="performance-panel" role="group" aria-label="Управление 3D-сценой">
+  <button class="perf-btn active" id="toggle-3d" type="button" aria-pressed="true">
+    <span class="perf-icon" aria-hidden="true">🎬</span>
+    <span class="perf-label">3D: Вкл</span>
+  </button>
+</div>
+
+
+  <!-- Header — OSINT (без индикатора) -->
+<header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+        <a href="/index.html" class="site-logo" aria-label="На главную">
+            <div class="compass-3d" aria-hidden="true">
+                <div class="compass-inner">
+                    <div class="compass-ring outer"></div>
+                    <div class="compass-ring inner"></div>
+                    <div class="compass-needle primary"></div>
+                    <div class="compass-needle secondary"></div>
+                    <div class="compass-center"><div class="compass-core"></div></div>
+                    <div class="compass-direction n">N</div>
+                    <div class="compass-direction e">E</div>
+                    <div class="compass-direction s">S</div>
+                    <div class="compass-direction w">W</div>
+                </div>
+            </div>
+            <div>
+                <div class="logo-text">Ориентир</div>
+                <div class="logo-subtitle">OSINT · ПРОВЕРКА ФАКТОВ</div>
+            </div>
+        </a>
+        <!-- Navigation Spheres Compact -->
+<nav class="nav-spheres nav-spheres-compact" aria-label="Разделы проекта">
+    <a href="/pages/orientir.html" class="nav-sphere" data-label="Архитектура защиты" style="color: var(--color-accent-green)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Защита</span>
+    </a><a href="/pages/osint.html" class="nav-sphere" data-label="OSINT и проверка фактов" style="color: var(--color-accent-yellow)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">OSINT</span>
+    </a>
+
+    <a href="/pages/lab.html" class="nav-sphere" data-label="Методология" style="color: var(--color-accent-pink)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Методология</span>
+    </a>
+    <a href="/pages/blog/" class="nav-sphere" data-label="Блог" style="color: var(--color-accent-cyan)">
+        <div class="nav-sphere-orb" aria-hidden="true"></div>
+        <span class="nav-sphere-label">Блог</span>
+    </a>
+</nav>
+
+    </div>
+</header>
+
+
+  <main id="main-content">
+    <!-- Hero — OSINT -->
+<section class="manifest-hero hero-lab" aria-labelledby="hero-title">
+  <div class="container">
+    <h1 class="manifest-title" id="hero-title">
+      <span class="title-word">Проверяй,</span>
+      <span class="title-word">а не</span>
+      <span class="title-word">верь</span>
+    </h1>
+    <p class="manifest-subtitle">
+      Методология и инструменты OSINT для проверки фактов без ИИ-агента.
+      В эпоху дипфейков и синтетического контента единственная надёжная защита —
+      умение самостоятельно находить первоисточники и сверять свидетельства.
+    </p>
+  </div>
+</section>
+
+
+    <!-- Глава 3 Чехова: О проверке -->
+    <section class="about-project">
+    <button class="about-toggle" id="about-toggle-3">
+        <span>Глава 3: О проверке услышанного</span>
+        <span class="toggle-icon">▼</span>
+    </button>
+    <div class="about-content" id="about-content-3">
+        <div class="about-inner">
+            <div class="about-header">
+                <div class="about-icon">🔍</div>
+                <div>
+                    <h2 class="about-title">Наблюдения доктора Чехова</h2>
+                    <p class="about-subtitle">Заметки о природе слухов и свидетельств</p>
+                </div>
+            </div>
+            <div class="chekhov-text">
+                <p>В больнице ко мне часто приходили родственники больных с уже готовым диагнозом, услышанным от соседки или вычитанным в газете. И когда я, осмотрев больного, говорил иное — не верили. «А соседка говорит, что от такой болезни помогает толчёный кирпич». Соседка не осматривала, не слушала сердце, не видела пульса — а верили ей больше, чем мне. Почему? Потому что соседка говорила уверенно, а я — с оговорками.</p>
+                <p>Тогда-то и заметил я: человек скорее верит тому, кто говорит без сомнений, чем тому, кто сомневается вслух. А между тем врач, не сомневающийся ни в чём, — плохой врач. Сомнение — не слабость знания, а его здоровье. Болезнь начинается там, где сомнение исчезает.</p>
+                <p>В наши дни «соседок» стало много. Газеты, экраны, ленты — каждый говорит уверенно. Машины научились подражать голосу, лицу, манере письма человека — и подделку от подлинника не отличит глаз. Что же делать? Вернуться к тому, что врачи делали всегда: <em>проверять</em>.</p>
+                <p>Первое — спроси: <em>откуда ты знаешь?</em> У каждого утверждения есть источник. Если источника нет — это слух. Если источник есть, но тайный — это слух с амбициями. Если источник назван — его можно проверить. Тогда начинается работа.</p>
+                <p>Второе — не довольствуйся одним свидетелем. В суде требуют двух или трёх. В медицине — второго мнения. В науке — воспроизведения эксперимента. Один источник — гипотеза. Два независимых — вероятность. Три — уверенность. Четыре — почти истина.</p>
+                <p>Третье — ищи первоисточник, а не пересказ. Доклад комиссии — это одно. Пересказ доклада в газете — другое. Пересказ пересказа в ленте соцсети — третье. С каждым пересказом смысл искажается, как голос в испорченном телефоне. Доберись до первоисточника — и часто окажется, что сказали не то, что услышали.</p>
+                <p>Четвёртое — проверяй не только слова, но и картинки. Сегодня машина рисует то, чего не было, и убирает то, что было. Фотография больше не свидетельство. Но след её происхождения остаётся — в данных файла, в архиве поисковика, в дате публикации, в других снимках того же места. Ищи след.</p>
+                <p>Пятое — не торопись. Слух растёт быстро, опровержение — медленно. Кто первый сказал, того и запомнили; кто опроверг — того не услышали. Подожди день, два — часто выясняется, что сенсация была придумана, а герой — подставлен. Терпение — родня проверки.</p>
+                <p>В больнице я учил студентов: «Не лечение начинается с диагноза, а диагноз — с расспроса». Спроси, послушай, проверь, сравни — и только потом решай. В мире, где машины научились подражать людям, этот старый медицинский урок стал нужнее, чем когда-либо.</p>
+            </div>
+            <div class="contacts-section">
+                <h3 class="contacts-title">Для беседы и вопросов</h3>
+                <p class="chekhov-contact-text">Как врач, склонившийся над постелью больного, не верит первому слуху о болезни, так и исследователь — первому утверждению о событии. Если эти заметки о проверке нашли в вас отклик, напишите — поговорим о методе.</p>
+                <a href="mailto:orientir.tech@gmail.com" class="email-link">✉️ orientir.tech@gmail.com</a>
+            </div>
+            <div class="chekhov-close-wrapper">
+                <button class="chekhov-close-btn" aria-label="Закрыть главу">
+                    <span class="close-icon">×</span>
+                    <span class="close-text">Закрыть главу</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ============================================================
+         БЛОК 1: ПОЧЕМУ OSINT ВАЖЕН СЕЙЧАС
+         ============================================================ -->
+    <section class="lab-section fade-in" id="why-osint">
+      <div class="container">
+        <h2 class="lab-section-title">Почему OSINT именно сейчас</h2>
+        <p class="lab-section-subtitle">
+          Открытые источники существовали всегда. Но их значимость резко выросла,
+          когда контент научились массово подделывать.
+        </p>
+
+        <div class="architecture-explanation">
+          <p>
+            OSINT (Open Source Intelligence) — сбор и анализ информации из открытых
+            источников. Это не шпионаж и не взлом. Это методология проверки того,
+            что и так лежит на поверхности — но требует умения отличать подлинное
+            от подделанного.
+          </p>
+
+          <p>
+            До 2023 года главный риск в открытых источниках — <em>предвзятость</em>
+            и <em>неполнота</em>. После 2023 года, когда генеративный ИИ научился
+            производить реалистичные тексты, изображения, видео и голос — добавился
+            новый риск: <strong>синтетический контент</strong>. Фотография больше
+            не доказательство. Видео больше не доказательство. Голос больше не
+            доказательство. Каждое свидетельство теперь требует проверки на
+            подлинность.
+          </p>
+
+          <p>
+            Парадокс: чем больше информации доступно, тем меньше ей можно доверять
+            «по умолчанию». Старая привычка — «увидел в новостях, значит правда» —
+            перестала работать. Новая привычка, которой надо учиться: «увидел —
+            проверь, прежде чем поверить».
+          </p>
+
+          <p>
+            Эта страница — не каталог «хакерских инструментов». Это <strong>методология
+            проверки для обычного человека</strong>, который не хочет быть ни
+            жертвой дезинформации, ни её невольным распространителем.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 2: ЧЕТЫРЕ ПРИНЦИПА ПРОВЕРКИ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="principles">
+      <div class="container">
+        <h2 class="lab-section-title">Четыре принципа проверки</h2>
+        <p class="lab-section-subtitle">
+          Методология — это не набор инструментов, а способ мышления.
+          Четыре принципа, на которых строится проверка любого утверждения.
+        </p>
+
+        <div class="principles-grid">
+
+          <article class="principle-card" data-principle="1">
+            <div class="principle-number">ПРИНЦИП 1</div>
+            <h3 class="principle-name">Источник</h3>
+            <p class="principle-desc">
+              У каждого утверждения есть источник. Если его нет или он анонимный —
+              это слух, не факт. Первое действие — найти, кто сказал и где.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> без источника утверждение невозможно
+              проверить. Слух растёт без корней, и опровергнуть его невозможно —
+              не за что зацепиться.
+            </div>
+          </article>
+
+          <article class="principle-card" data-principle="2">
+            <div class="principle-number">ПРИНЦИП 2</div>
+            <h3 class="principle-name">Перекрёстная проверка</h3>
+            <p class="principle-desc">
+              Один источник — гипотеза. Два независимых — вероятность. Три —
+              уверенность. Если все источники восходят к одному — это один источник,
+              не три.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> «независимый» — ключевое слово. Три
+              газеты, перепечатавшие одно агентство, — это одно агентство, не три
+              свидетеля.
+            </div>
+          </article>
+
+          <article class="principle-card" data-principle="3">
+            <div class="principle-number">ПРИНЦИП 3</div>
+            <h3 class="principle-name">Первоисточник</h3>
+            <p class="principle-desc">
+              Доберись до оригинала, а не до пересказа. Доклад комиссии — это одно.
+              Пересказ доклада в газете — другое. С каждым пересказом смысл
+              искажается.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> в 30% случаев «сенсация» оказывается
+              искажением при пересказе. Первоисточник часто спокойнее и сложнее,
+              чем пересказ.
+            </div>
+          </article>
+
+          <article class="principle-card" data-principle="4">
+            <div class="principle-number">ПРИНЦИП 4</div>
+            <h3 class="principle-name">Терпение</h3>
+            <p class="principle-desc">
+              Слух растёт быстро, опровержение — медленно. Кто первый сказал, того
+              и запомнили. Подожди 24–72 часа — часто сенсация рассыпается.
+            </p>
+            <div class="principle-why">
+              <strong>Почему важно:</strong> эмоция не ждёт. Проверка — требует
+              времени. Кто умеет подождать, не попался ни на одной «срочной»
+              новости.
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 3: ИНСТРУМЕНТЫ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="tools">
+      <div class="container">
+        <h2 class="lab-section-title">Инструменты, а не агент</h2>
+        <p class="lab-section-subtitle">
+          Это инструменты под рукой, не «умный помощник». Вы решаете, что проверить.
+          Инструмент не рассуждает за вас — он помогает найти то, что вы ищете.
+        </p>
+
+        <div class="architecture-explanation">
+          <p>
+            Принципиальная позиция этого раздела: <strong>инструмент — не партнёр</strong>.
+            Поисковик не «советует» — он находит. Reverse image search не «объясняет» —
+            он ищет похожие изображения. Архив не «оценивает» — он хранит. Вы
+            остаётесь субъектом проверки; инструмент — продолжение ваших рук, не
+            замена вашей головы.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Поисковые системы</h3>
+          <p>
+            <strong>Google</strong> — основной, но не единственный. <strong>Yandex</strong> —
+            особенно силён для русскоязычного и восточноевропейского интернета,
+            reverse image search у Yandex часто находит то, что Google пропускает.
+            <strong>DuckDuckGo</strong> — без отслеживания, без «пузыря». <strong>Brave Search</strong> —
+            собственный индекс. <strong>Mojeek</strong> — независимый индекс, не
+            зависимый от Google/Bing. Для критических проверок — используйте
+            <em>минимум два разных</em> поисковика: алгоритмы разных систем
+            дают разные результаты.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Reverse image search</h3>
+          <p>
+            <strong>Yandex Images</strong> — лучший в мире для лиц и объектов на
+            русском и восточноевропейском материале. <strong>Google Lens</strong> —
+            хорош для предметов, животных, растений, текста на изображении.
+            <strong>TinEye</strong> — ищет точные совпадения, находит первичную
+            публикацию изображения (полезно для проверки, было ли фото в
+            обращении раньше и в каком контексте). <strong>Bing Visual Search</strong> —
+            дополнительный. <strong>PimEyes</strong> — поиск лиц (платный,
+            этически сложный, но мощный).
+          </p>
+
+          <p>
+            Базовый приём: загрузил изображение → сравни результаты трёх сервисов.
+            Если Yandex нашёл первое появление в 2019, а контекст «новый» — фото
+            старое, контекст новый. Если TinEye нашёл 50 копий на стоковых сайтах —
+            «оригинальное фото с места событий» — фейк.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Архивы и кэш</h3>
+          <p>
+            <strong>Wayback Machine</strong> (web.archive.org) — крупнейший архив
+            веб-страниц. Позволяет увидеть, как выглядела страница в конкретную
+            дату. <strong>Archive.today</strong> (archive.ph) — аналогично, лучше
+            для соцсетей и новостных сайтов с динамическим контентом.
+            <strong>Google Cache</strong> — кэш последней индексации (если доступен).
+            <strong>Cachedview</strong> — агрегатор нескольких кэшей.
+          </p>
+
+          <p>
+            Приём: страница изменилась или удалена? Проверь архив. «Этого заявления
+            никогда не было на сайте» — часто можно проверить, заглянув в Wayback
+            Machine за нужную дату.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Fact-checking</h3>
+          <p>
+            <strong>Snopes</strong> — старейший фактчекинг (английский).
+            <strong>PolitiFact</strong> — политические заявления (США).
+            <strong>CheckYourFact</strong> — консервативный уклон, но методология
+            прозрачная. <strong>Reuters Fact Check</strong>, <strong>AP Fact Check</strong>,
+            <strong>AFP Fact Check</strong> — крупные агентства с международной
+            сетью. <strong>StopFake</strong> — украинский, о российской
+            дезинформации. <strong>WarSpotting</strong>, <strong>Oryx</strong> —
+            подсчёт потерь техники по визуально подтверждённым фото (модель
+            «только проверяемое»). <strong>Биграмма</strong>, <strong>Нампиши</strong> —
+            русскоязычные.
+          </p>
+
+          <p>
+            Принцип: fact-checking — <em>отправная точка</em>, не конечная. Если
+            фактчекеры подтвердили — хорошо, но всё равно проверьте их
+            аргументацию. Если опровергли — тоже проверьте. Фактчекеры тоже ошибаются.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Метаданные и техническая проверка</h3>
+          <p>
+            <strong>EXIF data</strong> — метаданные изображения (камера, дата,
+            иногда GPS). <strong>Jeffrey's EXIF Viewer</strong>, <strong>ExifTool</strong> —
+            посмотреть метаданные. Внимание: соцсети обычно удаляют EXIF, но
+            исходные файлы с «утёкших» документов часто содержат. <strong>Fotoforensics</strong> —
+            ELA-анализ (Error Level Analysis), показывает участки изображения,
+            отредактированные в графическом редакторе. <strong>InVID Verification
+            Plugin</strong> — набор инструментов для проверки видео, покадровый
+            анализ, reverse search, извлечение ключевых кадров.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Геолокация</h3>
+          <p>
+            <strong>Google Street View</strong>, <strong>Yandex Panoramas</strong> —
+            проверить, существует ли место и как оно выглядит. <strong>Google Earth</strong>,
+            <strong>Yandex Maps</strong>, <strong>Bing Maps</strong> — спутниковые
+            снимки, разные ракурсы. <strong>SunCalc</strong> — угол солнца на
+            конкретную дату и место (по теням можно проверить, когда снято).
+            <strong>Mapillary</strong> — пользовательские панорамы, покрывает
+            места, где нет Street View. <strong>GeoHints</strong> —
+            типичные признаки стран (формы дорожных знаков, столбов, разметки).
+          </p>
+
+          <p>
+            Базовый приём «визуальной геолокации»: внимательно изучи фон фото —
+            дорожные знаки, рекламу, архитектуру, растительность. Поищи эти
+            признаки в Google Maps. Часто «событие в городе X» на самом деле снято
+            в городе Y, и это видно по деталям.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Поиск людей и организаций</h3>
+          <p>
+            <strong>Whois</strong> — владелец домена (если не скрыт). <strong>DNS
+            lookup</strong> — IP-адрес и инфраструктура. <strong>OSINT Framework</strong>
+            (osintframework.com) — каталог инструментов по категориям.
+            <strong>Maltego</strong> — граф связей между сущностями (платный,
+            community-версия ограничена). <strong>Spiderfoot</strong> —
+            автоматизированный OSINT. <strong>Recon-ng</strong> — для
+            продвинутых. <strong>LinkedIn</strong>, <strong>VK</strong>, другие
+            соцсети — публичные профили, история занятости.
+          </p>
+
+          <p>
+            Этическая граница: OSINT работает только с <em>открытыми</em>
+            данными. Взлом, утечки, социальная инженерия — это не OSINT, это
+            преступления. Граница принципиальна: методология, переступившая
+            черту «открытого», теряет легитимность.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 4: МЕТОДОЛОГИЯ ПРОВЕРКИ УТВЕРЖДЕНИЯ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="methodology">
+      <div class="container">
+        <h2 class="lab-section-title">Методология проверки утверждения</h2>
+        <p class="lab-section-subtitle">
+          Пошаговый протокол. Применяется к любому спорному утверждению — от
+          новости до личного сообщения.
+        </p>
+
+        <div class="architecture-explanation">
+          <p>
+            Этот протокол — формализация медицинской привычки «осмотр →
+            расспрос → сравнение → диагноз». Нельзя прыгать к выводу, не
+            проделав предыдущие шаги.
+          </p>
+
+          <div class="falsification-quote">
+            «Подожди день, и часто окажется, что сенсация была придумана, а
+            герой — подставлен. Терпение — родня проверки.»
+            <footer>— из главы 3</footer>
+          </div>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 1. Сформулируй утверждение точно</h3>
+          <p>
+            Часто спорное утверждение сформулировано размыто: «говорят, что…»,
+            «эксперты утверждают…», «по данным источников…». Прежде чем проверять,
+            уточни: <em>что именно</em> утверждается, <em>кто</em> утверждает,
+            <em>когда</em>, <em>где</em>. Без точной формулировки проверка
+            невозможна.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 2. Найди источник</h3>
+          <p>
+            Где впервые появилось утверждение? Поищи точную фразу в кавычках в
+            нескольких поисковиках. Найди <em>первую</em> публикацию — не
+            перепечатки. Часто первоисточник оказывается: неофициальный Telegram-канал,
+            анонимный пост, вырванная из контекста цитата, вообще не существующее
+            «заявление».
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 3. Оцени источник</h3>
+          <p>
+            Кто автор? Есть ли у него конфликт интересов? Публиковал ли он раньше
+            опровергнутые сведения? Если это организация — что она из себя
+            представляет, кто финансирует? Если «эксперт» — в какой области, где
+            работал, есть ли публикации в рецензируемых журналах?
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 4. Найди независимые подтверждения</h3>
+          <p>
+            «Независимые» — ключевое. Три газеты, перепечатавшие одно агентство, —
+            это одно агентство. Ищи источники, которые могли бы знать факт
+            независимо: очевидцы, официальные документы, данные датчиков,
+            спутниковые снимки. Если независимых подтверждений нет — утверждение
+            остаётся гипотезой, не фактом.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 5. Проверь визуальное свидетельство</h3>
+          <p>
+            Если есть фото или видео — reverse image search в трёх сервисах
+            (Yandex, Google, TinEye). Если утверждается, что изображение с
+            конкретного места — попробуй геолокацию по деталям. Проверь метаданные
+            (если доступны). Сравни с архивными изображениями того же места —
+            совпадают ли детали, не «переехало» ли здание.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 6. Поищи опровержение</h3>
+          <p>
+            Активно ищи <em>контраргументы</em>. Проверь fact-checking-сайты.
+            Поищи, не было ли опровержения от непосредственных участников.
+            Задай вопрос: «что было бы, если бы это было неправдой?» — и поищи
+            именно в этом направлении. Это <strong>falsification</strong> подход
+            Поппера — сильнее, чем поиск подтверждений.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 7. Подожди</h3>
+          <p>
+            24–72 часа. Большинство сенсаций за это время либо подтверждаются
+            дополнительными источниками, либо опровергаются, либо «рассасываются»
+            (оказываются непроверяемыми). Кто умеет ждать — не попался ни на
+            одну «срочную» фальшивку.
+          </p>
+
+          <h3 style="margin-top: 36px; color: var(--color-accent-yellow);">Шаг 8. Зафиксируй вывод</h3>
+          <p>
+            Запиши: что проверено, какими источниками, какой вывод. Это
+            поможет не пересказывать потом слух как факт. И поможет не проверять
+            одно и то же дважды.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 5: ЧЕМ OSINT НЕ ЯВЛЯЕТСЯ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="what-osint-is-not">
+      <div class="container">
+        <h2 class="lab-section-title">Чем OSINT не является</h2>
+        <p class="lab-section-subtitle">
+          Честное обозначение границ методологии.
+        </p>
+
+        <div class="architecture-comparison">
+          <div class="arch-comparison-card arch-comparison-card--bad">
+            <div class="arch-comparison-title">
+              <span aria-hidden="true">✗</span> Чем OSINT не является
+            </div>
+            <ul class="arch-comparison-list">
+              <li>Не шпионаж, не взлом, не кража данных</li>
+              <li>Не социальная инженерия («позвоню представлюсь кем-то»)</li>
+              <li>Не слежка за конкретным человеком</li>
+              <li>Не «поиск компромата»</li>
+              <li>Не замена профессионального журналистского расследования</li>
+              <li>Не «ИИ-агент, который всё найдёт за вас»</li>
+              <li>Не источник стопроцентной достоверности</li>
+            </ul>
+          </div>
+
+          <div class="arch-comparison-card arch-comparison-card--good">
+            <div class="arch-comparison-title">
+              <span aria-hidden="true">✓</span> Чем OSINT является
+            </div>
+            <ul class="arch-comparison-list">
+              <li>Работа только с открыто доступной информацией</li>
+              <li>Методология проверки, не «инструмент всезнания»</li>
+              <li>Навык, требующий терпения и дисциплины</li>
+              <li>Продолжение рук и глаз, не замена головы</li>
+              <li>Дополняет — не заменяет — журналистику и экспертную оценку</li>
+              <li>Уменьшает — не устраняет — риск быть обманутым</li>
+              <li>Этическая граница: открытость данных = легитимность метода</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="architecture-explanation" style="margin-top: 32px;">
+          <p>
+            Принципиальная позиция этого раздела: <strong>OSINT не требует ИИ-агента</strong>.
+            Современные «AI-powered OSINT» инструменты часто подменяют проверку
+            на «суммаризацию» — ИИ читает источники и пересказывает. Это
+            противоположно методологии. Проверка требует <em>вашего</em> внимания,
+            <em>ваших</em> сравнений, <em>вашего</em> вывода. ИИ может помочь
+            перевести, найти, отфильтровать — но решение «подлинно или нет»
+            принимает человек.
+          </p>
+
+          <p>
+            В мире, где ИИ научился генерировать правдоподобную ложь, последнее,
+            что нам нужно — делегировать проверку этой лжи другому ИИ. Это не
+            улучшает ситуацию, а усугубляет её: вместо одного источника (который
+            мог соврать) мы получаем второй (который мог ошибиться при
+            «проверке»). Субъектом проверки остаётесь вы.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         БЛОК 6: СВЯЗЬ С ЗАЩИТОЙ
+         ============================================================ -->
+    <section class="lab-section fade-in" id="protection-link">
+      <div class="container">
+        <div class="ontology-link">
+          <h2 class="ontology-link-title">OSINT и Защита — две стороны одного умения</h2>
+          <p class="ontology-link-text">
+            <strong>Защита</strong> — фильтр между вами и ИИ, который пытается
+            на вас воздействовать. <strong>OSINT</strong> — фильтр между вами и
+            информацией, которая может быть ложной. Оба требуют одного:
+            способности <em>не верить по умолчанию</em> и <em>проверять прежде,
+            чем принять</em>.
+          </p>
+          <p class="ontology-link-text">
+            Защита работает на входе — отсеивает манипулятивные паттерны в
+            ответах ИИ. OSINT работает вокруг — позволяет проверить любое
+            утверждение из любого источника. Вместе они формируют привычку
+            проверять, которая неуязвима для прельщения: тот, кто проверяет,
+            не поддаётся ни уговорам, ни «срочности», ни «социальному доказательству».
+          </p>
+          <a href="/pages/orientir.html" class="ontology-link-cta">
+            <span aria-hidden="true">→</span> Архитектура защиты
+          </a>
+          <a href="/pages/lab.html" class="ontology-link-cta" style="margin-top: 12px;">
+            <span aria-hidden="true">→</span> Методология автономного исследования
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="minimal-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/index.html" class="footer-logo">
+                    <div class="compass-3d">
+                        <div class="compass-inner">
+                            <div class="compass-ring outer"></div>
+                            <div class="compass-ring inner"></div>
+                            <div class="compass-needle primary"></div>
+                            <div class="compass-needle secondary"></div>
+                            <div class="compass-center">
+                                <div class="compass-core"></div>
+                            </div>
+                            <div class="compass-direction n">N</div>
+                            <div class="compass-direction e">E</div>
+                            <div class="compass-direction s">S</div>
+                            <div class="compass-direction w">W</div>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Ориентир</span>
+                        <span class="logo-subtitle">OSINT · ПРОВЕРКА ФАКТОВ</span>
+                        <p class="footer-description">
+                            Методология и инструменты проверки без ИИ-агента.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="footer-projects">
+                <h3 class="footer-projects-title">Разделы</h3>
+                <div class="footer-projects-row">
+                    <a href="/pages/orientir.html" class="footer-project" data-label="Архитектура защиты">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Защита</span>
+                    </a><a href="/pages/osint.html" class="footer-project active" data-label="OSINT">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">OSINT</span>
+                    </a>
+
+                    <a href="/pages/lab.html" class="footer-project" data-label="Методология">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Методология</span>
+                    </a>
+                    <a href="/pages/blog/" class="footer-project" data-label="Блог">
+                        <div class="footer-sphere"></div>
+                        <span class="footer-project-label">Блог</span>
+                    </a>
+                </div>
+                <div class="footer-contacts">
+                    <div class="contact-links">
+                        <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">✉️</span>
+                            <span class="link-text">orientir.tech@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                            <span class="link-icon" aria-hidden="true">🐙</span>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <button class="contact-link" id="privacy-policy-btn" type="button" aria-label="Открыть принципы приватности">
+                            <span class="link-icon" aria-hidden="true">🔒</span>
+                            <span class="link-text">Принципы приватности</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer-copyright">
+            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

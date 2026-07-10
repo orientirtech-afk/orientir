@@ -1,0 +1,353 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||google-analytics.com/collect",
+      "resourceTypes": ["xmlhttprequest", "image", "script", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||google-analytics.com/g/collect",
+      "resourceTypes": ["xmlhttprequest", "image", "script", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googletagmanager.com/gtm.js",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||analytics.google.com/",
+      "resourceTypes": ["xmlhttprequest", "image", "script", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||chatgpt.com/ces/",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||chatgpt.com/backend-api/conversation^*metrics*",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||chat.openai.com/ces/",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||claude.ai/api/*telemetry*",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 9,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||anthropic.com/*metrics*",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 10,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||gemini.google.com/*log*",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 11,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||google.com/gen_204",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 12,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||clients2.google.com/*/log",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 13,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||segment.io/v1/",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 14,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||mixpanel.com/track/",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 15,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||amplitude.com/*/httpapi",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 16,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||hotjar.com/api/",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  },
+  {
+    "id": 17,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||fullstory.com/rec/",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  },
+  {
+    "id": 18,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||sentry.io/api/",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 19,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||datadoghq.com/api/v2/rum",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 20,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||newrelic.com/*/events",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 21,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||facebook.net/*fbevents*",
+      "resourceTypes": ["xmlhttprequest", "image", "script"]
+    }
+  },
+  {
+    "id": 22,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||facebook.com/tr",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 23,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||doubleclick.net/*/activity",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 24,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adsrvr.org/track",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 25,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adroll.com/j/roundtrip",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 26,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||fingerprintjs",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 27,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||device-fingerprint",
+      "resourceTypes": ["script", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 28,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||clientjs",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 29,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||behavioral-tracking",
+      "resourceTypes": ["script", "xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 30,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||user-tracking",
+      "resourceTypes": ["script", "xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 31,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||event-track",
+      "resourceTypes": ["script", "xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 32,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||scorecardresearch.com/beacon",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 33,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||quantserve.com/quant",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 34,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||comscore.com/beat",
+      "resourceTypes": ["xmlhttprequest", "image", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 35,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||optimizely.com/log",
+      "resourceTypes": ["xmlhttprequest", "ping", "beacon"]
+    }
+  },
+  {
+    "id": 36,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||crazyegg.com/track",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  },
+  {
+    "id": 37,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||mouseflow.com/",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  },
+  {
+    "id": 38,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||clarity.ms/",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  },
+  {
+    "id": 39,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||logrocket.com/",
+      "resourceTypes": ["xmlhttprequest", "script"]
+    }
+  }
+]

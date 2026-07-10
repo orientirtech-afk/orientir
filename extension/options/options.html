@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ориентир — Настройки</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0e14;
+      color: #e6eef5;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(165,214,167,0.9), rgba(79,195,247,0.6));
+      box-shadow: 0 0 16px rgba(165,214,167,0.4);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255,255,255,0.8);
+    }
+
+    .header-text h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .header-text p {
+      font-size: 13px;
+      color: rgba(160,180,210,0.7);
+    }
+
+    .section {
+      margin-bottom: 32px;
+      padding: 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #a5d6a7;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .section p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(200,220,240,0.85);
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .option-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .option-row:last-child { border-bottom: none; }
+
+    .option-label {
+      flex: 1;
+    }
+
+    .option-label strong {
+      display: block;
+      font-size: 13px;
+      color: #e6eef5;
+      margin-bottom: 2px;
+    }
+
+    .option-label small {
+      font-size: 11px;
+      color: rgba(160,180,210,0.7);
+    }
+
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 2px;
+      background: #888;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle input:checked + .toggle-slider {
+      background: rgba(165,214,167,0.3);
+      border-color: rgba(165,214,167,0.4);
+    }
+
+    .toggle input:checked + .toggle-slider::before {
+      transform: translateX(20px);
+      background: #a5d6a7;
+      box-shadow: 0 0 8px rgba(165,214,167,0.6);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .stat-card {
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+    }
+
+    .stat-card .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffcc80;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-card .stat-label {
+      font-size: 11px;
+      color: rgba(160,180,210,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: #e6eef5;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .btn-danger {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.3);
+      color: #ef5350;
+    }
+
+    .btn-danger:hover {
+      background: rgba(239,68,68,0.15);
+    }
+
+    .protected-sites {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .site-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: rgba(165,214,167,0.06);
+      border: 1px solid rgba(165,214,167,0.15);
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: rgba(200,220,240,0.9);
+    }
+
+    .site-badge::before {
+      content: '✓';
+      color: #a5d6a7;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      font-size: 12px;
+      color: rgba(160,180,210,0.5);
+    }
+
+    .footer a {
+      color: #4fc3f7;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-icon"></div>
+      <div class="header-text">
+        <h1>Ориентир — Настройки</h1>
+        <p>Внешний фильтр между вами и ИИ · Уровень 7: Ограничение слежки</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Что делает расширение</h2>
+      <p>
+        <strong>Ориентир</strong> — это реализация Уровня 7 архитектуры защиты.
+        Расширение блокирует телеметрию, поведенческие данные и слежку на сайтах
+        ИИ-ассистентов. ИИ видит только то, что вы явно напечатали — не то, как
+        вы читаете, как двигаете мышью, сколько времени задерживаетесь на ответе.
+      </p>
+      <p>
+        Расширение работает на следующих сайтах:
+      </p>
+      <div class="protected-sites">
+        <div class="site-badge">chatgpt.com</div>
+        <div class="site-badge">claude.ai</div>
+        <div class="site-badge">gemini.google.com</div>
+        <div class="site-badge">perplexity.ai</div>
+        <div class="site-badge">you.com</div>
+        <div class="site-badge">poe.com</div>
+        <div class="site-badge">character.ai</div>
+        <div class="site-badge">replika.com</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Настройки защиты</h2>
+
+      <div class="option-row">
+        <div class="option-label">
+          <strong>Блокировка телеметрии</strong>
+          <small>Перехват запросов к analytics, tracking, behavioral data</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="opt-telemetry" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="option-row">
+        <div class="option-label">
+          <strong>Блокировка поведенческих событий</strong>
+          <small>Перехват mousemove, scroll, click, keydown на window/document</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="opt-behavioral" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="option-row">
+        <div class="option-label">
+          <strong>Защита от Canvas fingerprinting</strong>
+          <small>Добавляет шум в toDataURL — делает отпечаток нестабильным</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="opt-canvas" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="option-row">
+        <div class="option-label">
+          <strong>Защита от WebRTC IP leak</strong>
+          <small>Блокирует ICE candidates, раскрывающие локальный IP</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="opt-webrtc" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="option-row">
+        <div class="option-label">
+          <strong>Защита от AudioContext fingerprinting</strong>
+          <small>Добавляет шум в AudioBuffer — делает audio fingerprint нестабильным</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="opt-audio" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="option-row">
+        <div class="option-label">
+          <strong>Перехват sendBeacon</strong>
+          <small>Блокирует отправку данных через navigator.sendBeacon к telemetry-доменам</small>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="opt-beacon" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Статистика</h2>
+      <p>Сколько запросов и событий заблокировано с момента установки:</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="opt-stat-total">0</div>
+          <div class="stat-label">Всего заблокировано</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="opt-stat-domains">0</div>
+          <div class="stat-label">Доменов затронуто</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="opt-stat-first">—</div>
+          <div class="stat-label">Первый блок</div>
+        </div>
+      </div>
+      <div style="margin-top: 16px;">
+        <button class="btn btn-danger" id="opt-btn-reset">Сбросить всю статистику</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>О проекте</h2>
+      <p>
+        <strong>Ориентир</strong> — архитектура защиты от скрытых манипуляций ИИ.
+        Расширение реализует Уровень 7 (Ограничение слежки) из девяти уровней защиты.
+        Полная архитектура — на сайте проекта.
+      </p>
+      <p>
+        Это <strong>open-source</strong> проект. Код прозрачен — вы можете проверить,
+        что расширение действительно блокирует слежку, а не добавляет свою.
+        Никаких внешних запросов, кроме блокировки — расширение ничего не отправляет.
+      </p>
+      <p>
+        <a href="https://orenpro.pro/pages/orientir.html" target="_blank" style="color: #4fc3f7;">
+          Полная архитектура защиты →
+        </a>
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Ориентир · Версия 0.1.0 · <a href="https://orenpro.pro/pages/blog/manifesto.html" target="_blank">Манифест</a> · <a href="https://github.com/orientirtech-afk" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
