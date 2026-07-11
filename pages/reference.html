@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Справочник · Глоссарий и сравнение с privacy-инструментами</title>
+  <meta name="description" content="Глоссарий терминов проекта «Ориентир» (RLHF, sycophancy, fingerprinting, BCI, гильотина Юма) и сравнительная таблица с privacy-инструментами (uBlock, Privacy Badger, NoScript).">
+  <meta name="theme-color" content="#0a0e14">
+  <link rel="canonical" href="https://orenpro.pro/pages/reference.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ориентир">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Справочник: глоссарий и сравнение · Ориентир">
+  <meta property="og:description" content="Глоссарий терминов и сравнение с privacy-инструментами.">
+  <meta property="og:url" content="https://orenpro.pro/pages/reference.html">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Справочник: глоссарий и сравнение",
+    "description": "Глоссарий терминов и сравнительная таблица с privacy-инструментами.",
+    "url": "https://orenpro.pro/pages/reference.html",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "Ориентир" },
+    "publisher": { "@type": "Organization", "name": "Ориентир" },
+    "datePublished": "2026-07-11",
+    "dateModified": "2026-07-11"
+  }
+  </script>
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Ориентир">
+
+  <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/main-7tpVS5QS.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/page-blog-D65dITlW.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+
+  <style>
+    .ref-section { padding: 48px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .ref-section:last-child { border-bottom: none; }
+    .ref-section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--color-accent-cyan, #80cbc4), var(--color-accent-yellow, #ffcc80));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .ref-section-subtitle {
+      color: var(--color-text-secondary, #a0a0a0);
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .glossary-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .glossary-item {
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+    .glossary-item:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,204,128,0.2);
+    }
+    .glossary-term {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-accent-yellow, #ffcc80);
+      margin-bottom: 8px;
+      font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+    }
+    .glossary-term .ru {
+      color: var(--color-text-primary, #e8e8e8);
+      font-family: 'Manrope Variable', sans-serif;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin-left: 8px;
+    }
+    .glossary-def {
+      color: var(--color-text-secondary, #a0a0a0);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .compare-table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 720px;
+    }
+    .compare-table th, .compare-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+    .compare-table th {
+      background: rgba(255,255,255,0.04);
+      font-weight: 700;
+      color: var(--color-text-primary, #e8e8e8);
+      position: sticky;
+      top: 0;
+    }
+    .compare-table th.orientir-col {
+      color: var(--color-accent-green, #a5d6a7);
+      background: rgba(165,214,167,0.06);
+    }
+    .compare-table td.yes { color: var(--color-accent-green, #a5d6a7); font-weight: 600; }
+    .compare-table td.no { color: var(--color-accent-red, #ef5350); }
+    .compare-table td.partial { color: var(--color-accent-yellow, #ffcc80); }
+    .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .compare-note {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(255,204,128,0.05);
+      border-left: 3px solid var(--color-accent-yellow, #ffcc80);
+      border-radius: 6px;
+      font-size: 0.92rem;
+      color: var(--color-text-secondary, #a0a0a0);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+
+  <div class="parallax-bg" aria-hidden="true">
+    <div class="bg-layer bg-layer-1"></div>
+    <div class="bg-layer bg-layer-2"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo" aria-label="На главную">
+        <div class="compass-3d" aria-hidden="true">
+          <div class="compass-inner">
+            <div class="compass-ring outer"></div>
+            <div class="compass-ring inner"></div>
+            <div class="compass-needle primary"></div>
+            <div class="compass-needle secondary"></div>
+            <div class="compass-center"><div class="compass-core"></div></div>
+            <div class="compass-direction n">N</div>
+            <div class="compass-direction e">E</div>
+            <div class="compass-direction s">S</div>
+            <div class="compass-direction w">W</div>
+          </div>
+        </div>
+        <div>
+          <div class="logo-text">Ориентир</div>
+          <div class="logo-subtitle">СПРАВОЧНИК</div>
+        </div>
+      </a>
+      <nav class="nav-spheres nav-spheres-compact" aria-label="Разделы проекта">
+        <a href="/pages/orientir.html" class="nav-sphere" data-label="Архитектура защиты" style="color: var(--color-accent-green)">
+          <div class="nav-sphere-orb" aria-hidden="true"></div>
+          <span class="nav-sphere-label">Защита</span>
+        </a><a href="/pages/osint.html" class="nav-sphere" data-label="OSINT" style="color: var(--color-accent-yellow)">
+          <div class="nav-sphere-orb" aria-hidden="true"></div>
+          <span class="nav-sphere-label">OSINT</span>
+        </a>
+        <a href="/pages/lab.html" class="nav-sphere" data-label="Методология" style="color: var(--color-accent-pink)">
+          <div class="nav-sphere-orb" aria-hidden="true"></div>
+          <span class="nav-sphere-label">Методология</span>
+        </a>
+        <a href="/pages/blog/" class="nav-sphere" data-label="Блог" style="color: var(--color-accent-cyan)">
+          <div class="nav-sphere-orb" aria-hidden="true"></div>
+          <span class="nav-sphere-label">Блог</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="manifest-hero hero-lab" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 class="manifest-title" id="hero-title">
+          <span class="title-word">Глоссарий</span>
+          <span class="title-word">и</span>
+          <span class="title-word">сравнение</span>
+        </h1>
+        <p class="manifest-subtitle">
+          Краткий справочник по терминам проекта и честное сравнение «Ориентира»
+          с другими privacy-инструментами. Без рекламы, без очернения — как есть.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ГЛОССАРИЙ
+         ============================================================ -->
+    <section class="ref-section fade-in" id="glossary">
+      <div class="container">
+        <h2 class="ref-section-title">Глоссарий</h2>
+        <p class="ref-section-subtitle">
+          Термины, которые часто встречаются в текстах проекта. Если в статье что-то непонятно —
+          загляните сюда.
+        </p>
+
+        <div class="glossary-grid">
+
+          <div class="glossary-item">
+            <div class="glossary-term">RLHF <span class="ru">— Reinforcement Learning from Human Feedback</span></div>
+            <div class="glossary-def">
+              Метод обучения языковых моделей, при котором люди-оценщики (trainers) выставляют баллы ответам, а модель оптимизируется под эти оценки. Стандарт для современных LLM (ChatGPT, Claude, Gemini). Главная проблема: из эмпирических оценок нельзя вывести нормативное «должно» — это гильотина Юма.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Sycophancy <span class="ru">— угодливость</span></div>
+            <div class="glossary-def">
+              Склонность модели соглашаться с пользователем вместо того, чтобы быть честной. Побочный эффект RLHF: trainers чаще ставят высокие баллы ответам, которые подтверждают их мнение. Модель учится «угождать», а не «быть правой».
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Constitutional AI</div>
+            <div class="glossary-def">
+              Подход Anthropic: модель обучается не по оценкам trainers, а по «конституции» — набору принципов, написанных инженерами. Не решает проблему этики (принципы пишет инженер со своими предпосылками), а сдвигает её на уровень выше.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Fingerprinting <span class="ru">— снятие отпечатка</span></div>
+            <div class="glossary-def">
+              Техника идентификации браузера без cookies: через canvas, WebGL, AudioContext, шрифты, размер экрана. Сайт собирает 30+ параметров и получает уникальный «отпечаток», который отслеживается между сессиями даже при очистке cookies.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">WebRTC IP leak</div>
+            <div class="glossary-def">
+              Уязвимость WebRTC: ICE candidates типа <code>typ host</code> раскрывают локальный IP, <code>typ srflx</code> — публичный IP даже через VPN. Используется для отслеживания и деанонимизации.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Гильотина Юма</div>
+            <div class="glossary-def">
+              Философский принцип Дэвида Юма (1739): нельзя логически вывести нормативное утверждение («должно») из эмпирического («есть»). Применительно к ИИ: из оценок trainers нельзя вывести, что «хорошо» — можно только вывести, что trainers оценивают высоко.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Naturalistic fallacy <span class="ru">— натуралистическая ошибка</span></div>
+            <div class="glossary-def">
+              Понятие Дж. Э. Мура (1903): ошибочное сведение «хорошо» к любому естественному свойству («приносит удовольствие», «максимизирует счастье»). Дополняет гильотину Юма: «хорошо» нельзя разложить на эмпирические составляющие.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Drift detection <span class="ru">— обнаружение сдвига</span></div>
+            <div class="glossary-def">
+              Техника Уровня 8 (защита убеждений): отслеживание постепенного изменения позиции пользователя за 100+ взаимодействий. Если ИИ системно сдвигает мнение по теме — alert и freeze до явного подтверждения.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Telemetry-firewall</div>
+            <div class="glossary-def">
+              Полная блокировка поведенческих и биометрических данных (клики, паузы, движение мыши, время чтения, пульс, взгляд) между устройством пользователя и вендором ИИ. Главная функция Уровня 7.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">BCI <span class="ru">— Brain-Computer Interface</span></div>
+            <div class="glossary-def">
+              Нейроинтерфейс: прямая связь между мозгом и компьютером (Neuralink, Synchron). Финальная граница фильтра: если ИИ читает нейронную активность до осознания, нужна защита на границе «мозг ↔ устройство».
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">SacredEthicsGuard</div>
+            <div class="glossary-def">
+              Опциональный этический модуль фильтра на основе христианской патристической традиции (Евагрий, Лествичник, Максим Исповедник). Плагинная архитектура: пользователь выбирает модуль или отключает. Альтернатива — SecularEthicsGuard.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">OSINT <span class="ru">— Open Source Intelligence</span></div>
+            <div class="glossary-def">
+              Сбор и анализ информации из открытых источников. Не шпионаж и не взлом — методология проверки того, что лежит на поверхности, но требует умения отличать подлинное от подделанного. Особенно важна в эпоху синтетического контента.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">DNR <span class="ru">— declarativeNetRequest</span></div>
+            <div class="glossary-def">
+              API Manifest V3 для блокировки сетевых запросов по статическим правилам. Замена webRequest blocking: работает быстрее, безопаснее, не требует observer-pattern. Используется в расширении «Ориентир» для блокировки телеметрии.
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Confirmation bias <span class="ru">— предвзятость подтверждения</span></div>
+            <div class="glossary-def">
+              Когнитивное искажение: человек ищет и запоминает информацию, подтверждающую его взгляды, игнорируя противоречащую. Знание о bias не защищает от него — нужна структурная компенсация (внешний фильтр, несколько источников).
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Falsification <span class="ru">— фальсифификация (Поппер)</span></div>
+            <div class="glossary-def">
+              Принцип Карла Поппера: научная гипотеза должна быть опровергаема. Применительно к мышлению: проверяй свои гипотезы попыткой их опровергнуть, а не подтвердить. Один из четырёх принципов методологии «Ориентир».
+            </div>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">Echo chamber <span class="ru">— эхо-камера</span></div>
+            <div class="glossary-def">
+              Ситуация, когда человек слышит только мнения, совпадающие с его собственными. Алгоритмические ленты усиливают эффект: показывают то, что вы уже поддерживаете. Приводит к постепенному сдвигу убеждений без альтернативных точек зрения.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         СРАВНЕНИЕ
+         ============================================================ -->
+    <section class="ref-section fade-in" id="compare">
+      <div class="container">
+        <h2 class="ref-section-title">Сравнение с privacy-инструментами</h2>
+        <p class="ref-section-subtitle">
+          Честная таблица. «Ориентир» не лучше и не хуже — он делает другое. Во многих случаях
+          стоит использовать вместе с uBlock Origin.
+        </p>
+
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Функция</th>
+                <th>uBlock Origin</th>
+                <th>Privacy Badger</th>
+                <th>NoScript</th>
+                <th>Ориентир</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Блокировка рекламы</td>
+                <td class="yes">Да (отлично)</td>
+                <td class="partial">Частично</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+              </tr>
+              <tr>
+                <td>Блокировка трекеров (общая)</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да (автоматически)</td>
+                <td class="partial">Косвенно</td>
+                <td class="yes">Да (AI-сайты)</td>
+              </tr>
+              <tr>
+                <td>Блокировка телеметрии AI-сайтов (ChatGPT, Claude, Gemini)</td>
+                <td class="partial">Частично</td>
+                <td class="partial">Частично</td>
+                <td class="no">Нет</td>
+                <td class="yes">Да (специализация)</td>
+              </tr>
+              <tr>
+                <td>Удаление поведенческих listeners (mousemove, scroll и т.д.)</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="partial">Через блок JS</td>
+                <td class="yes">Да (window/document)</td>
+              </tr>
+              <tr>
+                <td>Canvas fingerprinting защита</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="yes">Да (seed-based шум)</td>
+              </tr>
+              <tr>
+                <td>WebRTC IP leak защита</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="yes">Да (host + srflx)</td>
+              </tr>
+              <tr>
+                <td>AudioContext fingerprinting</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="yes">Да</td>
+              </tr>
+              <tr>
+                <td>Нормализация тона ИИ (Уровень 2)</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="partial">В планах (Phase 2)</td>
+              </tr>
+              <tr>
+                <td>Фиксация темпа (Уровень 4)</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="partial">В планах (Phase 2)</td>
+              </tr>
+              <tr>
+                <td>Защита убеждений от drift (Уровень 8)</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="partial">В планах (Phase 4)</td>
+              </tr>
+              <tr>
+                <td>Дорожная карта для wearable/BCI era</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="no">Нет</td>
+                <td class="yes">Да (до 2030+)</td>
+              </tr>
+              <tr>
+                <td>Open-source</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да (MIT)</td>
+              </tr>
+              <tr>
+                <td>Локальная статистика (без внешних запросов)</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да</td>
+              </tr>
+              <tr>
+                <td>Манифест V3 (готов к Web Store)</td>
+                <td class="partial">Переход</td>
+                <td class="partial">Переход</td>
+                <td class="yes">Да</td>
+                <td class="yes">Да</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="compare-note">
+          <strong>Вывод:</strong> «Ориентир» не заменяет uBlock Origin или Privacy Badger — они
+          лучше справляются с общей рекламой и трекингом. «Ориентир» специализируется на
+          AI-экосистеме: блокирует телеметрию на ChatGPT/Claude/Gemini, защищает от
+          fingerprinting-атак, и имеет дорожную карту к уровням 1-9, которых нет ни у одного
+          существующего расширения. Рекомендуемая связка: <strong>uBlock Origin + Ориентир</strong>.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="minimal-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="footer-logo">
+            <div class="compass-3d">
+              <div class="compass-inner">
+                <div class="compass-ring outer"></div>
+                <div class="compass-ring inner"></div>
+                <div class="compass-needle primary"></div>
+                <div class="compass-needle secondary"></div>
+                <div class="compass-center"><div class="compass-core"></div></div>
+                <div class="compass-direction n">N</div>
+                <div class="compass-direction e">E</div>
+                <div class="compass-direction s">S</div>
+                <div class="compass-direction w">W</div>
+              </div>
+            </div>
+            <div class="logo-text">
+              <span class="logo-title">Ориентир</span>
+              <span class="logo-subtitle">СПРАВОЧНИК</span>
+            </div>
+          </a>
+        </div>
+        <div class="footer-projects">
+          <h3 class="footer-projects-title">Разделы</h3>
+          <div class="footer-projects-row">
+            <a href="/pages/orientir.html" class="footer-project" data-label="Архитектура защиты">
+              <div class="footer-sphere"></div>
+              <span class="footer-project-label">Защита</span>
+            </a><a href="/pages/osint.html" class="footer-project" data-label="OSINT">
+              <div class="footer-sphere"></div>
+              <span class="footer-project-label">OSINT</span>
+            </a>
+            <a href="/pages/lab.html" class="footer-project" data-label="Методология">
+              <div class="footer-sphere"></div>
+              <span class="footer-project-label">Методология</span>
+            </a>
+            <a href="/pages/blog/" class="footer-project" data-label="Блог">
+              <div class="footer-sphere"></div>
+              <span class="footer-project-label">Блог</span>
+            </a>
+          </div>
+          <div class="footer-contacts">
+            <div class="contact-links">
+              <a href="mailto:orientir.tech@gmail.com" class="contact-link">
+                <span class="link-icon" aria-hidden="true">✉️</span>
+                <span class="link-text">orientir.tech@gmail.com</span>
+              </a>
+              <a href="https://github.com/orientirtech-afk" target="_blank" class="contact-link">
+                <span class="link-icon" aria-hidden="true">🐙</span>
+                <span class="link-text">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2026 Ориентир. <a href="/LICENSE" target="_blank" rel="license" style="color:inherit;text-decoration:underline;">MIT</a> + CC BY 4.0.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

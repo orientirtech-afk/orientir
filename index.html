@@ -70,6 +70,27 @@
   <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
   <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
   <link rel="stylesheet" crossorigin href="/assets/css/main-7tpVS5QS.css">
+  <noscript>
+    <style>
+      /* Без JavaScript: разворачиваем главы Чехова и показываем их содержимое */
+      .about-content {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .about-toggle {
+        display: none !important;
+      }
+      .about-inner {
+        padding: 24px !important;
+      }
+      .chekhov-close-wrapper {
+        display: none !important;
+      }
+    </style>
+  </noscript>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
@@ -240,26 +261,11 @@
                 </div>
                 <!-- SEO-блок с классом -->
                 <div class="footer-seo-block">
-                    <h4>О проекте</h4>
+                    <h4>OrenPro</h4>
                     <p>
-                        <strong>Девять уровней защиты</strong> — архитектурный манифест внешнего фильтра между человеком и ИИ. Принципы: прозрачность, автономия, верификация, итеративность. Задел на будущее, когда ИИ получит доступ к отслеживанию микропроцессов людей в реальном времени.<br>
-                        <strong>OSINT и проверка фактов</strong> — методология и инструменты самостоятельной проверки информации в эпоху синтетического контента и дипфейков. Без ИИ-агента — субъектом проверки остаётесь вы.<br>
-                        <strong>Методология</strong> — четыре принципа автономного исследования, проверка собственных гипотез (falsification), граф личных знаний в SQLite. Способ мышления, а не набор инструментов.<br>
-                        <strong>Блог и исследования</strong> — практические разборы манипулятивных паттернов: реклама, новости, ответы ИИ, политическая риторика.
-                    </p>
-                </div>
-
-                <div class="footer-seo-block">
-                    <h4>Создание сайтов</h4>
-                    <p>
-                        Мне нравится проектировать и создавать что-то интересное. Если вы хотите подобный сайт —
-                        <a href="mailto:orientir.tech@gmail.com?subject=Создание%20сайта" class="footer-link">напишите</a>,
-                        обсудим. Стек: Vite, Three.js, ES-модули, self-hosted шрифты, PWA, CSP.
-                    </p>
-                    <p style="margin-top:12px;">
-                        <strong>Мои работы:</strong>
-                        <a href="https://nadeeva.pro" target="_blank" rel="noopener" class="footer-link">nadeeva.pro</a> —
-                        сайт семейного lifestyle-фотографа. Стек: Next.js 15, React 19, Tailwind v4, GSAP + Three.js, PWA, CSP.
+                        <strong>OrenPro</strong> — личный проект, посвящённый разработке веб-решений. Основное направление — развитие системы «Ориентир»: архитектура защиты от скрытых манипуляций ИИ, методология проверки фактов, автономное мышление.<br>
+                        Также разрабатываю сайты с индивидуальным дизайном и понятной структурой. Среди реализованных проектов — <a href="https://nadeeva.pro" target="_blank" rel="noopener" class="footer-link">nadeeva.pro</a>.<br>
+                        Помогаю с запуском, поддержкой и развитием сайтов. Если у вас есть идея — <a href="mailto:orientir.tech@gmail.com?subject=Создание%20сайта" class="footer-link">напишите</a>, обсудим.
                     </p>
                 </div>
             </div>
@@ -283,7 +289,7 @@
 
         <!-- Копирайт -->
         <div class="footer-copyright">
-            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+            <p>© 2026 Ориентир. <a href="/LICENSE" target="_blank" rel="license" style="color:inherit;text-decoration:underline;">MIT</a> + CC BY 4.0. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
         </div>
     </div>
 </footer>

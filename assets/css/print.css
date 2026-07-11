@@ -1,0 +1,187 @@
+/* ============================================================
+   Print-friendly CSS — для статей блога
+   ============================================================
+   Активируется при печати (Ctrl+P) или Save as PDF.
+   Сбрасывает тёмную тему, 3D-фоны, навигацию, footer.
+   Остаётся только основной текст статьи. */
+
+@media print {
+  /* Сброс базовых параметров */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.55;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  /* Скрываем всё, что не контент */
+  .parallax-bg,
+  .bg-layer,
+  .bg-noise,
+  #three-container,
+  .performance-panel,
+  .site-header,
+  .minimal-footer,
+  .footer-copyright,
+  .nav-spheres,
+  .article-nav,
+  .blog-cta,
+  .reading-progress,
+  .scroll-hint,
+  .bottom-sheet,
+  .sheet-overlay,
+  .author-sphere,
+  .skip-link,
+  .article-toc,
+  .blog-filters,
+  .sphere-nav-section,
+  .manifest-hero .scroll-hint {
+    display: none !important;
+  }
+
+  /* Разворачиваем главы Чехова */
+  .about-content {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .about-toggle { display: none !important; }
+  .chekhov-close-wrapper { display: none !important; }
+
+  /* Article container — без ограничений ширины */
+  .article-container,
+  .container,
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Заголовок статьи */
+  .article-header {
+    border-bottom: 2px solid #000 !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 20px !important;
+  }
+  .article-title {
+    font-size: 22pt !important;
+    line-height: 1.25 !important;
+    color: #000 !important;
+    margin-bottom: 8px !important;
+  }
+  .article-category,
+  .article-meta {
+    font-size: 10pt !important;
+    color: #444 !important;
+  }
+
+  /* Тело статьи */
+  .article-body {
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+    color: #000 !important;
+  }
+  .article-body p {
+    margin: 0 0 12px 0 !important;
+    orphans: 3;
+    widows: 3;
+  }
+  .article-body h2 {
+    font-size: 16pt !important;
+    color: #000 !important;
+    margin-top: 28px !important;
+    margin-bottom: 12px !important;
+    page-break-after: avoid;
+    border-bottom: 1px solid #999 !important;
+    padding-bottom: 4px !important;
+  }
+  .article-body h3 {
+    font-size: 13pt !important;
+    color: #000 !important;
+    margin-top: 20px !important;
+    page-break-after: avoid;
+  }
+  .article-body a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+  .article-body a::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555 !important;
+  }
+  .article-body ul,
+  .article-body ol {
+    margin: 0 0 12px 0 !important;
+    padding-left: 24px !important;
+  }
+  .article-body li {
+    margin-bottom: 4px !important;
+  }
+  .article-body code {
+    font-family: 'Courier New', monospace !important;
+    background: #f0f0f0 !important;
+    padding: 1px 4px !important;
+    border-radius: 2px !important;
+    font-size: 10pt !important;
+  }
+  .article-body pre {
+    background: #f5f5f5 !important;
+    border: 1px solid #ccc !important;
+    padding: 10px !important;
+    font-size: 10pt !important;
+    white-space: pre-wrap !important;
+    page-break-inside: avoid;
+  }
+  .article-body blockquote {
+    border-left: 3px solid #000 !important;
+    padding-left: 12px !important;
+    margin: 12px 0 !important;
+    font-style: italic !important;
+    color: #333 !important;
+  }
+
+  /* Pattern-analysis блоки */
+  .pattern-analysis {
+    border: 1px solid #999 !important;
+    padding: 12px !important;
+    margin: 16px 0 !important;
+    background: #fafafa !important;
+    page-break-inside: avoid;
+  }
+  .pattern-analysis h4 {
+    font-size: 11pt !important;
+    color: #000 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Связанные материалы — на новой странице */
+  .pattern-analysis:has(h4) {
+    page-break-before: always;
+  }
+
+  /* Избегаем разрыва заголовка и следующего абзаца */
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  /* Поля страницы */
+  @page {
+    margin: 2cm 2cm 2cm 2cm;
+  }
+}

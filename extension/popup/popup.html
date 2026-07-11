@@ -300,6 +300,30 @@
       background: rgba(255,255,255,0.1);
       border-radius: 2px;
     }
+
+    .btn-small {
+      padding: 4px 10px;
+      font-size: 10px;
+      margin: 0;
+    }
+
+    .pause-banner {
+      padding: 10px 16px;
+      background: rgba(255,204,128,0.1);
+      border-top: 1px solid rgba(255,204,128,0.2);
+      border-bottom: 1px solid rgba(255,204,128,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: #ffcc80;
+    }
+
+    .pause-banner-text {
+      line-height: 1.4;
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -350,12 +374,18 @@
   </div>
 
   <div class="actions">
+    <button class="btn" id="btn-pause-hour" title="Отключить защиту на 1 час">⏸ Пауза 1ч</button>
     <button class="btn" id="btn-reset-session">Сброс сессии</button>
     <button class="btn btn-primary" id="btn-options">Настройки</button>
   </div>
 
+  <div class="pause-banner" id="pause-banner" style="display:none;">
+    <div class="pause-banner-text">Защита на паузе до <strong id="pause-until">—</strong></div>
+    <button class="btn btn-small" id="btn-resume-now">Возобновить</button>
+  </div>
+
   <div class="footer">
-    <span>Уровень 7 · v0.1</span>
+    <span>Уровень 7 · v0.2</span>
     <a href="https://orenpro.pro/pages/orientir.html" target="_blank">Подробнее →</a>
   </div>
 

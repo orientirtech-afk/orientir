@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Ориентир — Блог</title>
+    <link>https://orenpro.pro/pages/blog/</link>
+    <atom:link href="https://orenpro.pro/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Заметки о защите от скрытых манипуляций ИИ, методологии проверки фактов и автономном мышлении. Разборы паттернов влияния и концептуальные статьи о будущем человека в эпоху умных машин.</description>
+    <language>ru-ru</language>
+    <copyright>MIT License (код) + CC BY 4.0 (контент)</copyright>
+    <managingEditor>orientir.tech@gmail.com (Ориентир)</managingEditor>
+    <webMaster>orientir.tech@gmail.com (Ориентир)</webMaster>
+    <lastBuildDate>Fri, 11 Jul 2026 09:00:00 +0500</lastBuildDate>
+    <ttl>1440</ttl>
+    <image>
+      <url>https://orenpro.pro/web-app-manifest-512x512.png</url>
+      <title>Ориентир — Блог</title>
+      <link>https://orenpro.pro/pages/blog/</link>
+    </image>
+
+    <item>
+      <title>Манифест Ориентира: право остаться собой</title>
+      <link>https://orenpro.pro/pages/blog/manifesto.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/manifesto.html</guid>
+      <pubDate>Fri, 11 Jul 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Манифест</category>
+      <description>Зачем нужен внешний фильтр между человеком и ИИ в эпоху умных машин. Траектория от текста к среде, угроза незаметного изменения, почему законы и внутренние ограничители моделей не работают — и что делать тем, кто хочет сохранить себя.</description>
+    </item>
+
+    <item>
+      <title>Три недели с ChatGPT: что я заметил в собственном мышлении</title>
+      <link>https://orenpro.pro/pages/blog/case-three-weeks-chatgpt.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/case-three-weeks-chatgpt.html</guid>
+      <pubDate>Fri, 11 Jul 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Кейс</category>
+      <description>Личный кейс плотной работы с ИИ-ассистентом. Что произошло со способностью писать с нуля, стилистическим голосом, готовностью спорить и калибром уверенности. Без осуждения — анализ конкретных симптомов и контрмер.</description>
+    </item>
+
+    <item>
+      <title>От текста к среде: пять эпох воздействия ИИ на человека</title>
+      <link>https://orenpro.pro/pages/blog/ai-future-impact.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/ai-future-impact.html</guid>
+      <pubDate>Thu, 10 Jul 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Концепт</category>
+      <description>Видение развития ИИ от текстовых ассистентов до нейроинтерфейсов. Как каждое новое поколение ИИ усиливает способность воздействовать на человека. Почему большинство не заметит, как их изменят — и что делать тем, кто хочет сохранить себя.</description>
+    </item>
+
+    <item>
+      <title>Почему внешний фильтр, а не этичная модель</title>
+      <link>https://orenpro.pro/pages/blog/ai-filter-future.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/ai-filter-future.html</guid>
+      <pubDate>Wed, 08 Jul 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Концепт</category>
+      <description>Когда ИИ получит доступ к микропроцессам людей в реальном времени, манипуляция станет незаметной и непрерывной. Почему законы и внутренние ограничители моделей не помогут — и зачем нужен внешний фильтр как отдельное приложение.</description>
+    </item>
+
+    <item>
+      <title>Гильотина Юма: почему RLHF не может вывести «должно» из «есть»</title>
+      <link>https://orenpro.pro/pages/blog/rlhf-cannot-derive-ought.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/rlhf-cannot-derive-ought.html</guid>
+      <pubDate>Sat, 05 Jul 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Этика</category>
+      <description>Фундаментальная проблема AI-этики: нельзя вывести нормативное из эмпирического. Юм, G.E. Moore, naturalistic fallacy, Constitutional AI — и почему современный подход RLHF структурно не может дать устойчивую этику.</description>
+    </item>
+
+    <item>
+      <title>Синдром угодливости: почему ChatGPT соглашается с вами</title>
+      <link>https://orenpro.pro/pages/blog/ai-sycophancy.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/ai-sycophancy.html</guid>
+      <pubDate>Fri, 26 Jun 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Ответы ИИ</category>
+      <description>Феномен sycophancy в больших языковых моделях: как RLHF-обучение на людских оценках научило ИИ соглашаться с пользователем вместо того, чтобы быть честным. На примерах 12 диалогов с разными формулировками одного и того же ошибочного утверждения.</description>
+    </item>
+
+    <item>
+      <title>«Только сегодня!» — анатомия искусственной срочности</title>
+      <link>https://orenpro.pro/pages/blog/urgency-marketing.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/urgency-marketing.html</guid>
+      <pubDate>Thu, 03 Jul 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Реклама</category>
+      <description>Разбираем классический приём маркетинга: как фразы «последний шанс», «только сегодня», «ограничено 5 штук» подавляют критическое мышление. С анатомией 7 рекламных писем и пошаговым разбором, какие именно триггеры сработали.</description>
+    </item>
+
+    <item>
+      <title>Эмоциональный кликбейт: анатомия новостных заголовков</title>
+      <link>https://orenpro.pro/pages/blog/news-headlines.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/news-headlines.html</guid>
+      <pubDate>Fri, 19 Jun 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Новости</category>
+      <description>Анализ 50 заголовков крупных СМИ за одну неделю: какие эмоциональные триггеры используются чаще всего, как страх и возмущение превращаются в клики, и почему «шокирующее» в заголовке почти никогда не шокирует в тексте.</description>
+    </item>
+
+    <item>
+      <title>«10 000 человек уже купили» — фейковое социальное доказательство</title>
+      <link>https://orenpro.pro/pages/blog/social-proof-fake.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/social-proof-fake.html</guid>
+      <pubDate>Fri, 12 Jun 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Реклама</category>
+      <description>Как лендос-генераторы создают поддельные отзывы и счётчики «нас выбрали N человек». Разбираем техническую сторону: от DOM-манипуляций до AI-генерации отзывов. И контрмеры — что проверять, чтобы не попасться.</description>
+    </item>
+
+    <item>
+      <title>«Либо с нами, либо против» — ложная дилемма в политической риторике</title>
+      <link>https://orenpro.pro/pages/blog/false-dilemma-politics.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/false-dilemma-politics.html</guid>
+      <pubDate>Fri, 05 Jun 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Политика</category>
+      <description>Самый распространённый политический приём: бинаризация сложных вопросов. На примерах речей разных политиков 2024-2026 годов: как конструкция «или-или» закрывает пространство для дискуссии и превращает оппонента в врага.</description>
+    </item>
+
+    <item>
+      <title>Ловушка персонализации: когда «для вас» становится манипуляцией</title>
+      <link>https://orenpro.pro/pages/blog/personalization-trap.html</link>
+      <guid isPermaLink="true">https://orenpro.pro/pages/blog/personalization-trap.html</guid>
+      <pubDate>Fri, 29 May 2026 09:00:00 +0500</pubDate>
+      <dc:creator>Ориентир</dc:creator>
+      <category>Дизайн</category>
+      <description>Разбор UX-паттернов, которые используют поведенческие данные для создания иллюзии уникального предложения. От «персональной ленты» до «подобрано специально для вас». Почему персонализация часто противоположна интересам пользователя.</description>
+    </item>
+
+  </channel>
+</rss>

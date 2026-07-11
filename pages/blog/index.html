@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Блог и исследования · Разборы манипулятивных текстов</title>
-  <meta name="description" content="Практические разборы реальных случаев манипуляций: реклама, новости, ответы ИИ, политические выступления. Учимся распознавать паттерны влияния.">
+  <title>Блог · Защита от манипуляций ИИ, OSINT, автономное мышление</title>
+  <meta name="description" content="Заметки о защите от скрытых манипуляций ИИ, методологии проверки фактов и автономном мышлении. Разборы паттернов влияния и концептуальные статьи о будущем человека в эпоху умных машин.">
+  <link rel="alternate" type="application/rss+xml" title="Ориентир — Блог (RSS)" href="https://orenpro.pro/feed.xml" />
   <meta name="theme-color" content="#0a0e14">
   <!-- SEO для Yandex и Google -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -62,6 +63,8 @@
   <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
   <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
   <link rel="stylesheet" crossorigin href="/assets/css/page-blog-D65dITlW.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/print.css" media="print">
+  <script type="module" crossorigin src="/assets/js/blog-search.js" defer></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
@@ -133,11 +136,12 @@
   <main id="main-content">
     <section class="blog-hero">
       <div class="container">
-        <h1 class="blog-title fade-in">Блог и исследования</h1>
+        <h1 class="blog-title fade-in">Блог</h1>
         <p class="blog-subtitle fade-in">
-          Практические разборы реальных манипулятивных текстов: реклама, новости, ответы ИИ,
-          политические выступления. Каждый кейс — это паттерн распознан, проанализирован
-          и превращён в образовательный материал.
+          Заметки о защите от скрытых манипуляций ИИ, методологии проверки фактов
+          и автономном мышлении. Разборы реальных паттернов — реклама, новости, ответы ИИ,
+          политическая риторика, — а также концептуальные статьи о том, как меняется
+          человек в эпоху умных машин и что с этим делать.
         </p>
       </div>
     </section>
@@ -147,6 +151,7 @@
         <div class="blog-filters" role="toolbar" aria-label="Фильтр статей по категории">
           <button class="btn btn-secondary active" data-filter="all" type="button">Все статьи</button>
           <button class="btn btn-secondary" data-filter="manifest" type="button">Манифест</button>
+          <button class="btn btn-secondary" data-filter="case" type="button">Кейсы</button>
           <button class="btn btn-secondary" data-filter="ethics" type="button">Этика</button>
           <button class="btn btn-secondary" data-filter="advertising" type="button">Реклама</button>
           <button class="btn btn-secondary" data-filter="ai" type="button">Ответы ИИ</button>
@@ -163,15 +168,32 @@
               <div class="blog-card-icon" aria-hidden="true">🧭</div>
               <div class="blog-card-meta">
                 <span class="blog-card-category">Манифест</span>
-                <span class="blog-card-date">10 июля 2026</span>
+                <span class="blog-card-date">11 июля 2026</span>
               </div>
-              <h2 class="blog-card-title">Манифест Ориентира: почему мы строим фильтр, а не ИИ-агента</h2>
+              <h2 class="blog-card-title">Манифест Ориентира: право остаться собой</h2>
               <p class="blog-card-excerpt">
-                Почему проект отказался от строительства ИИ-агента и сфокусировался на внешнем
-                фильтре. Моральная, стратегическая и архитектурная честность выбора. Любой
-                ИИ-агент, даже «хороший», усиливает экосистему прельщения.
+                Зачем нужен внешний фильтр между человеком и ИИ в эпоху умных машин. Траектория
+                от текста к среде, угроза незаметного изменения, почему законы и внутренние
+                ограничители моделей не работают — и что делать тем, кто хочет сохранить себя.
               </p>
               <span class="blog-card-readmore">Читать манифест →</span>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in" data-category="case">
+            <a href="/pages/blog/case-three-weeks-chatgpt.html" class="blog-card-link">
+              <div class="blog-card-icon" aria-hidden="true">📝</div>
+              <div class="blog-card-meta">
+                <span class="blog-card-category">Кейс</span>
+                <span class="blog-card-date">11 июля 2026</span>
+              </div>
+              <h2 class="blog-card-title">Три недели с ChatGPT: что я заметил в собственном мышлении</h2>
+              <p class="blog-card-excerpt">
+                Личный кейс плотной работы с ИИ-ассистентом. Что произошло со способностью
+                писать с нуля, стилистическим голосом, готовностью спорить и калибром
+                уверенности. Без осуждения — анализ конкретных симптомов и контрмер.
+              </p>
+              <span class="blog-card-readmore">Читать кейс →</span>
             </a>
           </article>
 
@@ -182,11 +204,11 @@
                 <span class="blog-card-category">Концепт</span>
                 <span class="blog-card-date">10 июля 2026</span>
               </div>
-              <h2 class="blog-card-title">Как я вижу развитие ИИ и какое воздействие оно окажет на людей</h2>
+              <h2 class="blog-card-title">От текста к среде: пять эпох воздействия ИИ на человека</h2>
               <p class="blog-card-excerpt">
-                Видение развития ИИ от текстовых ассистентов до нейроинтерфейсов. Как каждое
-                новое поколение ИИ усиливает способность воздействовать на человека. Почему
-                большинство не заметит, как их изменят — и что делать тем, кто хочет сохранить себя.
+                От текстовых ассистентов до нейроинтерфейсов — пять эпох, каждая из которых
+                добавляет новый канал воздействия на человека. Почему большинство не заметит,
+                как их изменят, и что делать тем, кто хочет сохранить себя.
               </p>
               <span class="blog-card-readmore">Читать концепт →</span>
             </a>
@@ -199,11 +221,11 @@
                 <span class="blog-card-category">Концепт</span>
                 <span class="blog-card-date">8 июля 2026</span>
               </div>
-              <h2 class="blog-card-title">Фильтр между человеком и ИИ: зачем и как</h2>
+              <h2 class="blog-card-title">Почему внешний фильтр, а не этичная модель</h2>
               <p class="blog-card-excerpt">
-                Когда ИИ получит доступ к микропроцессам людей в реальном времени, манипуляция
-                станет незаметной и непрерывной. Почему законы и внутренние ограничители моделей
-                не помогут — и зачем нужен внешний фильтр как отдельное приложение.
+                Внутренние ограничители моделей не масштабируются: вендор меняет их в любой
+                момент. Законы отстают. Единственный технологический ответ — отдельное
+                приложение-фильтр между пользователем и любой моделью.
               </p>
               <span class="blog-card-readmore">Читать концепт →</span>
             </a>
@@ -216,11 +238,11 @@
                 <span class="blog-card-category">Этика</span>
                 <span class="blog-card-date">5 июля 2026</span>
               </div>
-              <h2 class="blog-card-title">Почему RLHF не может вывести «должно» из «есть»</h2>
+              <h2 class="blog-card-title">Гильотина Юма: почему RLHF не может вывести «должно» из «есть»</h2>
               <p class="blog-card-excerpt">
-                Фундаментальная проблема AI-этики: нельзя вывести нормативное из эмпирического.
-                Юм, G.E. Moore, naturalistic fallacy, Constitutional AI — и почему
-                современный подход RLHF структурно не может дать устойчивую этику.
+                Юм показал: нельзя логически вывести «должно» из «есть». Современный RLHF
+                пытается именно это — вывести нормативное из оценок trainers. Почему
+                Constitutional AI не решает проблему, а сдвигает её на уровень выше.
               </p>
               <span class="blog-card-readmore">Читать разбор →</span>
             </a>
@@ -334,13 +356,17 @@
 
     <section class="blog-cta fade-in">
       <div class="container">
-        <h2>Встретили манипулятивный текст?</h2>
+        <h2>Подпишитесь на новые статьи</h2>
         <p>
-          Присылайте ссылку или скриншот — мы разберём его в следующей статье.
-          Все разборы анонимны: мы публикуем только анализ паттернов, без указания авторов
-          и источников (если они не публичные).
+          RSS-фид — без алгоритмов, без email-рассылок, без слежки. Добавьте
+          <a href="/feed.xml" style="color: #4fc3f7; text-decoration: underline;">orenpro.pro/feed.xml</a>
+          в ваш читатель (Feedly, Reeder, Inoreader, FreshRSS) — и получайте статьи сразу
+          после публикации.
         </p>
-        <a href="mailto:orientir.tech@gmail.com?subject=Разбор%20манипулятивного%20текста" class="btn btn-primary">
+        <a href="/feed.xml" class="btn btn-primary" style="margin-right: 12px;">
+          <span aria-hidden="true">📡</span> Открыть RSS-фид
+        </a>
+        <a href="mailto:orientir.tech@gmail.com?subject=Разбор%20манипулятивного%20текста" class="btn">
           <span aria-hidden="true">✉️</span> Предложить кейс для разбора
         </a>
       </div>
@@ -391,7 +417,7 @@
                         <div class="footer-sphere"></div>
                         <span class="footer-project-label">Методология</span>
                     </a>
-                    <a href="/pages/blog/" class="footer-project active" data-label="Блог">
+                    <a href="/pages/reference.html" class="footer-project" data-label="Справочник"><div class="footer-sphere"></div><span class="footer-project-label">Справочник</span></a><a href="/pages/blog/" class="footer-project active" data-label="Блог">
                         <div class="footer-sphere"></div>
                         <span class="footer-project-label">Блог</span>
                     </a>
@@ -416,7 +442,7 @@
 
         <!-- Копирайт -->
         <div class="footer-copyright">
-            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+            <p>© 2026 Ориентир. <a href="/LICENSE" target="_blank" rel="license" style="color:inherit;text-decoration:underline;">MIT</a> + CC BY 4.0. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
         </div>
     </div>
 </footer>

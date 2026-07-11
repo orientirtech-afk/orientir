@@ -1,6 +1,6 @@
 # 🧭 Ориентир — Архитектура защиты от скрытых манипуляций ИИ
 
-**Сайт:** [orenpro.pro](https://orenpro.pro) · **Манифест:** [Почему мы строим фильтр, а не ИИ-агента](https://orenpro.pro/pages/blog/manifesto.html)
+**Сайт:** [orenpro.pro](https://orenpro.pro) · **Манифест:** [Право остаться собой](https://orenpro.pro/pages/blog/manifesto.html)
 
 Проект «Ориентир» — архитектура защиты от скрытых психологических воздействий ИИ. Девять уровней архитектуры защиты, OSINT-методология проверки фактов, методология автономного исследования. Open-source browser extension — первый прототип Уровня 7.
 
@@ -11,7 +11,9 @@
 ├── Защита (pages/orientir.html)        — 9 уровней + дорожная карта + эволюция
 ├── OSINT (pages/osint.html)            — методология проверки фактов без ИИ
 ├── Методология (pages/lab.html)        — автономное исследование без агента
-├── Блог (pages/blog/)                  — разборы манипулятивных паттернов
+├── Справочник (pages/reference.html)   — глоссарий и сравнение с privacy-инструментами
+├── Блог (pages/blog/)                  — статьи, кейсы, разборы паттернов
+├── RSS (feed.xml)                      — подписка без алгоритмов
 └── Browser Extension (extension/)      — прототип Уровня 7 (ограничение слежки)
 ```
 
@@ -21,6 +23,7 @@
 .
 ├── index.html                    # Главная страница
 ├── 404.html                      # Страница 404
+├── LICENSE                       # MIT (код) + CC BY 4.0 (контент)
 ├── manifest.json                 # PWA-манифест
 ├── sw.js                         # Service Worker
 ├── robots.txt                    # robots.txt
@@ -33,12 +36,14 @@
 │   ├── orientir.html             # Защита — 9 уровней, дорожная карта, эволюция
 │   ├── osint.html                # OSINT — методология проверки фактов
 │   ├── lab.html                  # Методология автономного исследования
+│   ├── reference.html            # Глоссарий + сравнение с privacy-инструментами
 │   └── blog/
-│       ├── index.html            # Индекс блога
-│       ├── manifesto.html        # Манифест проекта
-│       ├── ai-future-impact.html # Как я вижу развитие ИИ
-│       ├── ai-filter-future.html # Концепция фильтра
-│       ├── rlhf-cannot-derive-ought.html
+│       ├── index.html            # Индекс блога (с поиском и фильтрами)
+│       ├── manifesto.html        # Манифест: право остаться собой
+│       ├── case-three-weeks-chatgpt.html  # Кейс: три недели с ChatGPT
+│       ├── ai-future-impact.html # От текста к среде: пять эпох
+│       ├── ai-filter-future.html # Почему внешний фильтр, а не этичная модель
+│       ├── rlhf-cannot-derive-ought.html  # Гильотина Юма
 │       ├── ai-sycophancy.html
 │       ├── urgency-marketing.html
 │       ├── news-headlines.html
@@ -47,13 +52,14 @@
 │       └── personalization-trap.html
 │
 ├── extension/                    # Browser Extension (Уровень 7)
-│   ├── manifest.json             # Manifest V3
-│   ├── background.js             # Service worker
-│   ├── content.js                # Content script (MAIN world)
+│   ├── manifest.json             # Manifest V3 (два content_scripts: ISOLATED + MAIN)
+│   ├── background.js             # Service worker — статистика через DNR onRuleMatchedInfo
+│   ├── content-bridge.js         # Content script (ISOLATED) — мост MAIN ↔ background
+│   ├── content.js                # Content script (MAIN world) — перехват API
 │   ├── rules/
 │   │   └── telemetry_rules.json  # 39 DNR правил блокировки
-│   ├── popup/                    # UI popup
-│   ├── options/                  # Страница настроек
+│   ├── popup/                    # UI popup (storage.onChanged вместо опроса)
+│   ├── options/                  # Страница настроек (функциональные тогглы)
 │   ├── icons/                    # Иконки 16/32/48/128
 │   └── README.md                 # Документация расширения
 │
@@ -158,7 +164,7 @@ MIT License — используйте, модифицируйте, распро
 
 ## Связанные материалы
 
-- [Манифест Ориентира](https://orenpro.pro/pages/blog/manifesto.html) — почему фильтр, а не ИИ-агент
+- [Манифест Ориентира](https://orenpro.pro/pages/blog/manifesto.html) — право остаться собой в эпоху умных машин
 - [Девять уровней архитектуры защиты](https://orenpro.pro/pages/orientir.html) — полная архитектура
 - [Как я вижу развитие ИИ](https://orenpro.pro/pages/blog/ai-future-impact.html) — видение траектории
 - [Фильтр между человеком и ИИ: зачем и как](https://orenpro.pro/pages/blog/ai-filter-future.html) — концепция

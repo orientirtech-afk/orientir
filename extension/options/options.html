@@ -264,6 +264,43 @@
       color: #4fc3f7;
       text-decoration: none;
     }
+
+    .stat-detail {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: rgba(200,220,240,0.8);
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .stat-detail strong {
+      color: #ffcc80;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .whitelist-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: rgba(165,214,167,0.08);
+      border: 1px solid rgba(165,214,167,0.2);
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: rgba(200,220,240,0.9);
+    }
+    .whitelist-badge button {
+      background: none;
+      border: none;
+      color: #ef5350;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 0;
+      line-height: 1;
+    }
+    .whitelist-badge button:hover { opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -389,6 +426,28 @@
       <div style="margin-top: 16px;">
         <button class="btn btn-danger" id="opt-btn-reset">Сбросить всю статистику</button>
       </div>
+      <div id="opt-stat-types" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;"></div>
+    </div>
+
+    <div class="section">
+      <h2>Управление настройками</h2>
+      <p>Экспорт настроек и whitelist в JSON-файл — для бэкапа или переноса между устройствами. Импорт — восстановление из файла.</p>
+      <div style="margin-top: 12px;">
+        <input type="file" id="opt-import-file" accept=".json" style="display:none;">
+        <button class="btn" id="opt-btn-export">Экспорт настроек</button>
+        <button class="btn" id="opt-btn-import">Импорт настроек</button>
+      </div>
+      <div id="opt-import-status" style="margin-top: 12px; font-size: 12px;"></div>
+    </div>
+
+    <div class="section">
+      <h2>Whitelist сайтов</h2>
+      <p>Сайты, на которых защита всегда включена. По умолчанию — все поддерживаемые AI-сайты. Можно добавить свои (например, локальную Ollama Web UI или новый сервис).</p>
+      <div class="whitelist-controls" style="display: flex; gap: 8px; margin: 12px 0;">
+        <input type="text" id="opt-whitelist-input" placeholder="example.com" style="flex: 1; padding: 8px 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #e6eef5; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+        <button class="btn btn-primary" id="opt-btn-whitelist-add" style="margin: 0;">Добавить</button>
+      </div>
+      <div id="opt-whitelist-list" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
     </div>
 
     <div class="section">

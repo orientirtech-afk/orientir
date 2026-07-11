@@ -62,6 +62,27 @@
   <link rel="stylesheet" crossorigin href="/assets/css/three-base-B1zzSPfK.css">
   <link rel="stylesheet" crossorigin href="/assets/css/pages_lab-DbTW6oEW.css">
   <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
+  <noscript>
+    <style>
+      /* Без JavaScript: разворачиваем главы Чехова и показываем их содержимое */
+      .about-content {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .about-toggle {
+        display: none !important;
+      }
+      .about-inner {
+        padding: 24px !important;
+      }
+      .chekhov-close-wrapper {
+        display: none !important;
+      }
+    </style>
+  </noscript>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
@@ -685,7 +706,7 @@
                         <div class="footer-sphere"></div>
                         <span class="footer-project-label">Методология</span>
                     </a>
-                    <a href="/pages/blog/" class="footer-project" data-label="Блог">
+                    <a href="/pages/reference.html" class="footer-project" data-label="Справочник"><div class="footer-sphere"></div><span class="footer-project-label">Справочник</span></a><a href="/pages/blog/" class="footer-project" data-label="Блог">
                         <div class="footer-sphere"></div>
                         <span class="footer-project-label">Блог</span>
                     </a>
@@ -711,7 +732,7 @@
 
         <!-- Копирайт -->
         <div class="footer-copyright">
-            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+            <p>© 2026 Ориентир. <a href="/LICENSE" target="_blank" rel="license" style="color:inherit;text-decoration:underline;">MIT</a> + CC BY 4.0. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
         </div>
     </div>
 </footer>

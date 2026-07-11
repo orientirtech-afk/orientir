@@ -52,10 +52,23 @@
   }
 }
 </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://orenpro.pro/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://orenpro.pro/pages/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "«10 000 человек уже купили» — фейковое социальное доказательство" }
+    ]
+  }
+  </script>
+
   <script type="module" crossorigin src="/assets/js/sw-register-BP-CnRjZ.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/css/sw-register-CL-AhW5_.css">
   <link rel="stylesheet" crossorigin href="/assets/css/header-BuJmnF0m.css">
   <link rel="stylesheet" crossorigin href="/assets/css/page-blog-D65dITlW.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/print.css" media="print">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
@@ -272,7 +285,7 @@ document.getElementById('counter').textContent = currentCount.toLocaleString('ru
                         <div class="footer-sphere"></div>
                         <span class="footer-project-label">Методология</span>
                     </a>
-                    <a href="/pages/blog/" class="footer-project active" data-label="Блог">
+                    <a href="/pages/reference.html" class="footer-project" data-label="Справочник"><div class="footer-sphere"></div><span class="footer-project-label">Справочник</span></a><a href="/pages/blog/" class="footer-project active" data-label="Блог">
                         <div class="footer-sphere"></div>
                         <span class="footer-project-label">Блог</span>
                     </a>
@@ -297,7 +310,7 @@ document.getElementById('counter').textContent = currentCount.toLocaleString('ru
 
         <!-- Копирайт -->
         <div class="footer-copyright">
-            <p>© 2026 Ориентир. Все права защищены. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
+            <p>© 2026 Ориентир. <a href="/LICENSE" target="_blank" rel="license" style="color:inherit;text-decoration:underline;">MIT</a> + CC BY 4.0. <button class="footer-link-btn" id="license-btn" type="button">Лицензия</button></p>
         </div>
     </div>
 </footer>

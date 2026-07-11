@@ -22,17 +22,25 @@ REPO_URL="git@github.com:orientirtech-afk/orientir.git"
 REPO_URL_HTTPS="https://github.com/orientirtech-afk/orientir.git"
 TEMP_DIR="/tmp/orientir-update-$$"
 
+# Директория с исходными файлами сайта:
+# по умолчанию — директория, где лежит этот скрипт.
+# Можно переопределить через окружение: SITE_DIR=/path/to/site bash update_github.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SITE_DIR="${SITE_DIR:-$SCRIPT_DIR}"
+
 echo "🧭 Ориентир — обновление GitHub"
 echo "================================"
 echo ""
 
-# Проверяем, что мы в правильной директории
-if [ ! -f "index.html" ] || [ ! -d "extension" ]; then
-    echo "❌ Ошибка: запустите из директории site_new (где index.html и extension/)"
+# Проверяем, что SITE_DIR корректна
+if [ ! -f "$SITE_DIR/index.html" ] || [ ! -d "$SITE_DIR/extension" ]; then
+    echo "❌ Ошибка: в директории SITE_DIR=$SITE_DIR нет index.html или extension/"
+    echo "   Запустите скрипт из директории сайта, либо укажите SITE_DIR явно:"
+    echo "   SITE_DIR=/path/to/site bash update_github.sh"
     exit 1
 fi
 
-echo "📁 Текущая директория: $(pwd)"
+echo "📁 Исходная директория: $SITE_DIR"
 echo ""
 
 # Спрашиваем подтверждение
@@ -75,10 +83,9 @@ echo "   ✓ Старые файлы удалены"
 echo ""
 echo "📋 Копирование новых файлов..."
 
-# Копируем из site_new
-# Копируем новые файлы из вашей рабочей папки Windows
-cp -r "/c/Users/koc/Desktop/orenpro/Новая версия сайта/orientir-deploy-v2.7.2/orientir-new/"* .
-
+# Копируем из SITE_DIR (с точкой в конце — содержимое директории, включая скрытые)
+cp -r "$SITE_DIR"/. .
+cp "$SITE_DIR/.gitignore" . 2>/dev/null || true
 
 # Удаляем .git из скопированной директории (если есть)
 rm -rf .git-backup

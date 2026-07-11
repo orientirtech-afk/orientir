@@ -1,5 +1,5 @@
 # robots.txt для проекта Ориентир
-# Последнее обновление: 2026-07-05
+# Последнее обновление: 2026-07-11
 # AI-краулеры и поисковики РАЗРЕШЕНЫ
 
 User-agent: *
@@ -39,16 +39,17 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# === Запрет служебных путей ===
-Disallow: /shared/js/data/
-Disallow: /tmp/
-Disallow: /backup/
-Disallow: /nginx/
+# === Запрет служебных файлов (точечный) ===
 Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.swp$
+Disallow: /*.tmp$
+Disallow: /.git/
+Disallow: /.env
 
-# === Sitemap ===
+# === Sitemap + RSS ===
 Sitemap: https://orenpro.pro/sitemap.xml
-
+# RSS-фид блога: https://orenpro.pro/feed.xml
 
 # === Явно разрешённые файлы ===
 Allow: /favicon.ico$
